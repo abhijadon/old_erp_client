@@ -23,7 +23,7 @@ export default function CreateForm({ config, formElements, withUpload = false })
     const session = fieldsValue.customfields ? fieldsValue.customfields.session : '';
 
     // Check if the entity is 'lead' and the university name is one of the specified values and not "MANGALAYATAN ONLINE"
-    if (entity === 'lead' && (['SPU', 'BOSSE', 'MANGALAYATAN'].includes(universityName) || (universityName === 'MANGALAYATAN ONLINE' && ['JULY 23', 'JAN 24'].includes(session)))) {
+    if (entity === 'lead' && (['SPU', 'BOSSE', 'MANGALAYATAN DISTANCE'].includes(universityName) || (universityName === 'MANGALAYATAN ONLINE' && ['JULY 23', 'JAN 24'].includes(session)))) {
       // Open the drawer if the conditions are met
       setIsDrawerVisible(true);
       // Save form data to display in drawer

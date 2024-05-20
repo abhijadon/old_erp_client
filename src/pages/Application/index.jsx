@@ -13,8 +13,8 @@ export default function Lead() {
   const [page, setPage] = useState(1);
   const entity = 'lead';
   const searchConfig = {
-    displayLabels: ['full_name', 'company', 'contact.email'],
-    searchFields: ['full_name', 'company', 'contact.email'],
+    displayLabels: ['full_name'],
+    searchFields: ['full_name'],
     outputValue: '_id',
   };
 

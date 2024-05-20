@@ -35,7 +35,7 @@ import Application from '@/pages/Application/index';
 import Offer from '@/pages/Offer/index';
 import OfferCreate from '@/pages/Offer/OfferCreate';
 import OfferRead from '@/pages/Offer/OfferRead';
-import OfferUpdate from '@/pages/Offer/OfferUpdate';
+import CourseInfo from '@/pages/courseInfo';
 
 export default function AppRouter() {
   let element = useRoutes([
@@ -54,6 +54,10 @@ export default function AppRouter() {
     {
       path: '/customer',
       element: <Customer />,
+    },
+    {
+      path: '/courseInfo',
+      element: <CourseInfo />,
     },
     {
       path: '/inventory',
@@ -178,10 +182,6 @@ export default function AppRouter() {
     {
       path: '/offer/read/:id',
       element: <OfferRead />,
-    },
-    {
-      path: '/offer/update/:id',
-      element: <OfferUpdate />,
     },
     {
       path: '*',

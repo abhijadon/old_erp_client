@@ -14,7 +14,7 @@ import logoIcon from '@/style/images/sodelogo.png';
 import logoText from '@/style/images/sodeicon.png';
 import { FaUsersRays } from "react-icons/fa6";
 import { CiUnread } from "react-icons/ci";
-
+import { GrCircleInformation } from "react-icons/gr";
 const { Sider } = Layout;
 
 export default function Navigation() {
@@ -86,6 +86,10 @@ function Sidebar({ menuOptions }) {
         case 'Permission':
           icon = <CiUnread className="text-[18px]" />;
           path = '/permission';
+          break;
+        case 'course & Info':
+          icon = <GrCircleInformation className="text-[18px]" />;
+          path = '/courseInfo';
           break;
         default:
           icon = null;

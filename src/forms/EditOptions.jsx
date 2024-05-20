@@ -50,6 +50,7 @@ const EditPermission = ({ onClose, onFormSubmit, selectedRecord }) => {
                     <Option value="Teams">Teams</Option>
                     <Option value="Users">Users</Option>
                     <Option value="Permissions">Permissions</Option>
+                    <Option value="courseInfo">Course & Info</Option>
                 </Select>
             </Form.Item>
             <Form.Item>
