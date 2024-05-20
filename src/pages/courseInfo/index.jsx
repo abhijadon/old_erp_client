@@ -120,7 +120,7 @@ const Index = () => {
 
     const columns = [
         {
-            title: 'Mode Info',
+            title: 'Mode',
             dataIndex: 'mode_info',
             key: 'mode_info',
             render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
@@ -144,25 +144,26 @@ const Index = () => {
             render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
         },
         {
-            title: 'Fee',
-            dataIndex: 'fee',
-            key: 'fee',
-            render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
-        },
-        {
-            title: 'EBD',
-            dataIndex: 'ebd',
-            key: 'ebd',
-            render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
-        },
-        {
-            title: 'Reg Fee',
+            title: 'Reg fees',
             dataIndex: 'reg_fee',
             key: 'reg_fee',
             render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
         },
         {
-            title: 'Examination',
+            title: 'Course fees',
+            dataIndex: 'fee',
+            key: 'fee',
+            render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
+        },
+        {
+            title: 'Discounted fees',
+            dataIndex: 'ebd',
+            key: 'ebd',
+            render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
+        },
+
+        {
+            title: 'Examination fees',
             dataIndex: 'examination',
             key: 'examination',
             render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
@@ -218,16 +219,20 @@ const Index = () => {
                 </Button>
             </div>
             <div className='mb-4 flex items-center gap-4 justify-between'>
-                <div>
-                    <Input
-                        key={`searchFilterDataTable}`}
-                        onChange={handleSearchChange}
-                        value={searchQuery}
-                        placeholder='Search'
-                        allowClear={true}
-                    />
-                </div>
                 <div className='flex items-center gap-4'>
+                    <div>
+                        <Select placeholder='Select mode'
+                            className='w-48 h-8 capitalize hover:border-blue-500'
+                            onChange={(value) => handleFilterChange('mode_info', value)}
+                            showSearch
+                            value={filters.mode_info}
+                            optionFilterProp='children'
+                            options={[
+                                { value: 'Online', label: 'Online' },
+                                { value: 'Distance', label: 'Distance' },
+                            ]}
+                        ></Select>
+                    </div>
                     <div>
                         <Select
                             className='w-48 h-8 capitalize hover:border-blue-500'
@@ -285,20 +290,15 @@ const Index = () => {
                             ]}
                         ></Select>
                     </div>
-                    <div>
-                        <Select
-                            className='w-48 h-8 capitalize hover:border-blue-500'
-                            onChange={(value) => handleFilterChange('mode_info', value)}
-                            showSearch
-                            placeholder="Select mode_info"
-                            value={filters.mode_info}
-                            optionFilterProp='children'
-                            options={[
-                                { value: 'Online', label: 'Online' },
-                                { value: 'Distance', label: 'Distance' },
-                            ]}
-                        ></Select>
-                    </div>
+                </div>
+                <div>
+                    <Input
+                        key={`searchFilterDataTable}`}
+                        onChange={handleSearchChange}
+                        value={searchQuery}
+                        placeholder='Search'
+                        allowClear={true}
+                    />
                 </div>
             </div>
             <Table
