@@ -23,6 +23,7 @@ import HistoryModal from '../HistoryModal';
 import { IoFilterOutline } from "react-icons/io5";
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
 import CommentForm from '@/forms/comment'
+import moment from 'moment';
 const { Search } = Input;
 const { RangePicker } = DatePicker;
 
@@ -82,6 +83,8 @@ export default function DataTable({ config, extra = [] }) {
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [teamLeaders, setTeamLeaders] = useState([]); // For storing team leaders
   const [selectedTeamLeader, setSelectedTeamLeader] = useState(null); // To track selected team leader
+  const [prevStartDate, setPrevStartDate] = useState(null);
+  const [prevEndDate, setPrevEndDate] = useState(null);
 
   // buttons call function 
   const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(currentAdmin?.role);
@@ -243,6 +246,16 @@ export default function DataTable({ config, extra = [] }) {
     fetchData();
   }, [isSuccess]);
 
+  const handlePrevDateRangeChange = (dates) => {
+    if (dates && dates.length === 2) {
+      setPrevStartDate(dates[0]);
+      setPrevEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
+    } else {
+      setPrevStartDate(null);
+      setPrevEndDate(null); // Clear dates if not a valid range
+    }
+  };
+
   const resetValues = () => {
     setSelectedInstitute(null);
     setSelectedInstallment(null);
@@ -257,6 +270,8 @@ export default function DataTable({ config, extra = [] }) {
     setEndDate(null);
     setSelectedPaymentstatus(null)
     setLmsFilter(null)
+    setPrevStartDate(null);
+    setPrevEndDate(null);
   };
 
 
@@ -439,6 +454,13 @@ export default function DataTable({ config, extra = [] }) {
       const startDateMatch = !startDate || createdDate >= startDate;
       const endDateMatch = !endDate || createdDate <= endDate;
 
+      const prevDataDate = new Date(item.previousData[0].date);
+      console.log('prevDataDate', moment(prevDataDate).format('DD/MM/YYYY'))
+      const startPrevDateMatch = !prevStartDate || prevDataDate >= prevStartDate;
+      const endPreDateMatch = !prevEndDate || prevDataDate <= prevEndDate;
+
+      console.log('startPrevDateMatch', startPrevDateMatch, endPreDateMatch)
+
       const phoneAsString = item.contact?.phone?.toString();
       const emailLowerCase = item.contact?.email?.toLowerCase();
 
@@ -470,7 +492,7 @@ export default function DataTable({ config, extra = [] }) {
         }
       }
 
-      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch && lmsMatch && paymentmodeMatch && installmentMatch;
+      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch && lmsMatch && paymentmodeMatch && installmentMatch && endPreDateMatch && startPrevDateMatch;
     });
   };
 
