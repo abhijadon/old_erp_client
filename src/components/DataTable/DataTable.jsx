@@ -454,13 +454,6 @@ export default function DataTable({ config, extra = [] }) {
       const startDateMatch = !startDate || createdDate >= startDate;
       const endDateMatch = !endDate || createdDate <= endDate;
 
-      const prevDataDate = new Date(item.previousData[0].date);
-      console.log('prevDataDate', moment(prevDataDate).format('DD/MM/YYYY'))
-      const startPrevDateMatch = !prevStartDate || prevDataDate >= prevStartDate;
-      const endPreDateMatch = !prevEndDate || prevDataDate <= prevEndDate;
-
-      console.log('startPrevDateMatch', startPrevDateMatch, endPreDateMatch)
-
       const phoneAsString = item.contact?.phone?.toString();
       const emailLowerCase = item.contact?.email?.toLowerCase();
 
@@ -481,7 +474,6 @@ export default function DataTable({ config, extra = [] }) {
         paymentStatusMatch = customfields.paymentStatus === 'payment approved';
       }
 
-
       // If there is a specific condition for lmsFilter
       let lmsMatch = true; // Default is true (no filtering by "Yes" or "No")
       if (lmsFilter) {
@@ -492,7 +484,7 @@ export default function DataTable({ config, extra = [] }) {
         }
       }
 
-      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch && lmsMatch && paymentmodeMatch && installmentMatch && endPreDateMatch && startPrevDateMatch;
+      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch && lmsMatch && paymentmodeMatch && installmentMatch;
     });
   };
 
