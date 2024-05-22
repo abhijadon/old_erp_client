@@ -29,43 +29,28 @@ const EditCourseInfo = ({ onClose, onFormSubmit, selectedRecord }) => {
                 name="mode_info"
                 rules={[{ required: true, message: 'Please select a mode' }]}
             >
-                <Select placeholder="Select mode_info">
-                    <Option value="admin">ONLINE</Option>
-                    <Option value="subadmin">DISTANCE</Option>
-                </Select>
+                <Input disabled />
             </Form.Item>
             <Form.Item
                 label="University"
                 name="university"
                 rules={[{ required: true, message: 'Please select menu options' }]}
             >
-                <Select placeholder="Select University">
-                    <Option value="SPU">SPU</Option>
-                    <Option value="SGVU">SGVU</Option>
-                    <Option value="VIGNAN">VIGNAN</Option>
-                </Select>
+                <Input disabled />
             </Form.Item>
             <Form.Item
                 label="Course"
                 name="course"
                 rules={[{ required: true, message: 'Please select a course' }]}
             >
-                <Select placeholder="Select Course">
-                    <Option value="BBA">BBA</Option>
-                    <Option value="BCA">BCA</Option>
-                    <Option value="MBA">MBA</Option>
-                </Select>
+                <Input />
             </Form.Item>
             <Form.Item
                 label="Electives"
                 name="electives"
                 rules={[{ required: true, message: 'Please select a Electives' }]}
             >
-                <Select placeholder="Select Course">
-                    <Option value="BBA">BBA</Option>
-                    <Option value="BCA">BCA</Option>
-                    <Option value="MBA">MBA</Option>
-                </Select>
+                <Input />
             </Form.Item>
             <Form.Item
                 label="Fee"

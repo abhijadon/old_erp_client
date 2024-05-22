@@ -16,7 +16,7 @@ const Index = () => {
     const [dataSource, setDataSource] = useState([]);
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState();
-
+    const [uniqueFilters, setUniqueFilters] = useState({});
     const buildQueryString = (pagination, filters) => {
         const { current, pageSize } = pagination;
         let query = `?page=${current}&items=${pageSize}`;
@@ -28,7 +28,7 @@ const Index = () => {
         });
 
         if (searchQuery) {
-            query += `&fields=university&q=${searchQuery}`;
+            query += `&q=${searchQuery}`;
         }
 
         return query;
@@ -58,18 +58,33 @@ const Index = () => {
             setLoading(false);
         }
     };
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const { success, result } = await request.list({ entity: 'info' });
+                if (success) {
+                    const uniqueUniversities = [...new Set(result.map(item => item.university))];
+                    const uniqueCourses = [...new Set(result.map(item => item.course))];
+                    const uniqueElectives = [...new Set(result.map(item => item.electives))];
+                    const uniqueModes = [...new Set(result.map(item => item.mode_info))];
 
+                    setUniqueFilters({
+                        university: uniqueUniversities,
+                        course: uniqueCourses,
+                        electives: uniqueElectives,
+                        mode_info: uniqueModes
+                    });
+                }
+            } catch (error) {
+                message.error('Failed to fetch data');
+            }
+        };
+
+        fetchData();
+    }, []);
     useEffect(() => {
         fetchData(pagination, filters);
     }, [pagination.current, filters, searchQuery]);
-
-    const handleTableChange = (pagination) => {
-        setPagination((prevPagination) => ({
-            ...prevPagination,
-            current: pagination.current,
-            pageSize: pagination.pageSize,
-        }));
-    };
 
     const handleAddNew = () => {
         setSelectedRecord(null);
@@ -101,12 +116,6 @@ const Index = () => {
         setSelectedRecord(null);
         fetchData(pagination, filters); // Refresh the data after form submission
     };
-
-    const handleFilterChange = (field, value) => {
-        setFilters((prevFilters) => ({ ...prevFilters, [field]: value }));
-        setPagination({ ...pagination, current: 1 });
-    };
-
     const resetValues = () => {
         setFilters({ university: '', course: '', electives: '', mode_info: '' });
         setPagination({ current: 1, pageSize: 10 });
@@ -219,76 +228,62 @@ const Index = () => {
                 </Button>
             </div>
             <div className='mb-4 flex items-center gap-4 justify-between'>
-                <div className='flex items-center gap-4'>
+                <div className='flex items-center gap-3'>
                     <div>
-                        <Select placeholder='Select mode'
-                            className='w-48 h-8 capitalize hover:border-blue-500'
-                            onChange={(value) => handleFilterChange('mode_info', value)}
-                            showSearch
-                            value={filters.mode_info}
-                            optionFilterProp='children'
-                            options={[
-                                { value: 'Online', label: 'Online' },
-                                { value: 'Distance', label: 'Distance' },
-                            ]}
-                        ></Select>
+                        <Select
+                            placeholder="Select mode"
+                            style={{ width: 200 }}
+                            onChange={value => setFilters({ ...filters, mode_info: value })}
+                        >
+                            {uniqueFilters.mode_info &&
+                                uniqueFilters.mode_info.map(mode => (
+                                    <Select.Option key={mode} value={mode}>
+                                        {mode}
+                                    </Select.Option>
+                                ))}
+                        </Select>
                     </div>
                     <div>
                         <Select
-                            className='w-48 h-8 capitalize hover:border-blue-500'
-                            onChange={(value) => handleFilterChange('university', value)}
-                            showSearch
                             placeholder="Select university"
-                            optionFilterProp='children'
-                            value={filters.university}
-                            options={[
-                                { value: 'SGVU', label: 'SGVU' },
-                                { value: 'CU', label: 'CU' },
-                                { value: 'AMRITA', label: 'AMRITA' },
-                                { value: 'AMITY', label: 'AMITY' },
-                                { value: 'SPU', label: 'SPU' },
-                                { value: 'LPU', label: 'LPU' },
-                                { value: 'DPU', label: 'DPU' },
-                                { value: 'JAIN', label: 'JAIN' },
-                                { value: 'SVSU', label: 'SVSU' },
-                                { value: 'VIGNAN', label: 'VIGNAN' },
-                                { value: 'MANIPAL', label: 'MANIPAL' },
-                                { value: 'SMU', label: 'SMU' },
-                                { value: 'HU', label: 'HU' },
-                                { value: 'BOSSE', label: 'BOSSE' },
-                                { value: 'UU', label: 'UU' },
-                                { value: 'UPES', label: 'UPES' },
-                                { value: 'MANGALAYATAN DISTANCE', label: 'MANGALAYATAN DISTANCE' },
-                                { value: 'MANGALAYATAN ONLINE', label: 'MANGALAYATAN ONLINE' },
-                            ]}
-                        ></Select>
+                            style={{ width: 200 }}
+                            onChange={value => setFilters({ ...filters, university: value })}
+                        >
+                            {uniqueFilters.university &&
+                                uniqueFilters.university.map(university => (
+                                    <Select.Option key={university} value={university}>
+                                        {university}
+                                    </Select.Option>
+                                ))}
+                        </Select>
                     </div>
                     <div>
                         <Select
-                            className='w-48 h-8 capitalize hover:border-blue-500'
-                            onChange={(value) => handleFilterChange('course', value)}
-                            showSearch
                             placeholder="Select course"
-                            value={filters.course}
-                            optionFilterProp='children'
-                            options={[
-                                { value: 'BBA', label: 'BBA' },
-                                { value: 'BCA', label: 'BCA' },
-                            ]}
-                        ></Select>
+                            style={{ width: 200 }}
+                            onChange={value => setFilters({ ...filters, course: value })}
+                        >
+                            {uniqueFilters.course &&
+                                uniqueFilters.course.map(course => (
+                                    <Select.Option key={course} value={course}>
+                                        {course}
+                                    </Select.Option>
+                                ))}
+                        </Select>
                     </div>
                     <div>
                         <Select
-                            className='w-48 h-8 capitalize hover:border-blue-500'
-                            onChange={(value) => handleFilterChange('electives', value)}
-                            showSearch
-                            placeholder="Select Electives"
-                            value={filters.electives}
-                            optionFilterProp='children'
-                            options={[
-                                { value: 'Data Science, AI', label: 'Data Science, AI' },
-                            ]}
-                        ></Select>
+                            placeholder="Select electives"
+                            style={{ width: 200 }}
+                            onChange={value => setFilters({ ...filters, electives: value })}
+                        >
+                            {uniqueFilters.electives &&
+                                uniqueFilters.electives.map(elective => (
+                                    <Select.Option key={elective} value={elective}>
+                                        {elective}
+                                    </Select.Option>
+                                ))}
+                        </Select>
                     </div>
                 </div>
                 <div>

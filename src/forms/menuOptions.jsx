@@ -60,7 +60,7 @@ const PermissionForm = ({ onClose, onFormSubmit }) => {
                     <Option value="Teams">Teams</Option>
                     <Option value="Users">Users</Option>
                     <Option value="Permission">Permission</Option>
-                    <Option value="courseInfo">Course & Info</Option>
+                    <Option value="Courses & Fees">Courses & Fees</Option>
                 </Select>
             </Form.Item>
             <Form.Item>

@@ -87,7 +87,7 @@ function Sidebar({ menuOptions }) {
           icon = <CiUnread className="text-[18px]" />;
           path = '/permission';
           break;
-        case 'course & Info':
+        case 'Courses & Fees':
           icon = <GrCircleInformation className="text-[18px]" />;
           path = '/courseInfo';
           break;
