@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { EyeOutlined, EditOutlined, DeleteOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Dropdown, Table, Button, Card, Select, Input, DatePicker, Menu, Drawer } from 'antd';
+import { Dropdown, Table, Button, Card, Select, Input, DatePicker, Menu, Drawer, Modal } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
 import { LiaRupeeSignSolid } from "react-icons/lia";
@@ -18,12 +18,13 @@ import UpdatePaymentForm from '@/forms/AddPayment';
 import UploadDocumentForm from '@/forms/uploadDocument';
 import { IoDocumentAttachOutline } from "react-icons/io5";
 import StudentDetailsModal from '../StudentDetailsModal';
+import LMSModal from '../LMSModal';
 import { AiOutlineComment } from "react-icons/ai";
 import HistoryModal from '../HistoryModal';
 import { IoFilterOutline } from "react-icons/io5";
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
 import CommentForm from '@/forms/comment'
-import moment from 'moment';
+import { BsSend } from "react-icons/bs";
 const { Search } = Input;
 const { RangePicker } = DatePicker;
 
@@ -76,16 +77,15 @@ export default function DataTable({ config, extra = [] }) {
   const [recordForUploadDocument, setRecordForUploadDocument] = useState(null); // Record to be used in the upload document form
   const [selectedPaymentMode, setSelectedPaymentMode] = useState(null);
   const [paymentMode, setPaymentMode] = useState([]);
-  const [showCommentDrawer, setShowCommentDrawer] = useState(false); // State to control the Drawer
+  const [showCommentDrawer, setShowCommentDrawer] = useState(false);
   const [commentRecord, setCommentRecord] = useState(null);
   const currentAdmin = useSelector(selectCurrentAdmin);
   const [showStudentDetailsDrawer, setShowStudentDetailsDrawer] = useState(false);
-  const [selectedStudent, setSelectedStudent] = useState(null);
-  const [teamLeaders, setTeamLeaders] = useState([]); // For storing team leaders
-  const [selectedTeamLeader, setSelectedTeamLeader] = useState(null); // To track selected team leader
+  const [selectedStudent, setSelectedStudent] = useState(null); // To track selected team leader
   const [prevStartDate, setPrevStartDate] = useState(null);
   const [prevEndDate, setPrevEndDate] = useState(null);
-
+  const [showLMSDrawer, setShowLMSDrawer] = useState(false);
+  const [LMSRecord, setLMSRecord] = useState(null);
   // buttons call function 
   const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(currentAdmin?.role);
 
@@ -99,10 +99,21 @@ export default function DataTable({ config, extra = [] }) {
     setShowCommentDrawer(true); // Open the Drawer
   };
 
+  const handleLMS = (record) => {
+    setLMSRecord(record); // Store the record
+    setShowLMSDrawer(true); // Open the Drawer
+  };
+
   const closeCommentDrawer = () => {
     setShowCommentDrawer(false); // Close the Drawer
     setCommentRecord(null); // Clear the record
   };
+
+  const closeLMSDrawer = () => {
+    setShowLMSDrawer(false); // Close the Drawer
+    setLMSRecord(null); // Clear the record
+  };
+
 
   const handleCancelAddPaymentModal = () => {
     setShowAddPaymentModal(false);
@@ -184,12 +195,8 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   const handleAddpayment = async (record) => {
-    try {
-      setUpdatePaymentRecord(record); // Ensure record details are correctly set
-      setShowAddPaymentModal(true);
-    } catch (error) {
-      console.error("Error preparing payment update:", error);
-    }
+    setUpdatePaymentRecord(record); // Ensure record details are correctly set
+    setShowAddPaymentModal(true);
   };
 
   // Function to handle document upload drawer open
@@ -264,7 +271,6 @@ export default function DataTable({ config, extra = [] }) {
     setSelectedStatus(null);
     setSelectedUserId(null);
     setSearchQuery('');
-    setSelectedTeamLeader(null)
     setStartDate(null);
     setSelectedPaymentMode(null)
     setEndDate(null);
@@ -305,6 +311,11 @@ export default function DataTable({ config, extra = [] }) {
         label: translate('Upload_document'),
         key: 'upload',
         icon: <IoDocumentAttachOutline />,
+      },
+      {
+        label: 'LMS Send',
+        key: 'lms',
+        icon: <BsSend />,
       },
       {
         label: translate('Comments'),
@@ -368,6 +379,9 @@ export default function DataTable({ config, extra = [] }) {
                   break;
                 case 'comments':
                   handleComment(record);
+                  break;
+                case 'lms':
+                  handleLMS(record);
                   break;
                 case 'upload':
                   handleUploadDocument(record); // Open the drawer for document upload
@@ -556,12 +570,6 @@ export default function DataTable({ config, extra = [] }) {
       </>
     );
   };
-
-  // Handling change in Select for team leaders
-  const handleTeamLeaderChange = (value) => {
-    setSelectedTeamLeader(value); // Update state with selected team leader ID
-  };
-
 
   const handlePaymentStatus = (status) => {
     setSelectedPaymentstatus(status);
@@ -813,6 +821,25 @@ export default function DataTable({ config, extra = [] }) {
         historyData={historyData}
         onClose={() => setShowHistoryModal(false)}
       />
+      <Modal
+        title={
+          <div>
+            <div className='relative float-left font-thin text-lg'>LMS Status</div>
+          </div>
+        }
+        open={showLMSDrawer} // Controlled by state
+        onCancel={closeLMSDrawer} // Close action
+        width={1000}
+      >
+        {/* Render the CommentForm only if a record is set */}
+        {LMSRecord && (
+          <LMSModal
+            entity="lead"
+            id={LMSRecord._id}
+            recordDetails={LMSRecord}
+          />
+        )}
+      </Modal>
     </>
   );
 }
