@@ -313,7 +313,7 @@ export default function DataTable({ config, extra = [] }) {
         icon: <IoDocumentAttachOutline />,
       },
       {
-        label: 'LMS Send',
+        label: 'LMS',
         key: 'lms',
         icon: <BsSend />,
       },
@@ -821,14 +821,14 @@ export default function DataTable({ config, extra = [] }) {
         historyData={historyData}
         onClose={() => setShowHistoryModal(false)}
       />
-      <Modal
+      <Drawer
         title={
           <div>
-            <div className='relative float-left font-thin text-lg'>LMS Status</div>
+            <div className='relative float-right font-thin text-lg'>LMS Status</div>
           </div>
         }
         open={showLMSDrawer} // Controlled by state
-        onCancel={closeLMSDrawer} // Close action
+        onClose={closeLMSDrawer} // Close action
         width={1000}
       >
         {/* Render the CommentForm only if a record is set */}
@@ -839,7 +839,7 @@ export default function DataTable({ config, extra = [] }) {
             recordDetails={LMSRecord}
           />
         )}
-      </Modal>
+      </Drawer>
     </>
   );
 }
