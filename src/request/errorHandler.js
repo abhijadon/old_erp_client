@@ -45,7 +45,7 @@ const errorHandler = (error) => {
     window.localStorage.removeItem('auth');
     window.localStorage.removeItem('isLogout');
     if (result || isLogout) {
-      window.location.href = '/logout';
+      window.location.href = '/';
     }
   }
 

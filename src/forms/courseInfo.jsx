@@ -32,17 +32,17 @@ const courseInfo = [
                                     { value: 'Geography', label: 'Geography' },
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -108,17 +108,17 @@ const courseInfo = [
                                     { value: 'International Business', label: 'International Business' },
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -181,17 +181,17 @@ const courseInfo = [
                                     { value: 'General', label: 'General' }
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -255,17 +255,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -339,17 +339,17 @@ const courseInfo = [
                                     { value: 'Hotel Management', label: 'Hotel Management' },
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -413,17 +413,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -487,17 +487,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -561,17 +561,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -640,17 +640,17 @@ const courseInfo = [
                                     { value: 'Supply Chain Management', label: 'Supply Chain Management' },
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -723,17 +723,17 @@ const courseInfo = [
                                     { value: 'Supply Chain Management', label: 'Supply Chain Management' },
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -803,17 +803,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -877,17 +877,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -951,17 +951,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1034,17 +1034,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1108,17 +1108,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1182,17 +1182,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1256,17 +1256,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1337,10 +1337,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -1385,9 +1385,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1411,10 +1411,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -1459,9 +1459,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1488,10 +1488,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -1536,9 +1536,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1562,10 +1562,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -1610,9 +1610,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1636,10 +1636,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -1684,9 +1684,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1710,10 +1710,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -1758,9 +1758,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1792,10 +1792,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -1840,9 +1840,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1873,10 +1873,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -1921,9 +1921,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -1958,10 +1958,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2006,9 +2006,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2038,10 +2038,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2086,9 +2086,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2130,10 +2130,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2178,9 +2178,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2209,10 +2209,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2257,9 +2257,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2283,10 +2283,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2331,9 +2331,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2357,10 +2357,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2405,9 +2405,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2437,10 +2437,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2485,9 +2485,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2519,10 +2519,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2567,9 +2567,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2593,10 +2593,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2641,9 +2641,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2667,10 +2667,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2715,9 +2715,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2757,10 +2757,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2805,9 +2805,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2831,10 +2831,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2879,9 +2879,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2905,10 +2905,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -2953,9 +2953,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -2980,10 +2980,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3028,9 +3028,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3055,10 +3055,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3103,9 +3103,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3136,10 +3136,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3184,9 +3184,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3210,10 +3210,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3258,9 +3258,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3284,10 +3284,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3332,9 +3332,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3358,10 +3358,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3406,9 +3406,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3432,10 +3432,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3480,9 +3480,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3513,10 +3513,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3561,9 +3561,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3587,10 +3587,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3635,9 +3635,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3670,10 +3670,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3718,9 +3718,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3746,10 +3746,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3794,9 +3794,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3836,10 +3836,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3884,9 +3884,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3911,10 +3911,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -3959,9 +3959,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -3988,10 +3988,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4036,9 +4036,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4064,10 +4064,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4112,9 +4112,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4146,10 +4146,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4194,9 +4194,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4220,10 +4220,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4268,9 +4268,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4294,10 +4294,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4342,9 +4342,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4368,10 +4368,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4416,9 +4416,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4441,10 +4441,10 @@ const courseInfo = [
                                     { value: 'General', label: 'General' },
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4489,9 +4489,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4523,10 +4523,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4571,9 +4571,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4597,10 +4597,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4645,9 +4645,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4671,10 +4671,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4719,9 +4719,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4745,10 +4745,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4793,9 +4793,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4824,10 +4824,10 @@ const courseInfo = [
                                     { value: 'International Business', label: 'International Business' },
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4872,9 +4872,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4906,10 +4906,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -4954,9 +4954,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -4980,10 +4980,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5028,9 +5028,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5055,10 +5055,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5103,9 +5103,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5133,10 +5133,10 @@ const courseInfo = [
                                     { value: 'Finance & HRM', label: 'Finance & HRM' },
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5181,9 +5181,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5216,10 +5216,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5264,9 +5264,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5291,10 +5291,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5339,9 +5339,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5370,10 +5370,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5418,9 +5418,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5444,10 +5444,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5492,9 +5492,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5520,10 +5520,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5568,9 +5568,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5593,10 +5593,10 @@ const courseInfo = [
                                     { value: 'General', label: 'General' },
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5641,9 +5641,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5678,10 +5678,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5726,9 +5726,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5754,10 +5754,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5802,9 +5802,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5838,10 +5838,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5886,9 +5886,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -5915,10 +5915,10 @@ const courseInfo = [
                                     { value: 'Logistics and Supply Chain Management', label: 'Logistics and Supply Chain Management' },
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -5963,9 +5963,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6001,10 +6001,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6049,9 +6049,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6089,10 +6089,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6137,9 +6137,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6163,10 +6163,10 @@ const courseInfo = [
                                     { value: 'Hospital and Healtcare Management', label: 'Hospital and Healtcare Management' },
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6211,9 +6211,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6245,10 +6245,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6293,9 +6293,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6319,10 +6319,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6368,9 +6368,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6395,10 +6395,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6443,9 +6443,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6469,10 +6469,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6517,9 +6517,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6547,10 +6547,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6595,9 +6595,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6625,10 +6625,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6673,9 +6673,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6699,10 +6699,10 @@ const courseInfo = [
                                     { value: 'ACCA', label: 'ACCA' },
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6747,9 +6747,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6773,10 +6773,10 @@ const courseInfo = [
                                     { value: 'Journalism and Mass Communication', label: 'Journalism and Mass Communication' },
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6821,9 +6821,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6862,10 +6862,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6910,9 +6910,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -6940,10 +6940,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -6988,9 +6988,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7019,10 +7019,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7067,9 +7067,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7100,10 +7100,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7148,9 +7148,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7174,10 +7174,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7222,9 +7222,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7248,10 +7248,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7296,9 +7296,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7322,10 +7322,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7370,9 +7370,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7403,10 +7403,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7451,9 +7451,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7477,10 +7477,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7525,9 +7525,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7553,10 +7553,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7601,9 +7601,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7627,10 +7627,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7675,9 +7675,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7717,10 +7717,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7765,9 +7765,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7798,10 +7798,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7846,9 +7846,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7881,10 +7881,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -7929,9 +7929,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -7955,10 +7955,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -8003,9 +8003,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8029,10 +8029,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -8077,9 +8077,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8107,10 +8107,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -8155,9 +8155,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8182,10 +8182,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -8230,9 +8230,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8276,17 +8276,17 @@ const courseInfo = [
                                     { value: 'Sociology', label: 'Sociology' },
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8349,17 +8349,17 @@ const courseInfo = [
                                     { value: 'General', label: 'General' }
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8422,17 +8422,17 @@ const courseInfo = [
                                     { value: 'General', label: 'General' }
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8495,17 +8495,17 @@ const courseInfo = [
                                     { value: 'General', label: 'General' }
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8590,17 +8590,17 @@ const courseInfo = [
                                     { value: 'Supply Chain Management', label: 'Supply Chain Management' },
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8670,17 +8670,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8744,17 +8744,17 @@ const courseInfo = [
 
                                 ]
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8831,10 +8831,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -8879,9 +8879,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8905,10 +8905,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -8953,9 +8953,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -8979,10 +8979,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9027,9 +9027,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9053,10 +9053,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9101,9 +9101,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9127,10 +9127,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9175,9 +9175,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9201,10 +9201,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9249,9 +9249,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9284,10 +9284,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9332,9 +9332,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9358,10 +9358,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9406,9 +9406,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9436,10 +9436,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9484,9 +9484,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9510,10 +9510,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9558,9 +9558,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9584,10 +9584,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9632,9 +9632,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9664,10 +9664,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9712,9 +9712,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9738,10 +9738,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9786,9 +9786,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9815,10 +9815,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9863,9 +9863,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9906,10 +9906,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -9954,9 +9954,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -9980,10 +9980,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10028,9 +10028,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10054,10 +10054,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10102,9 +10102,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10129,10 +10129,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10177,9 +10177,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10203,10 +10203,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10251,9 +10251,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10277,10 +10277,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10325,9 +10325,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10357,10 +10357,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10405,9 +10405,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10431,10 +10431,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10479,9 +10479,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10505,10 +10505,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10553,9 +10553,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10579,10 +10579,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10627,9 +10627,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10653,10 +10653,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10701,9 +10701,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10727,10 +10727,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10775,9 +10775,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10801,10 +10801,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10849,9 +10849,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10875,10 +10875,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10923,9 +10923,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -10951,10 +10951,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -10999,9 +10999,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -11034,10 +11034,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -11082,9 +11082,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -11108,10 +11108,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -11156,9 +11156,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -11182,10 +11182,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -11230,9 +11230,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -11256,10 +11256,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -11304,9 +11304,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -11330,10 +11330,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -11378,9 +11378,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -11404,10 +11404,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -11452,9 +11452,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -11484,10 +11484,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -11532,9 +11532,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -11558,10 +11558,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -11606,9 +11606,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',
@@ -11632,10 +11632,10 @@ const courseInfo = [
 
                                 ],
                             },
-                            {
+                          {
                                 key: 'text',
                                 name: 'fee',
-                                label: 'Fee',
+                                label: 'Course Fee',
                                 place: 'Enter Fee',
                                 id: 'fee',
                                 type: 'text',
@@ -11680,9 +11680,9 @@ const courseInfo = [
                                 id: 'website_url',
                                 type: 'text',
                             },
-                            {
+                             {
                                 key: 'text',
-                                label: 'EBD',
+                                label: 'Discounted fees',
                                 name: 'ebd',
                                 place: 'Enter EBD',
                                 id: 'ebd',

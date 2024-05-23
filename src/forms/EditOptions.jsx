@@ -8,7 +8,7 @@ const EditPermission = ({ onClose, onFormSubmit, selectedRecord }) => {
 
     const handleFinish = async (values) => {
         try {
-            await request.update({ entity: 'permission', id: selectedRecord._id, jsonData: values });
+            await request.update({ entity: 'menu', id: selectedRecord._id, jsonData: values });
             onFormSubmit(); // Trigger reload in parent component
             onClose(); // Close the form
         } catch (error) {

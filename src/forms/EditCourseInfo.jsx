@@ -53,14 +53,14 @@ const EditCourseInfo = ({ onClose, onFormSubmit, selectedRecord }) => {
                 <Input />
             </Form.Item>
             <Form.Item
-                label="Fee"
+                label="Course fees"
                 name="fee"
                 rules={[{ required: true, message: 'Please Enter a fee' }]}
             >
                 <Input />
             </Form.Item>
             <Form.Item
-                label="EBD"
+                label="Discounted fees"
                 name="ebd"
                 rules={[{ required: true, message: 'Please Enter a EBD' }]}
             >

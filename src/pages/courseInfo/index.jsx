@@ -165,16 +165,15 @@ const Index = () => {
             render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
         },
         {
-            title: 'Discounted fees',
-            dataIndex: 'ebd',
-            key: 'ebd',
+            title: 'Examination fees',
+            dataIndex: 'examinationFee',
+            key: 'examination',
             render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
         },
-
         {
-            title: 'Examination fees',
-            dataIndex: 'examination',
-            key: 'examination',
+            title: 'Discounted total fees',
+            dataIndex: 'ebd',
+            key: 'ebd',
             render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
         },
         {
@@ -190,10 +189,14 @@ const Index = () => {
             render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
         },
         {
-            title: 'Website_url',
+            title: 'Website URL',
             dataIndex: 'website_url',
             key: 'website_url',
-            render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
+            render: (text) => (
+                <a href={text} target="_blank" rel="noopener noreferrer">
+                    {text}
+                </a>
+            ),
         },
         {
             title: 'Actions',
