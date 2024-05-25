@@ -35,11 +35,12 @@ export default function Index({ entity, id, recordDetails, onClose }) {
             const response = await axios.post(`lms/create/${id}`); // Post new comment
             if (response.data.message) { // Check if response indicates success
                 message.success(response.data.message);
+                fetchData(); // Refetch data to update email status after submission
             } else {
                 message.error(response.data.message || 'Failed to create LMS'); // Dynamic error message
             }
         } catch (error) {
-            message.error(error.response.data.message)
+            message.error(error.response.data.message);
         } finally {
             setLoading(false); // Reset loading state after post
         }
@@ -78,6 +79,14 @@ export default function Index({ entity, id, recordDetails, onClose }) {
         setIsModalVisible(false);
     };
 
+    // Extract the latest email status
+    const latestEmailStatus = data?.result?.emailStatuses?.[data.result.emailStatuses.length - 1] || {};
+
+    // Determine the style for email status
+    const emailStatusStyle = {
+        color: latestEmailStatus.status === 'success' ? 'green' : latestEmailStatus.status === 'failed' ? 'red' : 'black'
+    };
+
     return (
         <>
             <Modal
@@ -103,14 +112,27 @@ export default function Index({ entity, id, recordDetails, onClose }) {
                     )}
                 </Spin>
             </Modal>
-            <div className='flex items-center  justify-between'>
+            <div>
+                <div className="flex justify-items-start items-center gap-10">
+                    <ul className="list-disc flex items-center gap-10 capitalize mb-5">
+                        <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                            <span className="text-base font-thin text-gray-700">Email status</span>
+                            <span className="text-base font-thin" style={emailStatusStyle}>{latestEmailStatus.status || 'N/A'}</span>
+                        </li>
+                        <li className="grid grid-cols-2 gap-20 border-b p-1 ml-64 relative float-end">
+                            <span className="text-base font-thin text-gray-700">Email Created At</span>
+                            <span className="text-sm font-thin text-gray-500">{latestEmailStatus.createdAt ? moment(latestEmailStatus.createdAt).format('DD-MM-YYYY HH:mm') : 'N/A'}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className='flex items-center justify-between'>
                 <Button onClick={showModal} className='bg-blue-300 w-48 hover:bg-blue-400 text-black hover:text-black font-thin rounded-none h-8 mt-4'>
                     View Table
                 </Button>
                 <Button onClick={handleSubmit} className='bg-blue-300 w-48 hover:bg-blue-400 text-black hover:text-black font-thin rounded-none h-8 relative float-right mt-4 mr-6'>
                     Send LMS
                 </Button>
-
             </div>
         </>
     );
