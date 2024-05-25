@@ -105,10 +105,11 @@ export default function Lead() {
       title: translate('Date of birth'),
       dataIndex: ['customfields', 'dob'],
       key: 'dob',
+      render: (dob) => dayjs(dob).format('DD-MM-YYYY'), // Format dob using dayjs
     },
     {
       title: translate('gender'),
-      dataIndex: ['customfields', 'gender'],
+      dataIndex: ['customfields', 'gender'],        
       key: 'gender'
     },
     {

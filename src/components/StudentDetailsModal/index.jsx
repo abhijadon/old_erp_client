@@ -140,7 +140,7 @@ const StudentDetailsModal = ({ student, id }) => {
                 if (status === 403) {
                     message.error(data.message);
                 } else if (status === 401) {
-                    message.error("Unauthorized: Please log in."); 
+                    message.error("Unauthorized: Please log in.");
                 } else {
                     message.error(data.message);
                 }
@@ -323,7 +323,7 @@ const StudentDetailsModal = ({ student, id }) => {
                             </li>
                             <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
                                 <span className="text-base font-thin text-gray-700">Date of Birth</span>
-                                <span class="text-sm font-thin text-gray-500">{student.customfields.dob}</span>
+                                <span class="text-sm font-thin text-gray-500">{moment(student.customfields.dob).format('DD-MM-YYYY')}</span>
                             </li>
                             <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
                                 <span className="text-base font-thin text-gray-700">Gender</span>
