@@ -58,6 +58,8 @@ const Index = () => {
             setLoading(false);
         }
     };
+
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -230,6 +232,9 @@ const Index = () => {
                     <span><AiOutlineMenuFold className='font-light text-lg' /></span> <span>Add New</span>
                 </Button>
             </div>
+            <span className='text-red-500 font-thin text-start'>
+                Total: {pagination.total}
+            </span>
             <div className='mb-4 flex items-center gap-4 justify-between'>
                 <div className='flex items-center gap-3'>
                     <div>

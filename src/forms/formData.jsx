@@ -24,7 +24,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -38,7 +69,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -142,7 +175,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }, ,
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -279,7 +315,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -601,7 +637,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -615,7 +682,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -719,7 +788,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }, ,
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -856,7 +928,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -1178,7 +1250,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -1192,7 +1295,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -1296,7 +1401,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -1433,7 +1541,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -1755,7 +1863,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -1769,7 +1908,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -1873,7 +2014,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -2010,7 +2154,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -2332,7 +2476,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -2346,7 +2521,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -2450,7 +2627,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -2587,7 +2767,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -2909,7 +3089,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -2923,7 +3134,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -3027,7 +3240,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -3164,7 +3380,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -3486,7 +3702,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -3500,7 +3747,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -3604,7 +3853,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -3741,7 +3993,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -4063,7 +4315,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -4077,7 +4360,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -4181,7 +4466,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -4318,7 +4606,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -4640,7 +4928,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -4654,7 +4973,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -4758,7 +5079,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -4895,7 +5219,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -5218,7 +5542,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -5232,7 +5587,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -5336,7 +5693,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -5473,7 +5833,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -5795,7 +6155,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -5809,7 +6200,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -5913,7 +6306,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -6050,7 +6446,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -6372,7 +6768,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -6386,7 +6813,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -6490,7 +6919,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -6627,7 +7059,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -6949,7 +7381,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -6963,7 +7426,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -7067,7 +7532,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -7204,7 +7672,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -7526,7 +7994,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -7540,7 +8039,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -7644,7 +8145,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -7781,7 +8285,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -8104,7 +8608,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -8118,7 +8653,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -8222,7 +8759,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -8359,7 +8899,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -8681,7 +9221,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -8695,7 +9266,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -8799,7 +9372,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -8936,7 +9512,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -9259,7 +9835,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -9273,7 +9880,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -9377,7 +9986,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -9514,7 +10126,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -9836,7 +10448,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -9850,7 +10493,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -9954,7 +10599,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -10091,7 +10739,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -10422,7 +11070,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -10436,7 +11115,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -10540,7 +11221,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -10677,7 +11361,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -10998,7 +11682,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -11012,7 +11727,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -11116,7 +11833,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -11253,7 +11973,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -11574,7 +12294,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -11588,7 +12339,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -11692,7 +12445,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -11829,7 +12585,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -12150,7 +12906,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -12164,7 +12951,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -12268,7 +13057,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -12405,7 +13197,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -12726,7 +13518,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -12740,7 +13563,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -12844,7 +13669,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -12981,7 +13809,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -13302,7 +14130,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -13316,7 +14175,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -13420,7 +14281,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -13557,7 +14421,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -13878,7 +14742,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -13892,7 +14787,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -13996,7 +14893,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -14133,7 +15033,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -14454,7 +15354,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -14468,7 +15399,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -14572,7 +15505,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -14709,7 +15645,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -15030,7 +15966,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -15044,7 +16011,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -15148,7 +16117,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -15285,7 +16257,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -15607,7 +16579,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -15621,7 +16624,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -15725,7 +16730,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -15862,7 +16870,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -16183,7 +17191,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -16197,7 +17236,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -16301,7 +17342,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -16438,7 +17482,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -16759,7 +17803,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -16773,7 +17848,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -16877,7 +17954,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -17014,7 +18094,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -17335,7 +18415,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -17349,7 +18460,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -17453,7 +18566,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -17590,7 +18706,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -17911,7 +19027,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -17925,7 +19072,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -18029,7 +19178,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -18166,7 +19318,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -18488,7 +19640,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -18502,7 +19685,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -18606,7 +19791,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -18743,7 +19931,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -19064,7 +20252,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -19078,7 +20297,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -19182,7 +20403,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -19319,7 +20543,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -19641,7 +20865,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -19655,7 +20910,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -19759,7 +21016,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -19896,7 +21156,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 
@@ -20217,7 +21477,38 @@ const formData = [
                 value: "DIPLOMA",
                 label: "DIPLOMA",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Photography", label: "Photography" },
+                  { value: "Disaster Management", label: "Disaster Management" },
+                  { value: "Operation Management", label: "Operation Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Front OfficeManagement", label: "Front OfficeManagement" },
+                ],
+              },
+              {
+                value: "DIPLOMA IN ENGG",
+                label: "DIPLOMA IN ENGG",
+                specializations: [
+                  { value: "Civil Engineering", label: "Civil Engineering" },
+                  { value: "Computer Science & Engineering", label: "Computer Science & Engineering" },
+                  { value: "Mechanical Engineering", label: "Mechanical Engineering" },
+                ],
+              },
+              {
+                value: "POST-GRADUATION DIPLOMA",
+                label: "POST-GRADUATION DIPLOMA",
+                specializations: [
+                  { value: "Business Management", label: "Business Management" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "HR", label: "HR" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Operations Management", label: "Operations Management" },
                 ],
               },
               {
@@ -20231,7 +21522,9 @@ const formData = [
                 value: "BVOC",
                 label: "BVOC",
                 specializations: [
-                  { value: "General", label: "General" },
+                  { value: "Interior Design", label: "Interior Design" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
                 ],
               },
               {
@@ -20335,7 +21628,10 @@ const formData = [
                   { value: "Hotel Management", label: "Hotel Management" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Botany", label: "Botany" },
                 ],
               },
               {
@@ -20472,7 +21768,7 @@ const formData = [
                   { value: "Fashion Technology", label: "Fashion Technology" },
                   { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
                   { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" },
                 ],
               },
 

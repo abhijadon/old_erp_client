@@ -14,7 +14,6 @@ export default function Index({ entity, id, recordDetails, onClose }) {
         try {
             const response = await axios.get(`lms/read/${id}`); // Fetch data
             setData(response.data); // Set fetched data
-            console.log('response', response);
         } catch (error) {
             message.error(error.response.data.message);
             // Handle error
@@ -55,14 +54,14 @@ export default function Index({ entity, id, recordDetails, onClose }) {
         },
         {
             title: 'User',
-            dataIndex: 'userId',
+            dataIndex: ['userId', 'fullname'],
             key: 'userId',
         },
         {
             title: 'Date',
             dataIndex: 'updatedAt',
             key: 'updatedAt',
-            render: (text) => moment(text).format('YYYY-MM-DD HH:mm'),
+            render: (text) => moment(text).format('DD-MM-YYYY HH:mm'),
         },
     ];
 
@@ -79,11 +78,6 @@ export default function Index({ entity, id, recordDetails, onClose }) {
         setIsModalVisible(false);
     };
 
-    // Display loading spinner while fetching data
-    if (isLoading) {
-        return <Spin tip="Loading comments..." />;
-    }
-
     return (
         <>
             <Modal
@@ -98,14 +92,16 @@ export default function Index({ entity, id, recordDetails, onClose }) {
                     </Button>,
                 ]}
             >
-                {data && (
-                    <Table
-                        dataSource={data.result.data}
-                        columns={columns}
-                        rowKey="_id"
-                        pagination={false}
-                    />
-                )}
+                <Spin spinning={isLoading} tip="Loading LMS...">
+                    {data && (
+                        <Table
+                            dataSource={data.result.data}
+                            columns={columns}
+                            rowKey="_id"
+                            pagination={false}
+                        />
+                    )}
+                </Spin>
             </Modal>
             <div className='flex items-center  justify-between'>
                 <Button onClick={showModal} className='bg-blue-300 w-48 hover:bg-blue-400 text-black hover:text-black font-thin rounded-none h-8 mt-4'>
