@@ -232,7 +232,7 @@ const Index = () => {
                     <span><AiOutlineMenuFold className='font-light text-lg' /></span> <span>Add New</span>
                 </Button>
             </div>
-            <span className='text-red-500 font-thin text-start'>
+            <span className='text-red-500 font-thin text-start mb-2'>
                 Total: {pagination.total}
             </span>
             <div className='mb-4 flex items-center gap-4 justify-between'>

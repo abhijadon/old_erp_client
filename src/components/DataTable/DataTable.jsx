@@ -434,6 +434,14 @@ export default function DataTable({ config, extra = [] }) {
   );
 
 
+  // Add useEffect to handle automatic table reload
+  useEffect(() => {
+    if (isSuccess) {
+      handelDataTableLoad({}, searchQuery); // Call handelDataTableLoad function with the current searchQuery
+    }
+  }, [isSuccess, searchQuery]);
+
+
   const handleSearch = debounce((value) => {
     setSearchQuery(value);
     handelDataTableLoad({}, value);
@@ -731,13 +739,6 @@ export default function DataTable({ config, extra = [] }) {
 
     return null;
   };
-
-  // Add useEffect to handle automatic table reload
-  useEffect(() => {
-    if (isSuccess) {
-      handelDataTableLoad({}, searchQuery); // Call handelDataTableLoad function with the current searchQuery
-    }
-  }, [isSuccess, searchQuery]);
 
 
   return (
