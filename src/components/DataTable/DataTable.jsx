@@ -8,6 +8,7 @@ import { selectCreatedItem, selectListItems } from '@/redux/crud/selectors';
 import useLanguage from '@/locale/useLanguage';
 import useResponsiveTable from '@/hooks/useResponsiveTable';
 import { GrHistory } from "react-icons/gr";
+import { generate as uniqueId } from 'shortid';
 import { useCrudContext } from '@/context/crud';
 import * as XLSX from 'xlsx';
 import { request } from '@/request';
@@ -16,7 +17,7 @@ import { LiaFileDownloadSolid } from "react-icons/lia";
 import { debounce } from 'lodash';
 import UpdatePaymentForm from '@/forms/AddPayment';
 import UploadDocumentForm from '@/forms/uploadDocument';
-import { IoDocumentAttachOutline } from "react-icons/io5";
+import { IoConstruct, IoDocumentAttachOutline } from "react-icons/io5";
 import StudentDetailsModal from '../StudentDetailsModal';
 import LMSModal from '../LMSModal';
 import { AiOutlineComment } from "react-icons/ai";
@@ -24,6 +25,7 @@ import HistoryModal from '../HistoryModal';
 import { IoFilterOutline } from "react-icons/io5";
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
 import CommentForm from '@/forms/comment'
+import { CiRedo } from "react-icons/ci";
 import { BsSend } from "react-icons/bs";
 const { Search } = Input;
 const { RangePicker } = DatePicker;
@@ -73,20 +75,17 @@ export default function DataTable({ config, extra = [] }) {
   const [updatePaymentRecord, setUpdatePaymentRecord] = useState(null);
   const [Paymentstatus, setSelectedPaymentstatus] = useState(null);
   const [lmsFilter, setLmsFilter] = useState(null);
-  const [showUploadDocumentDrawer, setShowUploadDocumentDrawer] = useState(false); // New state to control the drawer
-  const [recordForUploadDocument, setRecordForUploadDocument] = useState(null); // Record to be used in the upload document form
+  const [showUploadDocumentDrawer, setShowUploadDocumentDrawer] = useState(false);
+  const [recordForUploadDocument, setRecordForUploadDocument] = useState(null);
   const [selectedPaymentMode, setSelectedPaymentMode] = useState(null);
   const [paymentMode, setPaymentMode] = useState([]);
   const [showCommentDrawer, setShowCommentDrawer] = useState(false);
   const [commentRecord, setCommentRecord] = useState(null);
   const currentAdmin = useSelector(selectCurrentAdmin);
   const [showStudentDetailsDrawer, setShowStudentDetailsDrawer] = useState(false);
-  const [selectedStudent, setSelectedStudent] = useState(null); // To track selected team leader
-  const [prevStartDate, setPrevStartDate] = useState(null);
-  const [prevEndDate, setPrevEndDate] = useState(null);
+  const [selectedStudent, setSelectedStudent] = useState(null);
   const [showLMSDrawer, setShowLMSDrawer] = useState(false);
   const [LMSRecord, setLMSRecord] = useState(null);
-  // buttons call function 
   const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(currentAdmin?.role);
 
   const handleShowStudentDetails = (record) => {
@@ -122,7 +121,7 @@ export default function DataTable({ config, extra = [] }) {
 
   const handleSuccessUpdate = () => {
     setShowAddPaymentModal(false); // Close the payment modal
-    handelDataTableLoad({}, searchQuery); // Reload the table data
+    handleDataTableLoad({}, searchQuery); // Reload the table data
   };
 
   const handleDateRangeChange = (dates) => {
@@ -168,7 +167,7 @@ export default function DataTable({ config, extra = [] }) {
 
   const handleOptionSelect = (option) => {
     setLmsFilter(option); // Set the filter to "yes" or "no"
-    handelDataTableLoad(); // Reload the table data with the new filter
+    handleDataTableLoad(); // Reload the table data with the new filter
   };
 
   const handleHistory = async (record) => {
@@ -253,15 +252,6 @@ export default function DataTable({ config, extra = [] }) {
     fetchData();
   }, [isSuccess]);
 
-  const handlePrevDateRangeChange = (dates) => {
-    if (dates && dates.length === 2) {
-      setPrevStartDate(dates[0]);
-      setPrevEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
-    } else {
-      setPrevStartDate(null);
-      setPrevEndDate(null); // Clear dates if not a valid range
-    }
-  };
 
   const resetValues = () => {
     setSelectedInstitute(null);
@@ -406,27 +396,29 @@ export default function DataTable({ config, extra = [] }) {
   ];
 
 
-  const { result: listResult } = useSelector(selectListItems);
-  const { items: dataSource } = listResult;
+  const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
+  const { pagination, items: dataSource } = listResult;
 
-  const handelDataTableLoad = useCallback((pagination) => {
-    const options = { page: pagination.current || 1, items: pagination.pageSize || 10 };
-    dispatch(crud.list({ entity, options }));
-  }, []);
-
+  const handleDataTableLoad = useCallback(
+    (pagination) => {
+      const options = { page: pagination.current || 1, items: pagination.pageSize || 10 };
+      dispatch(crud.list({ entity, options }));
+    },
+    [entity, dispatch]
+  );
 
 
   // Add useEffect to handle automatic table reload
   useEffect(() => {
     if (isSuccess) {
-      handelDataTableLoad({}, searchQuery); // Call handelDataTableLoad function with the current searchQuery
+      handleDataTableLoad({}, searchQuery); // Call handleDataTableLoad function with the current searchQuery
     }
   }, [isSuccess, searchQuery]);
 
 
   const handleSearch = debounce((value) => {
     setSearchQuery(value);
-    handelDataTableLoad({}, value);
+    handleDataTableLoad({}, value);
   }, 500);
 
   const dispatcher = () => {
@@ -537,6 +529,9 @@ export default function DataTable({ config, extra = [] }) {
               </div>
             )}
             <div className='space-x-2 flex items-center'>
+              <Button onClick={handleDataTableLoad} key={`${uniqueId()}`} icon={<CiRedo />}>
+                {translate('Refresh')}
+              </Button>
               <AddNewItem key="addNewItem" config={config} />
               <div className='font-thin'>
                 <LiaFileDownloadSolid title='Export excel' onClick={handleExportToExcel} className='text-3xl text-blue-500 hover:text-blue-700 cursor-pointer' />
@@ -554,7 +549,8 @@ export default function DataTable({ config, extra = [] }) {
             rowKey={(item) => item._id}
             dataSource={filteredData}
             pagination={true}
-            onChange={handelDataTableLoad}
+            loading={listIsLoading}
+            onChange={handleDataTableLoad}
           />
         </div>
       </>
