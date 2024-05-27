@@ -48,7 +48,7 @@ function AddNewItem({ config }) {
 }
 
 export default function DataTable({ config, extra = [] }) {
-  let { entity, dataTableColumns } = config;
+  let { entity, dataTableColumns, DATATABLE_TITLE, fields, searchConfig } = config;
   const { isSuccess } = useSelector(selectCreatedItem);
   const dispatch = useDispatch();
   const { crudContextAction } = useCrudContext();
@@ -502,6 +502,13 @@ export default function DataTable({ config, extra = [] }) {
     </Menu>
   );
 
+  const filterTable = (e) => {
+    const value = e.target.value;
+    const options = { q: value, fields: searchConfig?.searchFields || '' };
+    dispatch(crud.list({ entity, options }));
+  };
+
+
   const renderTable = () => {
     const filteredData = filterDataSource(dataSource);
     return (
@@ -511,12 +518,11 @@ export default function DataTable({ config, extra = [] }) {
             {entity === 'lead' && (
               <div className='flex items-center gap-2'>
                 <div className="flex justify-center items-center text-red-500">
-                  <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {filteredData.length}</span>
+                  <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {pagination.total}</span>
                 </div>
                 <Search
                   placeholder="Search by email"
-                  onSearch={handleSearch}
-                  onChange={(e) => handleSearch(e.target.value)}
+                  onChange={filterTable}
                   className='w-full'
                 />
               </div>
@@ -548,7 +554,7 @@ export default function DataTable({ config, extra = [] }) {
             columns={tableColumns}
             rowKey={(item) => item._id}
             dataSource={filteredData}
-            pagination={true}
+            pagination={pagination}
             loading={listIsLoading}
             onChange={handleDataTableLoad}
           />

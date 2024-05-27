@@ -36,36 +36,39 @@ export const crud = {
       });
     },
  list:
-  ({ entity, options = {} }) =>
-  async (dispatch) => {
-    dispatch({
-      type: actionTypes.REQUEST_LOADING,
-      keyState: 'list',
-      payload: null,
-    });
-
-    // Remove the pageSize key from options
-    const { ...restOptions } = options;
-
-    let data = await request.list({ entity, options: restOptions });
-
-    if (data.success === true) {
-      const result = {
-        items: data.result,
-           };
+    ({ entity, options = { page: 1, items: 10 } }) =>
+    async (dispatch) => {
       dispatch({
-        type: actionTypes.REQUEST_SUCCESS,
-        keyState: 'list',
-        payload: result,
-      });
-    } else {
-      dispatch({
-        type: actionTypes.REQUEST_FAILED,
+        type: actionTypes.REQUEST_LOADING,
         keyState: 'list',
         payload: null,
       });
-    }
-  },
+
+      let data = await request.list({ entity, options });
+
+      if (data.success === true) {
+        const result = {
+          items: data.result,
+          pagination: {
+            current: parseInt(data.pagination.page, 10),
+            pageSize: options?.items,
+            total: parseInt(data.pagination.count),
+          },
+        };
+
+        dispatch({
+          type: actionTypes.REQUEST_SUCCESS,
+          keyState: 'list',
+          payload: result,
+        });
+      } else {
+        dispatch({
+          type: actionTypes.REQUEST_FAILED,
+          keyState: 'list',
+          payload: null,
+        });
+      }
+    },
   create:
     ({ entity, jsonData, withUpload = false }) =>
     async (dispatch) => {
