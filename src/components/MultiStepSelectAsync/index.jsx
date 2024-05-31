@@ -23,7 +23,7 @@ const MultiStepSelectAsync = ({
   secondSelectValueKey = 'value',
   secondSelectLabelKey = 'label',
   entityName,
-  subEntityName = 'items',
+  subEntityName = 'lead',
   value = {},
   onChange,
   style,

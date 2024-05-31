@@ -15,6 +15,7 @@ import logoText from '@/style/images/sodeicon.png';
 import { FaUsersRays } from "react-icons/fa6";
 import { CiUnread } from "react-icons/ci";
 import { GrCircleInformation } from "react-icons/gr";
+import { IoSettingsOutline } from "react-icons/io5";
 const { Sider } = Layout;
 
 export default function Navigation() {
@@ -90,6 +91,10 @@ function Sidebar({ menuOptions }) {
         case 'Courses & Fees':
           icon = <GrCircleInformation className="text-[18px]" />;
           path = '/courseInfo';
+          break;
+        case 'Settings':
+          icon = <IoSettingsOutline className="text-[18px]" />;
+          path = '/settings';
           break;
         default:
           icon = null;

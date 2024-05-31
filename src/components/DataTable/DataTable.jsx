@@ -8,7 +8,6 @@ import { selectCreatedItem, selectListItems } from '@/redux/crud/selectors';
 import useLanguage from '@/locale/useLanguage';
 import useResponsiveTable from '@/hooks/useResponsiveTable';
 import { GrHistory } from "react-icons/gr";
-import { generate as uniqueId } from 'shortid';
 import { useCrudContext } from '@/context/crud';
 import * as XLSX from 'xlsx';
 import { request } from '@/request';
@@ -17,7 +16,7 @@ import { LiaFileDownloadSolid } from "react-icons/lia";
 import { debounce } from 'lodash';
 import UpdatePaymentForm from '@/forms/AddPayment';
 import UploadDocumentForm from '@/forms/uploadDocument';
-import { IoConstruct, IoDocumentAttachOutline } from "react-icons/io5";
+import { IoDocumentAttachOutline } from "react-icons/io5";
 import StudentDetailsModal from '../StudentDetailsModal';
 import LMSModal from '../LMSModal';
 import { AiOutlineComment } from "react-icons/ai";
@@ -25,7 +24,6 @@ import HistoryModal from '../HistoryModal';
 import { IoFilterOutline } from "react-icons/io5";
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
 import CommentForm from '@/forms/comment'
-import { CiRedo } from "react-icons/ci";
 import { BsSend } from "react-icons/bs";
 const { Search } = Input;
 const { RangePicker } = DatePicker;
@@ -48,7 +46,7 @@ function AddNewItem({ config }) {
 }
 
 export default function DataTable({ config, extra = [] }) {
-  let { entity, dataTableColumns, DATATABLE_TITLE, fields, searchConfig } = config;
+  let { entity, dataTableColumns } = config;
   const { isSuccess } = useSelector(selectCreatedItem);
   const dispatch = useDispatch();
   const { crudContextAction } = useCrudContext();
@@ -75,17 +73,20 @@ export default function DataTable({ config, extra = [] }) {
   const [updatePaymentRecord, setUpdatePaymentRecord] = useState(null);
   const [Paymentstatus, setSelectedPaymentstatus] = useState(null);
   const [lmsFilter, setLmsFilter] = useState(null);
-  const [showUploadDocumentDrawer, setShowUploadDocumentDrawer] = useState(false);
-  const [recordForUploadDocument, setRecordForUploadDocument] = useState(null);
+  const [showUploadDocumentDrawer, setShowUploadDocumentDrawer] = useState(false); // New state to control the drawer
+  const [recordForUploadDocument, setRecordForUploadDocument] = useState(null); // Record to be used in the upload document form
   const [selectedPaymentMode, setSelectedPaymentMode] = useState(null);
   const [paymentMode, setPaymentMode] = useState([]);
   const [showCommentDrawer, setShowCommentDrawer] = useState(false);
   const [commentRecord, setCommentRecord] = useState(null);
   const currentAdmin = useSelector(selectCurrentAdmin);
   const [showStudentDetailsDrawer, setShowStudentDetailsDrawer] = useState(false);
-  const [selectedStudent, setSelectedStudent] = useState(null);
+  const [selectedStudent, setSelectedStudent] = useState(null); // To track selected team leader
+  const [prevStartDate, setPrevStartDate] = useState(null);
+  const [prevEndDate, setPrevEndDate] = useState(null);
   const [showLMSDrawer, setShowLMSDrawer] = useState(false);
   const [LMSRecord, setLMSRecord] = useState(null);
+  // buttons call function 
   const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(currentAdmin?.role);
 
   const handleShowStudentDetails = (record) => {
@@ -121,7 +122,7 @@ export default function DataTable({ config, extra = [] }) {
 
   const handleSuccessUpdate = () => {
     setShowAddPaymentModal(false); // Close the payment modal
-    handleDataTableLoad({}, searchQuery); // Reload the table data
+    handelDataTableLoad({}, searchQuery); // Reload the table data
   };
 
   const handleDateRangeChange = (dates) => {
@@ -167,7 +168,7 @@ export default function DataTable({ config, extra = [] }) {
 
   const handleOptionSelect = (option) => {
     setLmsFilter(option); // Set the filter to "yes" or "no"
-    handleDataTableLoad(); // Reload the table data with the new filter
+    handelDataTableLoad(); // Reload the table data with the new filter
   };
 
   const handleHistory = async (record) => {
@@ -252,6 +253,15 @@ export default function DataTable({ config, extra = [] }) {
     fetchData();
   }, [isSuccess]);
 
+  const handlePrevDateRangeChange = (dates) => {
+    if (dates && dates.length === 2) {
+      setPrevStartDate(dates[0]);
+      setPrevEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
+    } else {
+      setPrevStartDate(null);
+      setPrevEndDate(null); // Clear dates if not a valid range
+    }
+  };
 
   const resetValues = () => {
     setSelectedInstitute(null);
@@ -397,28 +407,36 @@ export default function DataTable({ config, extra = [] }) {
 
 
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
-  const { pagination, items: dataSource } = listResult;
+  const { items: dataSource } = listResult;
 
-  const handleDataTableLoad = useCallback(
-    (pagination) => {
-      const options = { page: pagination.current || 1, items: pagination.pageSize || 10 };
-      dispatch(crud.list({ entity, options }));
+  const handelDataTableLoad = useCallback(
+    async (newSearchQuery = '') => {
+      const options = {
+        filter: {
+          q: newSearchQuery,
+          institute: selectedInstitute,
+          paymentMode: selectedPaymentMode,
+          university: selectedUniversity,
+          session: selectedSession,
+          status: selectedStatus,
+          userId: selectedUserId,
+          startDate,
+          endDate,
+        },
+      };
+
+      const { success, result } = await dispatch(crud.list({ entity, options }));
+      if (success) {
+        const filteredData = filterDataSource(result);
+      }
     },
-    [entity, dispatch]
+    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId, selectedSession, startDate, endDate, selectedPaymentMode]
   );
-
-
-  // Add useEffect to handle automatic table reload
-  useEffect(() => {
-    if (isSuccess) {
-      handleDataTableLoad({}, searchQuery); // Call handleDataTableLoad function with the current searchQuery
-    }
-  }, [isSuccess, searchQuery]);
 
 
   const handleSearch = debounce((value) => {
     setSearchQuery(value);
-    handleDataTableLoad({}, value);
+    handelDataTableLoad({}, value);
   }, 500);
 
   const dispatcher = () => {
@@ -502,13 +520,6 @@ export default function DataTable({ config, extra = [] }) {
     </Menu>
   );
 
-  const filterTable = (e) => {
-    const value = e.target.value;
-    const options = { q: value, fields: searchConfig?.searchFields || '' };
-    dispatch(crud.list({ entity, options }));
-  };
-
-
   const renderTable = () => {
     const filteredData = filterDataSource(dataSource);
     return (
@@ -518,11 +529,12 @@ export default function DataTable({ config, extra = [] }) {
             {entity === 'lead' && (
               <div className='flex items-center gap-2'>
                 <div className="flex justify-center items-center text-red-500">
-                  <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {pagination.total}</span>
+                  <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {filteredData.length}</span>
                 </div>
                 <Search
                   placeholder="Search by email"
-                  onChange={filterTable}
+                  onSearch={handleSearch}
+                  onChange={(e) => handleSearch(e.target.value)}
                   className='w-full'
                 />
               </div>
@@ -535,9 +547,6 @@ export default function DataTable({ config, extra = [] }) {
               </div>
             )}
             <div className='space-x-2 flex items-center'>
-              <Button onClick={handleDataTableLoad} key={`${uniqueId()}`} icon={<CiRedo />}>
-                {translate('Refresh')}
-              </Button>
               <AddNewItem key="addNewItem" config={config} />
               <div className='font-thin'>
                 <LiaFileDownloadSolid title='Export excel' onClick={handleExportToExcel} className='text-3xl text-blue-500 hover:text-blue-700 cursor-pointer' />
@@ -554,9 +563,9 @@ export default function DataTable({ config, extra = [] }) {
             columns={tableColumns}
             rowKey={(item) => item._id}
             dataSource={filteredData}
-            pagination={pagination}
             loading={listIsLoading}
-            onChange={handleDataTableLoad}
+            pagination={true}
+            onChange={handelDataTableLoad}
           />
         </div>
       </>
@@ -723,6 +732,13 @@ export default function DataTable({ config, extra = [] }) {
 
     return null;
   };
+
+  // Add useEffect to handle automatic table reload
+  useEffect(() => {
+    if (isSuccess) {
+      handelDataTableLoad({}, searchQuery); // Call handelDataTableLoad function with the current searchQuery
+    }
+  }, [isSuccess, searchQuery]);
 
 
   return (

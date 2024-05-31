@@ -308,7 +308,8 @@ const Index = () => {
                 dataSource={dataSource}
                 columns={columns}
                 loading={loading}
-                pagination={true}
+                pagination={false}
+                
             />
             <Drawer
                 title={selectedRecord ? 'Edit Course & University' : 'Add Course & University'}

@@ -1,5 +1,5 @@
 import SetingsSection from '../components/SetingsSection';
-import UpdateSettingModule from '../components/UpdateSettingModule';
+import GeneralSetting from '../components/GeneralModule';
 import AppSettingForm from './forms/AppSettingForm';
 
 import useLanguage from '@/locale/useLanguage';
@@ -7,13 +7,14 @@ import useLanguage from '@/locale/useLanguage';
 export default function CompanyLogoSettingsModule({ config }) {
   const translate = useLanguage();
   return (
-    <UpdateSettingModule config={config} uploadSettingKey="company_logo" withUpload>
+    <GeneralSetting>
       <SetingsSection
-        title={translate('Company Logo')}
-        description={translate('Update Company logo')}
+        title={
+          <div>{config.DATATABLE_TITLE}</div>
+        }
       >
         <AppSettingForm />
       </SetingsSection>
-    </UpdateSettingModule>
+    </GeneralSetting>
   );
 }

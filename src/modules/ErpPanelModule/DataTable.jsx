@@ -131,7 +131,7 @@ export default function DataTable({ config, extra = [] }) {
     }
   };
 
-   const handleDateRangeChange = (dates) => {
+  const handleDateRangeChange = (dates) => {
     if (dates && dates.length === 2) {
       setStartDate(dates[0]);
       setEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
@@ -404,6 +404,7 @@ export default function DataTable({ config, extra = [] }) {
           <Table
             columns={tableColumns}
             rowKey={(item) => item._id}
+            loading={listIsLoading}
             dataSource={filterDataSource(dataSource)}
             pagination={true}
             onChange={handelDataTableLoad}

@@ -5,16 +5,15 @@ import CompanyLogoSettingsModule from '@/modules/SettingModule/CompanyLogoSettin
 export default function AppSettings() {
   const translate = useLanguage();
 
-  const entity = 'setting';
+  const entity = 'Institute';
 
   const Labels = {
-    PANEL_TITLE: translate('settings'),
-    DATATABLE_TITLE: translate('settings_list'),
-    ADD_NEW_ENTITY: translate('add_new_settings'),
-    ENTITY_NAME: translate('settings'),
+    INS_TITLE: translate('Institute'),
+    DATATABLE_TITLE: translate('institute_list'),
+    ADD_NEW_ENTITY: translate('add_new_institute'),
+    ENTITY_NAME: translate('institute'),
     CREATE_ENTITY: translate('save'),
     UPDATE_ENTITY: translate('update'),
-    SETTINGS_TITLE: translate('General Settings'),
   };
 
   const configPage = {

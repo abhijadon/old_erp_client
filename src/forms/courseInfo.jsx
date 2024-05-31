@@ -7488,7 +7488,12 @@ const courseInfo = [
                                 type: 'select',
                                 options: [
                                     { value: 'General', label: 'General' },
-
+                                    { value: 'Human Resource Management', label: 'Human Resource Management' },
+                                    { value: 'Finance', label: 'Finance' },
+                                    { value: 'Marketing', label: 'Marketing' },
+                                    { value: 'Direct Selling', label: 'Direct Selling' },
+                                    { value: 'Computer Science', label: 'Computer Science' },
+                                    { value: 'Digital Marketing', label: 'Digital Marketing' },
                                 ],
                             },
                             {

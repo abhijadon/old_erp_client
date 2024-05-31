@@ -78,7 +78,7 @@ export default function HeaderContent() {
 
   const DropdownMenu = ({ text }) => {
     return <span style={{}}>{text}</span>;
-  };
+  }; 
 
   const items = isAdmin
     ? [

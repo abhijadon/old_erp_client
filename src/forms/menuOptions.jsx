@@ -61,6 +61,7 @@ const PermissionForm = ({ onClose, onFormSubmit }) => {
                     <Option value="Users">Users</Option>
                     <Option value="Permission">Permission</Option>
                     <Option value="Courses & Fees">Courses & Fees</Option>
+                    <Option value="Settings">Settings</Option>
                 </Select>
             </Form.Item>
             <Form.Item>

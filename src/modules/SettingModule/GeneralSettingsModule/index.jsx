@@ -1,18 +1,18 @@
 import SetingsSection from '../components/SetingsSection';
-import UpdateSettingModule from '../components/UpdateSettingModule';
-import GeneralSettingForm from './forms/GeneralSettingForm';
+import GeneralSetting from '../components/GeneralModule';
 import useLanguage from '@/locale/useLanguage';
-
+import CompanyLogoSettingsModule from '@/modules/SettingModule/CompanyLogoSettingsModule';
 export default function GeneralSettingsModule({ config }) {
   const translate = useLanguage();
   return (
-    <UpdateSettingModule config={config}>
-      <SetingsSection
-        title={translate('Company')}
-        description={translate('Update your company informations')}
-      >
-        <GeneralSettingForm />
-      </SetingsSection>
-    </UpdateSettingModule>
+    <>
+      <div className='flex'>
+        <GeneralSetting config={config}>
+          <div>
+            {config.PANEL_TITLE}
+          </div>
+        </GeneralSetting>
+      </div>
+    </>
   );
 }

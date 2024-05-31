@@ -1,48 +1,45 @@
-import {
-  SettingOutlined,
-  FileTextOutlined,
-  CreditCardOutlined,
-  DollarOutlined,
-  FileImageOutlined,
-} from '@ant-design/icons';
-
+import { IoBookOutline } from "react-icons/io5";
+import { LiaUniversitySolid } from "react-icons/lia";
+import { IoMdDoneAll } from "react-icons/io";
 import TabsContent from '@/components/TabsContent/TabsContent';
-
-import CompanyLogoSettings from './CompanyLogoSettings';
-import GeneralSettings from './GeneralSettings';
-import PaymentSettings from './PaymentSettings';
-import InvoiceSettings from './InvoiceSettings';
-import MoneyFormatSettings from './MoneyFormatSettings';
-
+import PermissionAllowed from '@/pages/PermissionAllowed';
+import AllSettings from '@/pages/AllSettings';
+import Institute from '@/pages/Institute';
+import Course from '@/pages/Course';
+import Subcourse from '@/pages/Subcourse';
+import { MdDensitySmall } from "react-icons/md";
+import { BiSolidBookBookmark } from "react-icons/bi";
 import useLanguage from '@/locale/useLanguage';
 
 export default function Settings() {
   const translate = useLanguage();
+
+
   const content = [
     {
-      label: translate('General Settings'),
-      icon: <SettingOutlined />,
-      children: <GeneralSettings />,
+      label: translate('All'),
+      icon: <MdDensitySmall />,
+      children: <AllSettings />,
     },
     {
-      label: translate('Company Logo'),
-      icon: <FileImageOutlined />,
-      children: <CompanyLogoSettings />,
+      label: translate('Permissions Allowed'),
+      icon: <IoMdDoneAll />,
+      children: <PermissionAllowed />,
     },
     {
-      label: translate('Currency Settings'),
-      icon: <DollarOutlined />,
-      children: <MoneyFormatSettings />,
+      label: 'Institutes & Universities',
+      icon: <LiaUniversitySolid />,
+      children: <Institute />,
     },
     {
-      label: translate('Finance Settings'),
-      icon: <CreditCardOutlined />,
-      children: <PaymentSettings />,
+      label: translate('Courses'),
+      icon: <IoBookOutline />,
+      children: <Course />,
     },
     {
-      label: translate('Crm Settings'),
-      icon: <FileTextOutlined />,
-      children: <InvoiceSettings />,
+      label: translate('SubCourse'),
+      icon: <BiSolidBookBookmark />,
+      children: <Subcourse />,
     },
   ];
 
