@@ -36,7 +36,7 @@ export const crud = {
       });
     },
  list:
-    ({ entity, options = { page: 1, items: 10 } }) =>
+    ({ entity, options = {} }) =>
     async (dispatch) => {
       dispatch({
         type: actionTypes.REQUEST_LOADING,
@@ -49,11 +49,6 @@ export const crud = {
       if (data.success === true) {
         const result = {
           items: data.result,
-          pagination: {
-            current: parseInt(data.pagination.page, 10),
-            pageSize: options?.items,
-            total: parseInt(data.pagination.count),
-          },
         };
 
         dispatch({
