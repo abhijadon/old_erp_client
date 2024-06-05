@@ -267,7 +267,9 @@ export default function EditForm() {
                         options={[
                             { value: 'New', label: translate('New') },
                             { value: 'Approved', label: translate('Approved') },
+                            { value: 'Processed', label: translate('Processed') },
                             { value: 'Enrolled', label: translate('Enrolled') },
+                            { value: 'Correction', label: translate('Correction') },
                             { value: 'Cancel', label: translate('Cancel') },
                             { value: 'Refunded', label: translate('Refunded') },
                             { value: 'Alumni', label: translate('Alumni') },
@@ -321,6 +323,7 @@ export default function EditForm() {
                 >
                     <TextArea rows={1} />
                 </Form.Item>
+
             </div>
         </>
     );

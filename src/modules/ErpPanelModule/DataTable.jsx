@@ -8,7 +8,7 @@ import {
   PlusOutlined,
   EllipsisOutlined,
 } from '@ant-design/icons';
-import { Dropdown, Table, Button, Input, Select, Card, Modal, DatePicker } from 'antd';
+import { Dropdown, Table, Button, Input, Select, Card, Modal, DatePicker, Drawer } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import useLanguage from '@/locale/useLanguage';
 import { erp } from '@/redux/erp/actions';
@@ -24,6 +24,8 @@ import { FcBearish, FcBullish, FcSalesPerformance } from 'react-icons/fc';
 import { LiaFileDownloadSolid } from 'react-icons/lia';
 import { GrHistory } from 'react-icons/gr';
 import HistoryModal from './HistoryModal';
+import CommentForm from '@/forms/comment'
+import { RiChatFollowUpLine } from "react-icons/ri";
 const { Search } = Input;
 const { RangePicker } = DatePicker;
 
@@ -69,13 +71,17 @@ export default function DataTable({ config, extra = [] }) {
   const [role, setRole] = useState('');
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-
-
+  const [selectedFollowup, setSelectedFollowup] = useState(null);
+  const [commentRecord, setCommentRecord] = useState(null);
+  const [showCommentDrawer, setShowCommentDrawer] = useState(false);
+  const [followstartDate, setFollowStartDate] = useState(null);
+  const [followendDate, setFollowEndDate] = useState(null);
   // Retrieve the role from localStorage
   useEffect(() => {
     const userData = JSON.parse(window.localStorage.getItem('auth'));
     setRole(userData.current.role);
   }, []);
+
 
 
   const handelDataTableLoad = useCallback(
@@ -206,6 +212,9 @@ export default function DataTable({ config, extra = [] }) {
     setSelectedPaymentType(null)
     setStartDate(null);
     setEndDate(null);
+    setFollowStartDate(null);
+    setFollowEndDate(null);
+    setSelectedFollowup(null);
   };
   useEffect(() => {
     const controller = new AbortController();
@@ -220,6 +229,11 @@ export default function DataTable({ config, extra = [] }) {
       label: translate('Show'),
       key: 'read',
       icon: <EyeOutlined />,
+    },
+    {
+      label: translate('Follow_up'),
+      key: 'followup',
+      icon: <RiChatFollowUpLine />,
     },
     {
       label: translate('Download'),
@@ -258,6 +272,16 @@ export default function DataTable({ config, extra = [] }) {
     modal.open();
   };
 
+
+  const handleFollowup = (record) => {
+    setCommentRecord(record); // Store the record
+    setShowCommentDrawer(true); // Open the Drawer
+  };
+  const closeCommentDrawer = () => {
+    setShowCommentDrawer(false); // Close the Drawer
+    setCommentRecord(null); // Clear the record
+  };
+
   // Function to handle history button click
   const handleHistory = async (record) => {
     try {
@@ -287,6 +311,9 @@ export default function DataTable({ config, extra = [] }) {
               switch (key) {
                 case 'read':
                   handleRead(record);
+                  break;
+                case 'followup':
+                  handleFollowup(record);
                   break;
                 case 'download':
                   handleDownload(record);
@@ -318,16 +345,24 @@ export default function DataTable({ config, extra = [] }) {
   const filterDataSource = (data) => {
     return data.filter(item => {
       // Extract the date from your data source (assuming it's stored as a Date object)
-      const itemDate = new Date(item.created); // Change 'date' to the key where your date is stored
+      const itemDate = new Date(item.created); // Change 'created' to the key where your date is stored
 
       // Check if the item date falls within the selected date range
       const dateMatch = (!startDate || !endDate || (itemDate >= startDate && itemDate <= endDate));
+
+
+      const followDate = new Date(item.followUpDate); // Change 'created' to the key where your date is stored
+
+      // Check if the item date falls within the selected date range
+      const followUpdateMatch = (!followstartDate || !followendDate || (followDate >= followstartDate && followDate <= followendDate));
+
 
       // Your existing filters
       const instituteMatch = !selectedInstitute || (item && item.institute_name === selectedInstitute);
       const universityMatch = !selectedUniversity || (item && item.university_name === selectedUniversity);
       const statusMatch = !selectedStatus || (item && item.status === selectedStatus);
       const userMatch = !selectedUserId || (item && item.userId?.fullname === selectedUserId);
+
 
       const phoneAsString = item && item.phone?.toString();
       const emailLowerCase = item && item.email?.toLowerCase();
@@ -339,11 +374,16 @@ export default function DataTable({ config, extra = [] }) {
         (item && item.full_name && item.full_name.includes(searchQuery))
       );
 
+      // Check if follow-up status matches
+      let followupMatch = true;
+      if (selectedFollowup === 'follow-up') {
+        followupMatch = item.followStatus === 'follow-up';
+      }
+
       // Return true only if all conditions match
-      return dateMatch && instituteMatch && universityMatch && statusMatch && userMatch && searchMatch;
+      return dateMatch && instituteMatch && universityMatch && statusMatch && userMatch && followupMatch && followUpdateMatch && searchMatch;
     });
   };
-
 
   const dispatcher = () => {
     dispatch(erp.list({ entity }));
@@ -459,123 +499,172 @@ export default function DataTable({ config, extra = [] }) {
     );
   });
 
+  const handlePaymentStatus = (status) => {
+    setSelectedFollowup(status);
+  };
 
-  const filterRender = () => (
-    <>
-      <div className='flex items-center space-x-2'>
-        <div>
-          {/* Select for Institute */}
-          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-          }
-            placeholder="Select institute"
-            className='w-60 h-10 capitalize'
-            value={selectedInstitute}
-            onChange={(value) => setSelectedInstitute(value)}
-          >
-            {institutes.map(institute => (
-              <Select.Option key={institute}>{institute}</Select.Option>
-            ))}
-          </Select>
-        </div>
-        <div>
-          {/* Select for University */}
-          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-          }
-            placeholder="Select university"
-            className='w-60 h-10 capitalize'
-            value={selectedUniversity}
-            onChange={(value) => setSelectedUniversity(value)}
-          >
-            {universities.map(university => (
-              <Select.Option key={university}>{university}</Select.Option>
-            ))}
-          </Select>
-        </div>
+  const handleFollowupDateRangeChange = (dates) => {
+    if (dates && dates.length === 2) {
+      setFollowStartDate(dates[0]);
+      setFollowEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
+    } else {
+      setFollowStartDate(null);
+      setFollowEndDate(null); // Clear dates if not a valid range
+    }
+  };
 
-        <div>
-          {/* Select for Status */}
-          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-          }
-            placeholder="Select status"
-            className='w-60 h-10 capitalize'
-            value={selectedStatus}
-            onChange={(value) => setSelectedStatus(value)}
-          >
-            {statuses.map(status => (
-              <Select.Option key={status}>{status}</Select.Option>
-            ))}
-          </Select>
+  const filterRender = () => {
+    const filtered = filterDataSource(dataSource);
+    const followupCount = filtered.filter(item => item.followStatus === 'follow-up').length;
+    return (
+      <div>
+        <div className='flex items-center space-x-2'>
+          <div>
+            {/* Select for Institute */}
+            <Select
+              showSearch
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select institute"
+              className='w-60 h-10 capitalize'
+              value={selectedInstitute}
+              onChange={(value) => setSelectedInstitute(value)}
+            >
+              {institutes.map(institute => (
+                <Select.Option key={institute}>{institute}</Select.Option>
+              ))}
+            </Select>
+          </div>
+          <div>
+            {/* Select for University */}
+            <Select
+              showSearch
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select university"
+              className='w-60 h-10 capitalize'
+              value={selectedUniversity}
+              onChange={(value) => setSelectedUniversity(value)}
+            >
+              {universities.map(university => (
+                <Select.Option key={university}>{university}</Select.Option>
+              ))}
+            </Select>
+          </div>
+          <div>
+            {/* Select for Status */}
+            <Select
+              showSearch
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select status"
+              className='w-60 h-10 capitalize'
+              value={selectedStatus}
+              onChange={(value) => setSelectedStatus(value)}
+            >
+              {statuses.map(status => (
+                <Select.Option key={status}>{status}</Select.Option>
+              ))}
+            </Select>
+          </div>
+          {/* Select for User Full Name */}
+          <div>
+            <Select
+              showSearch
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select payment mode"
+              className='w-60 h-10 capitalize'
+              value={selectedPaymentMode}
+              onChange={(value) => setSelectedPaymentMode(value)}
+            >
+              {paymentMode.map((paymentmode) => (
+                <Select.Option className="capitalize font-thin font-mono" key={paymentmode}>
+                  {paymentmode}
+                </Select.Option>
+              ))}
+            </Select>
+          </div>
+          <div>
+            <Select
+              showSearch
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select payment type"
+              className='w-60 h-10 capitalize'
+              value={selectedPaymentType}
+              onChange={(value) => setSelectedPaymentType(value)}
+            >
+              {paymentType.map((paymenttype) => (
+                <Select.Option className="capitalize font-thin font-mono" key={paymenttype}>
+                  {paymenttype}
+                </Select.Option>
+              ))}
+            </Select>
+          </div>
         </div>
-        {/* Select for User Full Name */}
-        <div>
-          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-          }
-            placeholder="Select payment mode"
-            className='w-60 h-10 capitalize'
-            value={selectedPaymentMode}
-            onChange={(value) => setSelectedPaymentMode(value)}
-          >
-            {paymentMode.map((paymentmode) => (
-              <Select.Option className="capitalize font-thin font-mono" key={paymentmode}>
-                {paymentmode}
-              </Select.Option>
-            ))}
-          </Select>
+        <div className='flex items-center space-x-2'>
+          <div>
+            <Select
+              showSearch
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select user full name"
+              className='w-60 h-10 capitalize mt-3'
+              value={selectedUserId}
+              onChange={(value) => setSelectedUserId(value)}
+            >
+              {userNames.map((userName) => (
+                <Select.Option className="capitalize font-thin font-mono" key={userName}>
+                  {userName}
+                </Select.Option>
+              ))}
+            </Select>
+          </div>
+          <div>
+            <RangePicker
+              className='w-60 h-10 mt-3 capitalize'
+              onChange={handleDateRangeChange}
+              style={{ width: '100%' }}
+              placeholder={['Start Date', 'End Date']}
+            />
+          </div>
+          <div>
+            {/* Button to filter Payment Received */}
+            <Button className='w-48 h-9 mt-3 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700 border-cyan-500 hover:border-cyan-500 rounded-none' onClick={() => handlePaymentStatus('follow-up')}>
+              <span className="font-thin text-sm -ml-2">Follow-uP</span>
+              <span className="font-thin text-sm ml-1">({followupCount})</span>
+            </Button>
+          </div>
+          <div>
+            <RangePicker
+              className='w-60 h-10 mt-3 capitalize'
+              onChange={handleFollowupDateRangeChange}
+              style={{ width: '100%' }}
+              placeholder={['Follow-UP Date', 'End Date']}
+            />
+          </div>
         </div>
-        <div>
-          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-          }
-            placeholder="Select payment type"
-            className='w-60 h-10 capitalize'
-            value={selectedPaymentType}
-            onChange={(value) => setSelectedPaymentType(value)}
-          >
-            {paymentType.map((paymenttype) => (
-              <Select.Option className="capitalize font-thin font-mono" key={paymenttype}>
-                {paymenttype}
-              </Select.Option>
-            ))}
-          </Select>
+        <div className='relative float-right -mt-10 mr-2'>
+          <Button title='Reset All Filters' onClick={resetValues} className='bg-white text-red-500 text-lg h-10 hover:text-red-600'>
+            <BiReset />
+          </Button>
         </div>
       </div>
-      <div className='flex items-center space-x-2'>
-        <div>
-          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-          }
-            placeholder="Select user full name"
-            className='w-60 h-10 capitalize mt-3'
-            value={selectedUserId}
-            onChange={(value) => setSelectedUserId(value)}
-          >
-            {userNames.map((userName) => (
-              <Select.Option className="capitalize font-thin font-mono" key={userName}>
-                {userName}
-              </Select.Option>
-            ))}
-          </Select>
-        </div>
-        <div>
-          <RangePicker
-            className='w-60 h-10 mt-3 capitalize'
-            onChange={handleDateRangeChange}
-            style={{ width: '100%' }}
-            placeholder={['Start Date', 'End Date']}
-          />
-        </div>
-      </div>
-      <div className='relative float-right -mt-10 mr-2'>
-        <Button title='Reset All Filters' onClick={resetValues} className='bg-white text-red-500 text-lg h-10 hover:text-red-600'>
-          <BiReset />
-        </Button>
-      </div>
-    </>
-  )
+    );
+  };
 
   return (
     <>
@@ -600,6 +689,26 @@ export default function DataTable({ config, extra = [] }) {
         historyData={historyData}
         onClose={() => setShowHistoryModal(false)}
       />
+      <Drawer
+        title={
+          <div>
+            <div className='relative float-right font-thin text-lg'>FollowUP & Comments</div>
+          </div>
+        }
+        placement="right" // The Drawer opens from the right
+        open={showCommentDrawer} // Controlled by state
+        onClose={closeCommentDrawer} // Close action
+        width={500}
+      >
+        {/* Render the CommentForm only if a record is set */}
+        {commentRecord && (
+          <CommentForm
+            entity="lead"
+            id={commentRecord.applicationId}
+            recordDetails={commentRecord}
+          />
+        )}
+      </Drawer>
     </>
   );
 }

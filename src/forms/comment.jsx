@@ -1,59 +1,58 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Spin, Input, Button, message, Avatar } from 'antd';
+import { Spin, Input, Button, message, Avatar, Form, DatePicker, Divider, Checkbox } from 'antd';
 import moment from 'moment';
 
-export default function Comment({  id }) {
-    const [commentData, setCommentData] = useState([]); // To hold fetched comment data
-    const [isLoading, setIsLoading] = useState(true); // Loading state
-    const [loading, setLoading] = useState(false); // Loading state for form
-    const [commentText, setCommentText] = useState(''); // State for the text area
+export default function Comment({ id }) {
+    const [commentData, setCommentData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
+    const [commentText, setCommentText] = useState('');
+    const [followUpDate, setFollowUpDate] = useState(null);
+    const [removeFollowUp, setRemoveFollowUp] = useState(false); // State for removeFollowUp flag
 
-    // Function to fetch comments
     const fetchComments = async () => {
-        setIsLoading(true); // Indicate loading state
+        setIsLoading(true);
         try {
-            const response = await axios.get(`lead/getComment/${id}`); // Fetch comments
-            if (response.data.comments) { // Check if response indicates success
-                setCommentData(response.data.comments); // Store fetched comments
+            const response = await axios.get(`lead/getComment/${id}`);
+            if (response.data.comments) {
+                setCommentData(response.data.comments);
             } else {
-                message.error(response.data.message); // Dynamic error message
+                message.error(response.data.message);
             }
         } catch (error) {
             console.error('Error fetching comments:', error);
-            message.error('Error fetching comments'); // Generic error message
+            message.error('Error fetching comments');
         } finally {
-            setIsLoading(false); // Reset loading state
+            setIsLoading(false);
         }
     };
 
-    // Fetch comments on component mount or when `id` changes
     useEffect(() => {
-        fetchComments(); // Trigger comment fetch
-    }, [id]); // Dependency array to avoid unnecessary re-renders
+        fetchComments();
+    }, [id]);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent form refresh
-        setLoading(true); // Indicate loading state
-
+    const handleSubmit = async () => {
+        setLoading(true);
         try {
-            const response = await axios.post(`lead/comment/${id}`, { commentText }); // Post new comment
-            if (response.data.message) { // Check if response indicates success
-                message.success(response.data.message);  // Dynamic success message
-                fetchComments(); // Refresh comments
-                setCommentText(''); // Clear comment text area
+            const response = await axios.post(`lead/comment/${id}`, { commentText, followUpDate, removeFollowUp }); // Send removeFollowUp flag
+            if (response.data.message) {
+                message.success(response.data.message);
+                fetchComments();
+                setCommentText('');
+                setFollowUpDate(null);
+                setRemoveFollowUp(false); // Reset removeFollowUp flag after submission
             } else {
-                message.error(response.data.message || 'Failed to post comment'); // Dynamic error message
+                message.error(response.data.message || 'Failed to post comment');
             }
         } catch (error) {
             console.error('Error posting comment:', error);
-            message.error('Error posting comment'); // Generic error message
+            message.error('Error posting comment');
         } finally {
-            setLoading(false); // Reset loading state after post
+            setLoading(false);
         }
     };
 
-    // Display loading spinner while fetching data
     if (isLoading) {
         return <Spin tip="Loading comments..." />;
     }
@@ -85,7 +84,7 @@ export default function Comment({  id }) {
                                         {moment(comment.timestamp).format('DD/MM/YYYY')}
                                         <br />
                                         <span className='ml-10 text-blue-400 text-xs'>
-                                        {moment(comment.timestamp).format('HH:mm')}
+                                            {moment(comment.timestamp).format('HH:mm')}
                                         </span>
                                     </div>
                                 </div>
@@ -99,22 +98,38 @@ export default function Comment({  id }) {
                     )}
                 </div>
 
-                <form onSubmit={handleSubmit}> {/* Attach submit handler */}
-                    <div className="w-full my-10">
-                        <Input.TextArea className='border border-blue-600'
-                        rows={4}
+                <Divider />
+
+                <Form layout="vertical" onFinish={handleSubmit} className='mt-4'>
+                    <Form.Item name="followUpDate">
+                        <DatePicker
+                            style={{ width: '100%' }}
+                            placeholder="Select follow-up date"
+                            value={followUpDate}
+                            onChange={(date) => setFollowUpDate(date)}
+                        />
+                    </Form.Item>
+
+                    <Form.Item name="commentText" rules={[{ required: true, message: 'Please input your comment!' }]}>
+                        <Input.TextArea
+                            rows={4}
                             value={commentText}
                             placeholder="Type your comment"
                             onChange={(e) => setCommentText(e.target.value)}
                         />
-                    </div>
+                    </Form.Item>
 
-                    <div className="w-full flex justify-end px-3">
+                    {/* Checkbox or toggle to indicate removing follow-up */}
+                    <Form.Item name="removeFollowUp" valuePropName="checked">
+                        <Checkbox onChange={(e) => setRemoveFollowUp(e.target.checked)}>Remove Follow-Up</Checkbox>
+                    </Form.Item>
+
+                    <Form.Item>
                         <Button type="primary" htmlType="submit" loading={loading}>
-                            Post Comment
+                            FollowUP & Comment
                         </Button>
-                    </div>
-                </form>
+                    </Form.Item>
+                </Form>
             </div>
         </div>
     );
