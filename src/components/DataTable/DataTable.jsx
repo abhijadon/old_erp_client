@@ -1,19 +1,16 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { EyeOutlined, EditOutlined, DeleteOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Dropdown, Table, Button, Card, Select, Input, DatePicker, Menu, Drawer, Modal } from 'antd';
+import { Dropdown, Table, Button, Card, Select, Input, DatePicker, Menu, Drawer, Checkbox, Radio } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { selectCreatedItem, selectListItems } from '@/redux/crud/selectors';
 import useLanguage from '@/locale/useLanguage';
-import useResponsiveTable from '@/hooks/useResponsiveTable';
 import { GrHistory } from "react-icons/gr";
 import { useCrudContext } from '@/context/crud';
 import * as XLSX from 'xlsx';
+import { generate as uniqueId } from 'shortid';
 import { request } from '@/request';
-import { BiReset } from 'react-icons/bi';
-import { LiaFileDownloadSolid } from "react-icons/lia";
-import { debounce } from 'lodash';
 import UpdatePaymentForm from '@/forms/AddPayment';
 import UploadDocumentForm from '@/forms/uploadDocument';
 import { IoDocumentAttachOutline } from "react-icons/io5";
@@ -24,9 +21,11 @@ import HistoryModal from '../HistoryModal';
 import { IoFilterOutline } from "react-icons/io5";
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
 import CommentForm from '@/forms/comment'
+import { MdOutlineLockReset } from "react-icons/md";
 import { BsSend } from "react-icons/bs";
-const { Search } = Input;
+import { PiMicrosoftExcelLogo } from "react-icons/pi";
 const { RangePicker } = DatePicker;
+import { FiRefreshCw } from "react-icons/fi";
 
 function AddNewItem({ config }) {
   const { crudContextAction } = useCrudContext();
@@ -46,47 +45,50 @@ function AddNewItem({ config }) {
 }
 
 export default function DataTable({ config, extra = [] }) {
-  let { entity, dataTableColumns } = config;
+  let { entity, dataTableColumns, DATATABLE_TITLE, fields, searchConfig } = config;
   const { isSuccess } = useSelector(selectCreatedItem);
   const dispatch = useDispatch();
   const { crudContextAction } = useCrudContext();
   const { panel, collapsedBox, modal, editBox, advancedBox } = crudContextAction;
   const translate = useLanguage();
-  const [selectedInstitute, setSelectedInstitute] = useState(null);
-  const [selectedInstallment, setSelectedInstallment] = useState(null);
-  const [selectedUniversity, setSelectedUniversity] = useState(null);
-  const [selectedSession, setSelectedSession] = useState(null);
-  const [selectedUserId, setSelectedUserId] = useState(null);
-  const [selectedStatus, setSelectedStatus] = useState(null);
   const [statuses, setStatuses] = useState([]);
   const [institutes, setInstitutes] = useState([]);
   const [installment, setInstallment] = useState([]);
   const [universities, setUniversities] = useState([]);
   const [session, setSession] = useState([]);
   const [userNames, setUserNames] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [historyData, setHistoryData] = useState(null);
   const [showHistoryModal, setShowHistoryModal] = useState(false);
   const [showAddPaymentModal, setShowAddPaymentModal] = useState(false);
   const [updatePaymentRecord, setUpdatePaymentRecord] = useState(null);
-  const [Paymentstatus, setSelectedPaymentstatus] = useState(null);
-  const [lmsFilter, setLmsFilter] = useState(null);
-  const [showUploadDocumentDrawer, setShowUploadDocumentDrawer] = useState(false); // New state to control the drawer
-  const [recordForUploadDocument, setRecordForUploadDocument] = useState(null); // Record to be used in the upload document form
-  const [selectedPaymentMode, setSelectedPaymentMode] = useState(null);
+  const [showUploadDocumentDrawer, setShowUploadDocumentDrawer] = useState(false);
+  const [recordForUploadDocument, setRecordForUploadDocument] = useState(null);
   const [paymentMode, setPaymentMode] = useState([]);
   const [showCommentDrawer, setShowCommentDrawer] = useState(false);
   const [commentRecord, setCommentRecord] = useState(null);
   const currentAdmin = useSelector(selectCurrentAdmin);
+  const [isChecked, setIsChecked] = useState(false);
   const [showStudentDetailsDrawer, setShowStudentDetailsDrawer] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null); // To track selected team leader
-  const [prevStartDate, setPrevStartDate] = useState(null);
-  const [prevEndDate, setPrevEndDate] = useState(null);
   const [showLMSDrawer, setShowLMSDrawer] = useState(false);
   const [LMSRecord, setLMSRecord] = useState(null);
-  // buttons call function 
+  const [filterValues, setFilterValues] = useState({
+    institute_name: null,
+    installment_type: null,
+    university_name: null,
+    session: null,
+    paymentStatus: null,
+    status: null,
+    payment_mode: null,
+    userId: null,
+    welcomeMail: null,
+    lmsStatus: null,
+    whatsappMessageStatus: null,
+    welcomeEnrolled: null,
+    whatsappEnrolled: null
+  });
   const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(currentAdmin?.role);
 
   const handleShowStudentDetails = (record) => {
@@ -128,23 +130,26 @@ export default function DataTable({ config, extra = [] }) {
   const handleDateRangeChange = (dates) => {
     if (dates && dates.length === 2) {
       setStartDate(dates[0]);
-      setEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
+      setEndDate(dates[1].endOf('day'));
     } else {
       setStartDate(null);
-      setEndDate(null); // Clear dates if not a valid range
+      setEndDate(null);
     }
   };
 
+  useEffect(() => {
+    filterData();
+  }, [startDate, endDate]);
 
   const handleExportToExcel = () => {
-    if (dataSource.length === 0) {
+    if (listResult.total === 0) {
       return;
     }
-    const fileName = 'data.xlsx';
 
+    const fileName = 'data.xlsx';
     const exportData = [
       dataTableColumns.map(column => column.title),
-      ...dataSource.map(item => dataTableColumns.map(column => {
+      ...listResult.items.map(item => dataTableColumns.map(column => {
         let value = item;
         const dataIndex = column.dataIndex;
         const keys = dataIndex ? (Array.isArray(dataIndex) ? dataIndex : dataIndex.split('.')) : [];
@@ -164,11 +169,6 @@ export default function DataTable({ config, extra = [] }) {
     } catch (error) {
       console.error('Error exporting data to Excel:', error);
     }
-  };
-
-  const handleOptionSelect = (option) => {
-    setLmsFilter(option); // Set the filter to "yes" or "no"
-    handelDataTableLoad(); // Reload the table data with the new filter
   };
 
   const handleHistory = async (record) => {
@@ -227,10 +227,9 @@ export default function DataTable({ config, extra = [] }) {
 
   // buttons call function 
 
-
   useEffect(() => {
     const fetchData = async () => {
-      const { success, result } = await request.list({ entity: 'lead' });
+      const { success, result } = await request.filter({ entity: 'lead' });
       if (success) {
         const uniqueStatuses = [...new Set(result.map(item => item.customfields.status))];
         const uniqueInstitutes = [...new Set(result.map(item => item.customfields.institute_name))];
@@ -238,7 +237,14 @@ export default function DataTable({ config, extra = [] }) {
         const uniqueSession = [...new Set(result.map(item => item.customfields.session))];
         const uniqueUniversities = [...new Set(result.map(item => item.customfields.university_name))];
         const uniquePaymentMode = [...new Set(result.map(item => item.customfields.payment_mode))];
-        const uniqueUserNames = [...new Set(result.map(item => item.userId?.fullname))];
+
+        const uniqueUserNames = result.reduce((acc, item) => {
+          const existingItem = acc.find(u => u._id === item.userId?._id);
+          if (!existingItem) {
+            acc.push({ fullname: item.userId?.fullname, _id: item.userId?._id });
+          }
+          return acc;
+        }, []);
 
         setStatuses(uniqueStatuses);
         setInstitutes(uniqueInstitutes);
@@ -251,35 +257,7 @@ export default function DataTable({ config, extra = [] }) {
     };
 
     fetchData();
-  }, [isSuccess]);
-
-  const handlePrevDateRangeChange = (dates) => {
-    if (dates && dates.length === 2) {
-      setPrevStartDate(dates[0]);
-      setPrevEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
-    } else {
-      setPrevStartDate(null);
-      setPrevEndDate(null); // Clear dates if not a valid range
-    }
-  };
-
-  const resetValues = () => {
-    setSelectedInstitute(null);
-    setSelectedInstallment(null);
-    setSelectedUniversity(null);
-    setSelectedSession(null);
-    setSelectedStatus(null);
-    setSelectedUserId(null);
-    setSearchQuery('');
-    setStartDate(null);
-    setSelectedPaymentMode(null)
-    setEndDate(null);
-    setSelectedPaymentstatus(null)
-    setLmsFilter(null)
-    setPrevStartDate(null);
-    setPrevEndDate(null);
-  };
-
+  }, []);
 
   const items = isAdmin
     ? [
@@ -313,7 +291,7 @@ export default function DataTable({ config, extra = [] }) {
         icon: <IoDocumentAttachOutline />,
       },
       {
-        label: 'LMS',
+        label: 'Notifications',
         key: 'lms',
         icon: <BsSend />,
       },
@@ -407,37 +385,77 @@ export default function DataTable({ config, extra = [] }) {
 
 
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
-  const { items: dataSource } = listResult;
+  const { pagination, items: dataSource } = listResult;
 
-  const handelDataTableLoad = useCallback(
-    async (newSearchQuery = '') => {
-      const options = {
-        filter: {
-          q: newSearchQuery,
-          institute: selectedInstitute,
-          paymentMode: selectedPaymentMode,
-          university: selectedUniversity,
-          session: selectedSession,
-          status: selectedStatus,
-          userId: selectedUserId,
-          startDate,
-          endDate,
-        },
-      };
+  const handelDataTableLoad = useCallback((pagination) => {
+    const options = { page: pagination.current || 1, items: pagination.pageSize || 10 };
+    dispatch(crud.list({
+      entity, options
+    }));
+  }, []);
 
-      const { success, result } = await dispatch(crud.list({ entity, options }));
-      if (success) {
-        const filteredData = filterDataSource(result);
+
+  const filterTable = (e) => {
+    const value = e.target.value;
+    const options = { q: value, fields: searchConfig?.searchFields || '' };
+    dispatch(crud.list({ entity, options }));
+  };
+
+
+  const filterData = (key, selectedValue) => {
+    // Update the state with the selected filter
+    const updatedFilterValues = {
+      ...filterValues,
+      [key]: selectedValue,
+    };
+
+    // Set the filter values immediately to reflect the UI change
+    setFilterValues(updatedFilterValues);
+
+    // Prepare options with only non-null and non-undefined filter values
+    const options = {};
+    Object.keys(updatedFilterValues).forEach(filterKey => {
+      if (updatedFilterValues[filterKey] !== null && updatedFilterValues[filterKey] !== undefined) {
+        options[filterKey] = updatedFilterValues[filterKey];
       }
-    },
-    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId, selectedSession, startDate, endDate, selectedPaymentMode]
-  );
+    });
+
+    // Include startDate and endDate in options if they are set
+    if (startDate && endDate) {
+      options.startDate = startDate.format('YYYY-MM-DD');
+      options.endDate = endDate.format('YYYY-MM-DD');
+    }
+
+    // Handle special case for paymentStatus filter
+    if (key === 'paymentStatus') {
+      options.paymentStatus = selectedValue; // Update paymentStatus filter
+    }
+    // Dispatch Redux action to fetch data with updated filters
+    dispatch(crud.list({ entity, options }));
+  };
 
 
-  const handleSearch = debounce((value) => {
-    setSearchQuery(value);
-    handelDataTableLoad({}, value);
-  }, 500);
+  // Handle clearing filters
+  const clearFilters = () => {
+    setFilterValues({
+      institute_name: null,
+      installment_type: null,
+      university_name: null,
+      session: null,
+      status: null,
+      paymentStatus: null,
+      payment_mode: null,
+      userId: null,
+      welcomeMail: null,
+      lmsStatus: null,
+      welcomeEnrolled: null,
+      whatsappMessageStatus: null,
+      whatsappEnrolled: null
+    });
+    setStartDate(null);
+    setEndDate(null);
+    dispatch(crud.list({ entity }));
+  };
 
   const dispatcher = () => {
     dispatch(crud.list({ entity }));
@@ -451,120 +469,135 @@ export default function DataTable({ config, extra = [] }) {
     };
   }, [entity]);
 
-  const { tableColumns } = useResponsiveTable(dataTableColumns, items);
 
-  const filterDataSource = (data) => {
-    return data.filter(item => {
-      const customfields = item.customfields || {};
-      const instituteMatch = !selectedInstitute || customfields.institute_name === selectedInstitute;
-      const installmentMatch = !selectedInstallment || customfields.installment_type === selectedInstallment;
-      const universityMatch = !selectedUniversity || customfields.university_name === selectedUniversity;
-      const paymentmodeMatch = !selectedPaymentMode || customfields.payment_mode === selectedPaymentMode;
-      const sessionMatch = !selectedSession || customfields.session === selectedSession;
-      const statusMatch = !selectedStatus || customfields.status === selectedStatus;
-      const userMatch = !selectedUserId || item.userId?.fullname === selectedUserId;
+  const handleCheckboxChange = (value) => {
+    filterData('welcomeMail', value);
+  };
 
-      const createdDate = new Date(item.created);
-      const startDateMatch = !startDate || createdDate >= startDate;
-      const endDateMatch = !endDate || createdDate <= endDate;
+  const handleCheckboxLMS = (value) => {
+    filterData('lmsStatus', value);
+  };
 
-      const phoneAsString = item.contact?.phone?.toString();
-      const emailLowerCase = item.contact?.email?.toLowerCase();
+  const handlewhatsappMessageStatus = (value) => {
+    filterData('whatsappMessageStatus', value);
+  };
 
-      const searchMatch = !searchQuery || (
-        item.lead_id.includes(searchQuery) ||
-        (emailLowerCase && emailLowerCase.includes(searchQuery.toLowerCase())) ||
-        (typeof phoneAsString === 'string' && phoneAsString.includes(searchQuery)) ||
-        item.full_name.includes(searchQuery)
-      );
+  const handleMailEnrolled = (value) => {
+    filterData('welcomeEnrolled', value);
+  };
 
-      // Check if paymentStatus matches
-      let paymentStatusMatch = true;
-      if (Paymentstatus === 'payment received') {
-        paymentStatusMatch = customfields.paymentStatus === 'payment received';
-      } else if (Paymentstatus === 'payment rejected') {
-        paymentStatusMatch = customfields.paymentStatus === 'payment rejected';
-      } else if (Paymentstatus === 'payment approved') {
-        paymentStatusMatch = customfields.paymentStatus === 'payment approved';
-      }
-
-      // If there is a specific condition for lmsFilter
-      let lmsMatch = true; // Default is true (no filtering by "Yes" or "No")
-      if (lmsFilter) {
-        if (lmsFilter === 'yes') {
-          lmsMatch = customfields.lmsStatus === 'yes'; // Change `someProperty` to the relevant property
-        } else if (lmsFilter === 'no') {
-          lmsMatch = customfields.lmsStatus === 'no'; // Change `someProperty` to the relevant property
-        }
-      }
-
-      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch && lmsMatch && paymentmodeMatch && installmentMatch;
-    });
+  const handleWhatsappEnrolled = (value) => {
+    filterData('whatsappEnrolled', value);
   };
 
 
   const menu = (
-    <Menu onClick={({ key }) => handleOptionSelect(key)}>
-      <Menu.Item
-        key="yes"
-        className={`${lmsFilter === 'yes' ? 'bg-blue-100 text-blue-600' : ''}`}
-      >
-        Yes
+    <Menu className="radio-menu">
+      <Menu.Item key="welcomeMail">
+        <span className="radio-label">Welcome Mail</span>
+        <Radio.Group
+          onChange={(e) => handleCheckboxChange(e.target.value)}
+          value={filterValues.welcomeMail}
+          className="radio-group"
+        >
+          <Radio.Button value={null}>All</Radio.Button>
+          <Radio.Button value={'Yes'}>Yes</Radio.Button>
+          <Radio.Button value={'No'}>No</Radio.Button>
+        </Radio.Group>
       </Menu.Item>
-      <Menu.Item
-        key="no"
-        className={`${lmsFilter === 'no' ? 'bg-red-100 text-red-600' : ''}`}
-      >
-        No
+      <Menu.Item key="whatsappMessageStatus">
+        <span className="radio-label">Welcome Whatsapp</span>
+        <Radio.Group
+          onChange={(e) => handlewhatsappMessageStatus(e.target.value)}
+          value={filterValues.whatsappMessageStatus}
+          className="radio-group"
+        >
+          <Radio.Button value={null}>All</Radio.Button>
+          <Radio.Button value={'success'}>Yes</Radio.Button>
+          <Radio.Button value={'failed'}>No</Radio.Button>
+        </Radio.Group>
+      </Menu.Item>
+      <Menu.Item key="welcomeEnrolled">
+        <span className="radio-label">Enrolled Mailed</span>
+        <Radio.Group
+          onChange={(e) => handleMailEnrolled(e.target.value)}
+          value={filterValues.welcomeEnrolled}
+          className="radio-group"
+        >
+          <Radio.Button value={null}>All</Radio.Button>
+          <Radio.Button value={'success'}>Yes</Radio.Button>
+          <Radio.Button value={'failed'}>No</Radio.Button>
+        </Radio.Group>
+      </Menu.Item>
+      <Menu.Item key="whatsappEnrolled">
+        <span className="radio-label">Enrolled Whatsapp</span>
+        <Radio.Group
+          onChange={(e) => handleWhatsappEnrolled(e.target.value)}
+          value={filterValues.whatsappEnrolled}
+          className="radio-group"
+        >
+          <Radio.Button value={null}>All</Radio.Button>
+          <Radio.Button value={'success'}>Yes</Radio.Button>
+          <Radio.Button value={'failed'}>No</Radio.Button>
+        </Radio.Group>
+      </Menu.Item>
+      <Menu.Item key="lmsStatus">
+        <span className="radio-label">LMS Status</span>
+        <Radio.Group
+          onChange={(e) => handleCheckboxLMS(e.target.value)}
+          value={filterValues.lmsStatus}
+          className="radio-group"
+        >
+          <Radio.Button value={null}>All</Radio.Button>
+          <Radio.Button value={'yes'}>Yes</Radio.Button>
+          <Radio.Button value={'no'}>No</Radio.Button>
+        </Radio.Group>
       </Menu.Item>
     </Menu>
   );
 
+
+
+
   const renderTable = () => {
-    const filteredData = filterDataSource(dataSource);
     return (
       <>
         <div className='mt-12'>
           <div className='flex justify-between items-center mb-3'>
-            {entity === 'lead' && (
-              <div className='flex items-center gap-2'>
-                <div className="flex justify-center items-center text-red-500">
-                  <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {filteredData.length}</span>
-                </div>
-                <Search
-                  placeholder="Search by email"
-                  onSearch={handleSearch}
-                  onChange={(e) => handleSearch(e.target.value)}
-                  className='w-full'
-                />
+            <div className='flex items-center gap-2'>
+              <div className="flex justify-center items-center text-red-500">
+                <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {pagination.total}</span>
               </div>
-            )}
-            {entity === 'admin' && (
-              <div className='flex items-center gap-2'>
-                <div className="flex justify-center items-center text-red-500">
-                  <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {filteredData.length}</span>
-                </div>
-              </div>
-            )}
+              <Input
+                key={`searchFilterDataTable}`}
+                onChange={filterTable}
+                placeholder={translate('search')}
+                allowClear
+              />
+            </div>
             <div className='space-x-2 flex items-center'>
-              <AddNewItem key="addNewItem" config={config} />
-              <div className='font-thin'>
-                <LiaFileDownloadSolid title='Export excel' onClick={handleExportToExcel} className='text-3xl text-blue-500 hover:text-blue-700 cursor-pointer' />
-              </div>
               <Dropdown overlay={menu} trigger={['click']}>
-                <div className='flex items-center gap-1.5 text-sm uppercase rounded-full border border-gray-400 bg-gray-50 px-1 cursor-pointer'>
+                <div className='flex items-center gap-1.5 text-sm uppercase rounded-full border border-gray-400 bg-gray-50 px-1 h-6 cursor-pointer'>
                   <span><IoFilterOutline /></span>
-                  <span>lms</span>
+                  <span>Filters</span>
                 </div>
               </Dropdown>
+              <Button title='Export excel' onClick={handleExportToExcel} className='text-green-800 bg-green-300 hover:text-green-700 hover:bg-green-100 border-none hover:border-none' icon={<PiMicrosoftExcelLogo />}> Excel</Button>
+              <Button title='Reset All Filters' onClick={clearFilters} className='text-red-900 border-none hover:text-red-800 bg-red-400 hover:bg-red-200' icon={<MdOutlineLockReset />}>
+                {translate('Reset')}
+              </Button>
+              <Button className='text-blue-700 bg-blue-300 hover:text-blue-800 hover:bg-blue-100' onClick={handelDataTableLoad} key={`${uniqueId()}`} icon={<FiRefreshCw />}>
+                {translate('Refresh')}
+              </Button>
+              <AddNewItem key="addNewItem" config={config} />
             </div>
           </div>
           <Table
-            columns={tableColumns}
+            columns={dataTableColumns}
             rowKey={(item) => item._id}
-            dataSource={filteredData}
+            dataSource={dataSource}
+            pagination={pagination}
             loading={listIsLoading}
-            pagination={true}
             onChange={handelDataTableLoad}
           />
         </div>
@@ -572,174 +605,104 @@ export default function DataTable({ config, extra = [] }) {
     );
   };
 
-  const handlePaymentStatus = (status) => {
-    setSelectedPaymentstatus(status);
+  const filterKeys = {
+    instituteName: "Select Institute",
+    universityName: "Select University",
+    installMent: "Select Installment",
+    session: "Select Session",
+    status: "Select Status",
+    paymentMode: "Select Payment Mode",
+    counsellor: "Select User",
   };
 
   const renderFilters = () => {
-    const filtered = filterDataSource(dataSource);
-    const paymentReceivedCount = filtered.filter(item => item.customfields?.paymentStatus === 'payment received').length;
-    const paymentApprovedCount = filtered.filter(item => item.customfields?.paymentStatus === 'payment approved').length;
-    const paymentRejectedCount = filtered.filter(item => item.customfields?.paymentStatus === 'payment rejected').length;
-
-    if (entity === 'lead') {
-      return (
-        <div>
-          <div className='flex items-center gap-3 flex-wrap'>
-            <div>
-              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-                placeholder="Select institute"
-                className='w-48 h-7 capitalize'
-                value={selectedInstitute}
-                onChange={(value) => setSelectedInstitute(value)}
+    return (
+      <div>
+        <div className='grid grid-cols-6 gap-2'>
+          {Object.keys(filterKeys).map((key) => (
+            <div key={key}>
+              <Select
+              allowClear
+              aria-label
+                className='w-48 h-8'
+                onChange={(value) => filterData(key, value)}
+                placeholder={filterKeys[key]}
               >
-                {institutes.map(institute => (
-                  <Select.Option key={institute}>{institute}</Select.Option>
-                ))}
-              </Select>
-            </div>
-            <div>
-              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-                placeholder="Select university"
-                className='w-48 h-7 capitalize'
-                value={selectedUniversity}
-                onChange={(value) => setSelectedUniversity(value)}
-              >
-                {universities.map(university => (
-                  <Select.Option key={university}>{university}</Select.Option>
-                ))}
-              </Select>
-            </div>
-            <div>
-              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-                placeholder="Select status"
-                className='w-48 h-7 capitalize'
-                value={selectedStatus}
-                onChange={(value) => setSelectedStatus(value)}
-              >
-                {statuses.map(status => (
-                  <Select.Option key={status}>{status}</Select.Option>
-                ))}
-              </Select>
-            </div>
-            <div>
-              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-                placeholder="Select user full name"
-                className='w-48 h-7 capitalize'
-                value={selectedUserId}
-                onChange={(value) => setSelectedUserId(value)}
-              >
-                {userNames.map((userName) => (
-                  <Select.Option className="capitalize font-thin font-mono" key={userName}>
-                    {userName}
+                {getFilterOptions(key).map((option) => (
+                  <Select.Option key={option.value} value={option.value}>
+                    {option.label}
                   </Select.Option>
                 ))}
               </Select>
             </div>
-            <div>
-              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-                placeholder="Select session"
-                className='w-48 h-7 capitalize'
-                value={selectedSession}
-                onChange={(value) => setSelectedSession(value)}
-              >
-                {session.map((session) => (
-                  <Select.Option className="capitalize font-thin font-mono" key={session}>
-                    {session}
-                  </Select.Option>
-                ))}
-              </Select>
-            </div>
-            <div>
-              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-                placeholder="Select payment mode"
-                className='w-48 h-7 capitalize'
-                value={selectedPaymentMode}
-                onChange={(value) => setSelectedPaymentMode(value)}
-              >
-                {paymentMode.map((paymentmode) => (
-                  <Select.Option className="capitalize font-thin font-mono" key={paymentmode}>
-                    {paymentmode}
-                  </Select.Option>
-                ))}
-              </Select>
-            </div>
-            <div>
-              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-                placeholder="Select installment type"
-                className='w-48 h-7 capitalize'
-                value={selectedInstallment}
-                onChange={(value) => setSelectedInstallment(value)}
-              >
-                {installment.map(install => (
-                  <Select.Option key={install}>{install}</Select.Option>
-                ))}
-              </Select>
-            </div>
-            <div>
-              <RangePicker
-                className='w-48 h-7 capitalize rounded-none'
-                onChange={handleDateRangeChange}
-                style={{ width: '100%' }}
-                placeholder={['Start Date', 'End Date']}
-              />
-            </div>
-            <div>
-              {/* Button to filter Payment Received */}
-              <Button className='w-48 h-7 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700 border-cyan-500 hover:border-cyan-500 rounded-none' onClick={() => handlePaymentStatus('payment received')}>
-                <span className="font-thin text-sm -ml-2">Received</span>
-                <span className="font-thin text-sm ml-1">({paymentReceivedCount})</span>
-              </Button>
-            </div>
-            <div>
-              {/* Button to filter Payment Approved */}
-              <Button className='w-48 h-7 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 hover:border-green-500 border-green-600 rounded-none' onClick={() => handlePaymentStatus('payment approved')}>
-                <span className="font-thin text-sm -ml-2">Approved</span>
-                <span className="font-thin text-sm ml-1">({paymentApprovedCount})</span>
-              </Button>
-            </div>
-            <div>
-              {/* Button to filter Payment Rejected */}
-              <Button className='w-48 h-7 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 hover:border-red-500 border-red-600 rounded-none' onClick={() => handlePaymentStatus('payment rejected')}>
-                <span className="font-thin text-sm -ml-2">Rejected</span>
-                <span className="font-thin text-sm ml-1">({paymentRejectedCount})</span>
-              </Button>
-            </div>
-
+          ))}
+          <div>
+            <RangePicker className='w-48'
+              onChange={handleDateRangeChange}
+              format="YYYY-MM-DD"
+              placeholder={['Start Date', 'End Date']}
+            />
           </div>
-          <div className='relative float-right -mt-8 mr-2'>
-            <Button title='Reset All Filters' onClick={resetValues} className='text-red-500 hover:text-red-600 bg-white rounded-none h-7'>
-              <BiReset />
-            </Button>
-          </div>
+          <Button
+            className={`w-48 h-7 capitalize text-center text-sm font-thin ${filterValues.paymentStatus === 'payment approved' ? 'bg-green-800 text-white hover:text-white hover:bg-green-900' : 'bg-green-100 text-green-700'
+              } hover:bg-green-100 hover:text-green-700 border-green-600 rounded-none`}
+            onClick={() => filterData('paymentStatus', 'payment approved')}
+          >
+            <span className="font-thin text-sm -ml-2">Approved</span>
+            <span className="font-thin text-sm ml-1">({pagination.countApproved})</span>
+          </Button>
+
+          <Button
+            className={`w-48 h-7 capitalize text-center text-sm font-thin ${filterValues.paymentStatus === 'payment received' ? 'bg-cyan-800 text-white hover:text-white hover:bg-cyan-900' : 'bg-cyan-100 text-cyan-700'
+              } hover:bg-cyan-100 hover:text-cyan-700 border-cyan-500 rounded-none`}
+            onClick={() => filterData('paymentStatus', 'payment received')}
+          >
+            <span className="font-thin text-sm -ml-2">Received</span>
+            <span className="font-thin text-sm ml-1">({pagination.countReceived})</span>
+          </Button>
+
+          <Button
+            className={`w-48 h-7 capitalize text-center text-sm font-thin ${filterValues.paymentStatus === 'payment rejected' ? 'bg-red-800 text-white hover:text-white hover:bg-red-900' : 'bg-red-100 text-red-700'
+              } hover:bg-red-100 hover:text-red-700 border-red-600 rounded-none`}
+            onClick={() => filterData('paymentStatus', 'payment rejected')}
+          >
+            <span className="font-thin text-sm -ml-2">Rejected</span>
+            <span className="font-thin text-sm ml-1">({pagination.countRejected})</span>
+          </Button>
+
+
         </div>
-      );
-    }
+      </div>
+    );
+  };
 
-    return null;
+  const getFilterOptions = (key) => {
+    switch (key) {
+      case 'instituteName':
+        return institutes.map(name => ({ label: name, value: name }));
+      case 'universityName':
+        return universities.map(name => ({ label: name, value: name }));
+      case 'installMent':
+        return installment.map(type => ({ label: type, value: type }));
+      case 'session':
+        return session.map(session => ({ label: session, value: session }));
+      case 'status':
+        return statuses.map(status => ({ label: status, value: status }));
+      case 'paymentMode':
+        return paymentMode.map(mode => ({ label: mode, value: mode }));
+      case 'counsellor':
+        return userNames.map(user => ({ label: user.fullname, value: user._id }));
+      default:
+        return [];
+    }
   };
 
   // Add useEffect to handle automatic table reload
   useEffect(() => {
     if (isSuccess) {
-      handelDataTableLoad({}, searchQuery); // Call handelDataTableLoad function with the current searchQuery
+      handelDataTableLoad({});
     }
-  }, [isSuccess, searchQuery]);
-
+  }, [isSuccess]);
 
   return (
     <>
@@ -808,7 +771,7 @@ export default function DataTable({ config, extra = [] }) {
         onClose={() => setShowStudentDetailsDrawer(false)} // Close action
         width={1000} // Adjust as needed
       >
-        {/* Display the component only if selectedStudent is set */}
+
         {selectedStudent && (
           <StudentDetailsModal
             visible={showStudentDetailsDrawer}
@@ -825,7 +788,7 @@ export default function DataTable({ config, extra = [] }) {
       <Drawer
         title={
           <div>
-            <div className='relative float-right font-thin text-lg'>LMS Status</div>
+            <div className='relative float-right font-thin text-lg'>Notifications</div>
           </div>
         }
         open={showLMSDrawer} // Controlled by state

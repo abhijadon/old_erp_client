@@ -82,7 +82,7 @@ function Sidebar({ menuOptions }) {
           break;
         case 'Users':
           icon = <FaUsersRays className="text-[18px]" />;
-          path = '/permissions';
+          path = '/users';
           break;
         case 'Permission':
           icon = <CiUnread className="text-[18px]" />;

@@ -179,7 +179,8 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             formData.append('customfields[total_paid_amount]', values.customfields.total_paid_amount);
             formData.append('customfields[paid_amount]', values.customfields.paid_amount);
             formData.append('customfields[paymentStatus]', values.customfields.paymentStatus);
-
+            formData.append('welcome', values.welcome);
+            formData.append('whatsappWelcome', values.whatsappWelcome);
             formData.append(
                 'customfields[sendfeeReciept]',
                 values.customfields.sendfeeReciept === 'yes' ? 'Yes' : 'No'
@@ -380,16 +381,38 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             >
                 <Input disabled={isFieldDisabled('paid_amount')} />
             </Form.Item>
-            <Form.Item
-                label="Send Fee Receipt"
-                name={['customfields', 'sendfeeReciept']}
-                rules={[{ required: true, message: 'Please select an option' }]}
-            >
-                <Radio.Group disabled={isField('paid_amount')}>
-                    <Radio value="yes">Yes</Radio>
-                    <Radio value="no">No</Radio>
-                </Radio.Group>
-            </Form.Item>
+          <div className='flex items-center justify-between'>
+                <Form.Item
+                    label="Send Fee Receipt"
+                    name={['customfields', 'sendfeeReciept']}
+                    rules={[{ required: true, message: 'Please select an option' }]}
+                >
+                    <Radio.Group disabled={isField('paid_amount')}>
+                        <Radio value="yes">Yes</Radio>
+                        <Radio value="no">No</Radio>
+                    </Radio.Group>
+                </Form.Item>
+                <Form.Item
+                    label="Welcome Mail"
+                    name="welcome"
+                    rules={[{ required: true, message: 'Please select an option' }]}
+                >
+                    <Radio.Group disabled={isField('paid_amount')}>
+                        <Radio value="yes">Yes</Radio>
+                        <Radio value="no">No</Radio>
+                    </Radio.Group>
+                </Form.Item>
+                <Form.Item
+                    label="Welcome whatsapp"
+                    name="whatsappWelcome"
+                    rules={[{ required: true, message: 'Please select an option' }]}
+                >
+                    <Radio.Group disabled={isField('paid_amount')}>
+                        <Radio value="yes">Yes</Radio>
+                        <Radio value="no">No</Radio>
+                    </Radio.Group>
+                </Form.Item>
+          </div>
             <Form.Item
                 label={translate('paymentStatus')}
                 name={['customfields', 'paymentStatus']}

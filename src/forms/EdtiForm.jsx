@@ -290,21 +290,6 @@ export default function EditForm() {
                     </Form.Item>
 
                 )}
-
-                {status === 'Approved' && ( // Conditionally render if status is 'Enrolled'
-                    <Form.Item className='ml-10'
-                        label={translate('lms')}
-                        name={['customfields', 'lmsStatus']}
-                        rules={[
-                            { required: status === 'Approved', message: 'lms status required' },
-                        ]}
-                    >
-                        <Radio.Group>
-                            <Radio value="yes">Yes</Radio>
-                            <Radio value="no">No</Radio>
-                        </Radio.Group>
-                    </Form.Item>
-                )}
                 <Form.Item
                     label={translate('paymentStatus')}
                     name={['customfields', 'paymentStatus']}

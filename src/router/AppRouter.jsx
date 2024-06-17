@@ -23,7 +23,7 @@ import Admin from '@/pages/Admin';
 import Settings from '@/pages/Settings/Settings';
 import PaymentMode from '@/pages/PaymentMode';
 import Teams from '@/pages/Roles';
-import Permissions from '@/pages/Permissions';
+import Users from '@/pages/Users';
 import Permission from '@/pages/permission';
 import History from '@/pages/History';
 import Email from '@/pages/Email/index';
@@ -160,8 +160,8 @@ export default function AppRouter() {
       element: <Profile />,
     },
     {
-      path: '/permissions',
-      element: <Permissions />,
+      path: '/users',
+      element: <Users />,
     },
     {
       path: '/permission',

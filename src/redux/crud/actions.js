@@ -36,7 +36,7 @@ export const crud = {
       });
     },
  list:
-    ({ entity, options = {} }) =>
+    ({ entity, options = { page: 1, items: 10 } }) =>
     async (dispatch) => {
       dispatch({
         type: actionTypes.REQUEST_LOADING,
@@ -49,8 +49,15 @@ export const crud = {
       if (data.success === true) {
         const result = {
           items: data.result,
+          pagination: {
+            current: parseInt(data.pagination.page, 10),
+            pageSize: options?.items,
+            total: parseInt(data.pagination.count, 10),
+            countReceived: parseInt(data.countReceived, 10),
+            countRejected: parseInt(data.countRejected, 10),
+            countApproved: parseInt(data.countApproved, 10)
+          },
         };
-
         dispatch({
           type: actionTypes.REQUEST_SUCCESS,
           keyState: 'list',

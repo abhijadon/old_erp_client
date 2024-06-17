@@ -16,12 +16,6 @@ const Index = () => {
         request.list({ entity: 'university' })
     );
 
-    useEffect(() => {
-        if (universityList) {
-            console.log('University List:', universityList);
-        }
-    }, [universityList]);
-
     const handleAddNew = () => {
         setSelectedRecord(null);
         setVisible(true);

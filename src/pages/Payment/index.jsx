@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 import useLanguage from '@/locale/useLanguage';
 import PaymentDataTableModule from '@/modules/PaymentModule/PaymentDataTableModule';
+import moment from 'moment';
 
 export default function Payment() {
   const translate = useLanguage();
@@ -60,7 +61,6 @@ export default function Payment() {
         return dayjs(date).format('DD/MM/YYYY');
       },
     },
-
   ];
 
   const entity = 'payment';

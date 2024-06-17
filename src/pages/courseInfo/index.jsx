@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Button, Drawer, message, Card, Select, Input } from 'antd';
+import { Table, Button, Drawer, message, Card, Select, Input, Modal } from 'antd';
 import { request } from '@/request';
 import EditCourseInfo from '@/forms/EditCourseInfo';
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -7,7 +7,9 @@ import { AiOutlineMenuFold } from "react-icons/ai";
 import { BiReset } from 'react-icons/bi';
 import { TbEdit } from 'react-icons/tb';
 import Form from '@/forms/courseInform';
-
+import { FaFilePdf, FaRegEye } from "react-icons/fa";
+import BrochuresModal from '@/components/BrochuresModal';
+import Detailpage from '@/components/Detailspage';
 const Index = () => {
     const [visible, setVisible] = useState(false);
     const [selectedRecord, setSelectedRecord] = useState(null);
@@ -17,6 +19,9 @@ const Index = () => {
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState();
     const [uniqueFilters, setUniqueFilters] = useState({});
+    const [brochuresVisible, setBrochuresVisible] = useState(false);
+    const [showDrawer, setShowDrawer] = useState(false);
+    const [drawerData, setDrawerData] = useState(null);
     const buildQueryString = (pagination, filters) => {
         const { current, pageSize } = pagination;
         let query = `?page=${current}&items=${pageSize}`;
@@ -128,7 +133,13 @@ const Index = () => {
     const handleSearchChange = (e) => {
         setSearchQuery(e.target.value);
     };
-
+    const handleBrochuresClick = () => {
+        setBrochuresVisible(true);
+    };
+    const handleShow = (record) => {
+        setDrawerData(record); // Set the data to be imported into the drawer
+        setShowDrawer(true); // Show the drawer when "Show" button is clicked
+    };
     const columns = [
         {
             title: 'Mode',
@@ -201,18 +212,32 @@ const Index = () => {
             ),
         },
         {
+            title: 'Utm Link',
+            dataIndex: 'utm_link',
+            key: 'utm_link',
+            render: (text) => (
+                <a href={text} target="_blank" rel="noopener noreferrer">
+                    {text}
+                </a>
+            ),
+        },
+        {
             title: 'Actions',
             dataIndex: '',
             key: 'actions',
             fixed: 'right',
             render: (text, record) => (
-                <span className='flex items-center gap-4'>
-                    <TbEdit
-                        className='text-blue-500 text-base cursor-pointer'
+                <span className='flex items-center gap-2'>
+                    <FaRegEye title='Show'
+                        className='text-green-500 hover:text-green-700 text-base cursor-pointer'
+                        onClick={() => handleShow(record)} // Attach onClick event handler to handle "Show" button click
+                    />
+                    <TbEdit title='Edit'
+                        className='text-blue-500 hover:text-blue-800 text-base cursor-pointer'
                         onClick={() => handleEdit(record)}
                     />
-                    <RiDeleteBin6Line
-                        className='text-red-500 text-base cursor-pointer'
+                    <RiDeleteBin6Line title='Delete'
+                        className='text-red-500 hover:text-red-800 text-base cursor-pointer'
                         onClick={() => handleDelete(record)}
                     />
                 </span>
@@ -227,10 +252,15 @@ const Index = () => {
                 </Button>
             </div>
             <div className='flex items-center justify-between mb-10'>
-                <h2 className='text-lg font-thin'>Courses</h2>
-                <Button type="primary" onClick={handleAddNew} className='relative float-right mb-4 flex items-center gap-1'>
-                    <span><AiOutlineMenuFold className='font-light text-lg' /></span> <span>Add New</span>
-                </Button>
+                <h2 className='text-lg font-thin text-blue-400'>Courses & Fees</h2>
+                <div>
+                    <Button onClick={handleBrochuresClick} className='ml-2 relative float-right mb-4 flex items-center gap-1 text-[#006633] bg-green-200 border-green-300 hover:text-green-800 capitalize'>
+                        <span><FaFilePdf /></span> <span>Download brochures</span>
+                    </Button>
+                    <Button type="primary" onClick={handleAddNew} className='relative float-right mb-4 flex items-center gap-1'>
+                        <span><AiOutlineMenuFold className='font-light text-lg' /></span> <span>Add New</span>
+                    </Button>
+                </div>
             </div>
             <span className='text-red-500 font-thin text-start mb-2'>
                 Total: {pagination.total}
@@ -309,7 +339,7 @@ const Index = () => {
                 columns={columns}
                 loading={loading}
                 pagination={false}
-                
+
             />
             <Drawer
                 title={selectedRecord ? 'Edit Course & University' : 'Add Course & University'}
@@ -330,6 +360,45 @@ const Index = () => {
                         onClose={handleDrawerClose}
                         onFormSubmit={handleFormSubmit}
                     />
+                )}
+            </Drawer>
+            <Modal
+                title={
+                    <div className='uppercase border-b text-[#006633]'>
+                        Download brochures
+                    </div>
+                }
+                open={brochuresVisible}
+                onOk={() => setBrochuresVisible(false)}
+                onCancel={() => setBrochuresVisible(false)}
+                width={1000}
+                footer={null}
+            >
+                <BrochuresModal
+                    visible={brochuresVisible}
+                    onClose={() => setBrochuresVisible(false)}
+                    university={filters.university}
+                    course={filters.course}
+                    electives={filters.electives}
+                />
+            </Modal>
+            <Drawer
+                title={
+                    <div>
+                        <div className='uppercase text-blue-600 relative float-end text-sm'>
+                           University & Course Details
+                        </div>
+                    </div>
+                }
+                placement="left"
+                closable={true} // Allow closing the drawer
+                onClose={() => setShowDrawer(false)} // Close the drawer when the close button is clicked
+                visible={showDrawer} // Set the visibility of the drawer based on state variable
+                width={700}
+            >
+                {/* Display the imported data inside the drawer */}
+                {drawerData && (
+                    <Detailpage record={drawerData}/>
                 )}
             </Drawer>
         </Card>

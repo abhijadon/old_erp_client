@@ -50,6 +50,11 @@ export const erp = {
     if (data.success === true) {
       const result = {
         items: data.result,
+            pagination: {
+            current: parseInt(data.pagination.page, 10),
+            pageSize: options?.items,
+            total: parseInt(data.pagination.count, 10),
+          },
            };
       dispatch({
         type: actionTypes.REQUEST_SUCCESS,

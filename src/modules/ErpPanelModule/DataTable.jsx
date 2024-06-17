@@ -49,7 +49,7 @@ export default function DataTable({ config, extra = [] }) {
   const translate = useLanguage();
   let { entity, dataTableColumns, create = true } = config;
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
-  const { items: dataSource } = listResult;
+  const { items: dataSource, pagination } = listResult;
   const { erpContextAction } = useErpContext();
   const { modal } = erpContextAction;
   const [selectedInstitute, setSelectedInstitute] = useState(null);
@@ -82,30 +82,12 @@ export default function DataTable({ config, extra = [] }) {
     setRole(userData.current.role);
   }, []);
 
-
-
-  const handelDataTableLoad = useCallback(
-    async (newSearchQuery = '') => {
-      const options = {
-        filter: {
-          q: newSearchQuery,
-          institute: selectedInstitute,
-          university: selectedUniversity,
-          status: selectedStatus,
-          userId: selectedUserId,
-          startDate: startDate,
-          endDate: endDate,
-        },
-      };
-
-      const { success, result } = await dispatch(erp.list({ entity, options }));
-      if (success) {
-        const filteredData = filterDataSource(result);
-        // Update filtered count
-      }
-    },
-    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId, startDate, endDate]
-  );
+  const handelDataTableLoad = useCallback((pagination) => {
+    const options = { page: pagination.current || 1, items: pagination.pageSize || 10 };
+    dispatch(erp.list({
+      entity, options
+    }));
+  }, []);
 
   const handleExportToExcel = () => {
     if (dataSource.length === 0) {
@@ -417,7 +399,7 @@ export default function DataTable({ config, extra = [] }) {
                   {entity === 'payment' && (
                     <div className='flex items-center gap-2'>
                       <div className="flex justify-center items-center text-red-500">
-                        <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {filteredData.length}</span>
+                        <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {pagination.total}</span>
                       </div>
                       <Search
                         placeholder="Search by email"
@@ -445,8 +427,8 @@ export default function DataTable({ config, extra = [] }) {
             columns={tableColumns}
             rowKey={(item) => item._id}
             loading={listIsLoading}
-            dataSource={filterDataSource(dataSource)}
-            pagination={true}
+            dataSource={dataSource}
+            pagination={pagination}
             onChange={handelDataTableLoad}
           />
         </Card>

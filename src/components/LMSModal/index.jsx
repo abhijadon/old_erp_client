@@ -2,8 +2,15 @@ import { Button, message, Spin, Table, Modal } from 'antd';
 import axios from 'axios';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
+import { RiShieldUserFill } from "react-icons/ri";
+import { LuSend } from "react-icons/lu";
+import { CiViewTable } from "react-icons/ci";
+import { SiWelcometothejungle } from "react-icons/si";
+import { FaRenren } from "react-icons/fa";
+
 
 export default function Index({ entity, id, recordDetails, onClose }) {
+    console.log(recordDetails);
     const [data, setData] = useState(null); // State to hold fetched data
     const [isLoading, setIsLoading] = useState(true); // Loading state
     const [loading, setLoading] = useState(false); // Loading state for form
@@ -82,24 +89,17 @@ export default function Index({ entity, id, recordDetails, onClose }) {
     // Extract the latest email status
     const latestEmailStatus = data?.result?.emailStatuses?.[data.result.emailStatuses.length - 1] || {};
 
-    // Determine the style for email status
-    const emailStatusStyle = {
-        color: latestEmailStatus.status === 'success' ? 'green' : latestEmailStatus.status === 'failed' ? 'red' : 'black'
-    };
+    console.log(data?.result?.data)
 
     return (
         <>
             <Modal
-                title="LMS Data"
+                title="LMS Details"
                 open={isModalVisible}
                 onOk={handleOk}
-                width={800}
+                width={500}
                 onCancel={handleCancel}
-                footer={[
-                    <Button key="back" onClick={handleCancel}>
-                        Close
-                    </Button>,
-                ]}
+                footer={null}
             >
                 <Spin spinning={isLoading} tip="Loading LMS...">
                     {data && (
@@ -112,27 +112,51 @@ export default function Index({ entity, id, recordDetails, onClose }) {
                     )}
                 </Spin>
             </Modal>
-            <div>
-                <div className="flex justify-items-start items-center gap-10">
-                    <ul className="list-disc flex items-center gap-10 capitalize mb-5">
-                        <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
-                            <span className="text-base font-thin text-gray-700">Email status</span>
-                            <span className="text-base font-thin" style={emailStatusStyle}>{latestEmailStatus.status || 'N/A'}</span>
+            <div className='grid grid-cols-3 gap-20'>
+                <div>
+                    <h3 className='flex items-center justify-start border-b'><span className='text-blue-600 mr-1'><RiShieldUserFill /></span><span className='text-blue-500'>LMS Status</span></h3>
+                    <ul className='mt-3 space-y-2'>
+                        <li className='border-b flex items-center justify-around'>
+                            <span> Email :</span> <span className='text-'> {latestEmailStatus.status || 'N/A'} </span>
                         </li>
-                        <li className="grid grid-cols-2 gap-20 border-b p-1 ml-64 relative float-end">
-                            <span className="text-base font-thin text-gray-700">Email Created At</span>
-                            <span className="text-sm font-thin text-gray-500">{latestEmailStatus.createdAt ? moment(latestEmailStatus.createdAt).format('DD-MM-YYYY HH:mm') : 'N/A'}</span>
+                        <li className='border-b flex items-center justify-around'>
+                            <span>Created :</span> <span className='text-'> {latestEmailStatus.createdAt ? moment(latestEmailStatus.createdAt).format('DD-MM-YYYY HH:mm') : 'N/A'}</span>
+                        </li>
+                    </ul>
+                    <div className='flex items-center justify-start gap-2'>
+                    <Button onClick={showModal} className='bg-green-300 w-48 hover:bg-green-400 text-green-800 hover:text-green-800 border-none hover:border-none font-thin rounded-none mt-4 h-6 flex items-center gap-1'>
+                            <span><CiViewTable /></span> <span>View Table</span> 
+                    </Button>
+                        <Button onClick={handleSubmit} className='bg-blue-200 w-48 h-6 hover:bg-blue-400 text-blue-800 hover:text-blue-800 font-thin rounded-none relative float-right mt-4 mr-6 flex items-center gap-1'>
+                            <span><LuSend /></span> <span>Send LMS</span> 
+                    </Button>
+                    </div>
+                </div>
+                <div>
+                    <h3 className='flex items-center justify-start border-b'><span className='text-green-600 mr-1'>  < SiWelcometothejungle /> </span><span className='text-green-500'>Welcome Status</span></h3>
+                    <ul className='mt-3 space-y-2 text-justify'>
+                        <li className='border-b flex items-center justify-around'>
+                            <span> Email :</span> <span className='text-'> {recordDetails?.welcomeMail || 'N/A'} </span>
+                        </li>
+                        <li className='border-b flex items-center justify-around'>
+                            <span> Whatsapp :</span> <span className='text-'> {recordDetails?.whatsappMessageStatus || 'N/A'} </span>
                         </li>
                     </ul>
                 </div>
-            </div>
-            <div className='flex items-center justify-between'>
-                <Button onClick={showModal} className='bg-blue-300 w-48 hover:bg-blue-400 text-black hover:text-black font-thin rounded-none h-8 mt-4'>
-                    View Table
-                </Button>
-                <Button onClick={handleSubmit} className='bg-blue-300 w-48 hover:bg-blue-400 text-black hover:text-black font-thin rounded-none h-8 relative float-right mt-4 mr-6'>
-                    Send LMS
-                </Button>
+                <div>
+                    <h3 className='flex items-center justify-start border-b'><span className='text-orange-600 mr-1'>  < FaRenren /> </span><span className='text-orange-500'>Enrollment Status</span></h3>
+                    <ul className='mt-3 space-y-2 text-justify'>
+                        <li className='border-b flex items-center justify-around'>
+                            <span> Enrollment :</span> <span className='text-'> {recordDetails?.customfields?.enrollment || 'N/A'} </span>
+                        </li>
+                        <li className='border-b flex items-center justify-around'>
+                            <span> Email :</span> <span className='text-'> {recordDetails?.welcomeEnrolled || 'N/A'} </span>
+                        </li>
+                        <li className='border-b flex items-center justify-around'>
+                            <span> Whatsapp :</span> <span className='text-'> {recordDetails?.whatsappEnrolled || 'N/A'} </span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </>
     );

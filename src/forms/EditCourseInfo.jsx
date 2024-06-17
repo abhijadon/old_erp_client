@@ -101,6 +101,13 @@ const EditCourseInfo = ({ onClose, onFormSubmit, selectedRecord }) => {
             >
                 <Input />
             </Form.Item>
+            <Form.Item
+                label="Utm Link"
+                name="utm_link"
+                rules={[{ required: true, message: 'Please Enter a utm_link' }]}
+            >
+                <Input />
+            </Form.Item>
             <Form.Item>
                 <Button type="primary" htmlType="submit">
                     Submit

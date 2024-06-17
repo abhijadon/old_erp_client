@@ -80,7 +80,7 @@ export default function Comment({ id }) {
                                         </span>
                                     </div>
 
-                                    <div className="text-gray-700 text-sm">
+                                    <div className="text-gray-700 text-xs">
                                         {moment(comment.timestamp).format('DD/MM/YYYY')}
                                         <br />
                                         <span className='ml-10 text-blue-400 text-xs'>
@@ -88,9 +88,20 @@ export default function Comment({ id }) {
                                         </span>
                                     </div>
                                 </div>
-                                <h2 className="text-black mt-5 text-start ml-5 capitalize">
+                                <div className='flex items-center justify-between mt-10'>
+                                <h2 className="text-black text-start ml-5 capitalize">
                                     {comment.commentText}
                                 </h2>
+                                    <div className="text-gray-700 text-sm">
+                                        <span className='text-gray-800 mr-1'>
+                                            Reminder date:
+                                        </span>
+                                        <span className='text-blue-600 font-thin text-base'>
+                                            {comment.followUpDate ? moment(comment.followUpDate).format('DD/MM/YYYY') : 'N/A'}
+                                        </span>
+                                    </div>
+
+                                </div>
                             </div>
                         ))
                     ) : (

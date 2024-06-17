@@ -13,6 +13,7 @@ const StudentDetailsModal = ({ student, id }) => {
     const [installmentData, setInstallmentData] = useState([]);
     const [dueAmount, setDueAmount] = useState(0);
     const [documentUrls, setDocumentUrls] = useState([]);
+    const [documentType, setDocumentType] = useState('');
     const [installmentModalVisible, setInstallmentModalVisible] = useState(false);
     const [documentModalVisible, setDocumentModalVisible] = useState(false);
     const [commentModalVisible, setCommentModalVisible] = useState(false);
@@ -40,6 +41,7 @@ const StudentDetailsModal = ({ student, id }) => {
 
         // Set the selected document URLs to display in the modal
         setDocumentUrls(documents);
+        setDocumentType(documentType);
 
         // Show the document modal
         setDocumentModalVisible(true);
@@ -528,7 +530,7 @@ const StudentDetailsModal = ({ student, id }) => {
                 footer={null}
                 width={1000}
             >
-                <DocumentPreview documentUrls={documentUrls} onDownload={onDownload} />
+                <DocumentPreview documentUrls={documentUrls} onDownload={onDownload} documentType={documentType} leadId={student.lead_id} />
             </Modal>
         </>
     );

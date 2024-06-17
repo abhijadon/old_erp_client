@@ -55,7 +55,6 @@ button,
   background-color: #1677ff !important;
 }
 
-
 .ant-picker-header button {
   color: #1677ff !important;
 }
@@ -135,11 +134,9 @@ button,
   /* Adjust the size as needed */
 }
 
-
 .ant-drawer-header {
-  background-color: #D8F7C9;
+  background-color: #d8f7c9;
 }
-
 
 .ant-drawer .ant-drawer-close {
   color: red !important;
@@ -150,4 +147,20 @@ button,
   color: red !important;
   font-size: 22px;
   background-color: transparent;
+}
+
+.radio-menu {
+  width: 200px;
+  text-align: center;
+}
+
+.radio-label {
+  display: inline-block;
+  width: 150px;
+  text-align: justify;
+}
+
+.radio-group {
+  display: inline-block;
+  vertical-align: middle;
 }

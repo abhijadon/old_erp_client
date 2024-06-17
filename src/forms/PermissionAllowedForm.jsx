@@ -51,7 +51,7 @@ const PermissionAllowed = ({ onClose, onFormSubmit }) => {
                 const response = await request.list({ entity: 'university' });
                 setUniversityList(response.result);
             } catch (error) {
-                console.error('Error fetching university list:', error);
+                console.error(error.response.data.message);
             } finally {
                 setIsLoading(false);
             }

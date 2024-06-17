@@ -14,7 +14,7 @@ export default function Lead() {
   const entity = 'lead';
   const searchConfig = {
     displayLabels: ['full_name'],
-    searchFields: ['full_name'],
+    searchFields: ['contact.email', 'contact.phone', 'full_name', 'lead_id', 'customfields.enrollment'],
     outputValue: '_id',
   };
 

@@ -543,7 +543,6 @@ const formData = [
             { value: 'JULY 22', label: 'JULY 22' },
             { value: 'JAN 23', label: 'JAN 23' },
             { value: 'JULY 23', label: 'JULY 23' },
-            { value: 'JAN 24', label: 'JAN 24' },
             { value: 'JULY 24', label: 'JULY 24' },
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
