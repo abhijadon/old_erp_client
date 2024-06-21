@@ -4,9 +4,6 @@ import { useRef, useState } from 'react';
 //q: this file is a hook
 
 export default function useResponsiveTable(dataTableColumns, items) {
-  // this hook returns two arays of columns
-  // one for mobile and one for desktop
-
   const [tableColumns, setTableColumns] = useState(dataTableColumns);
   const [expandedRowData, setExpandedRowData] = useState([]);
   const [headerWidth, setHeaderWidth] = useState(0);
@@ -17,7 +14,6 @@ export default function useResponsiveTable(dataTableColumns, items) {
     if (!header) return;
     checkTableWidth(header.clientWidth);
     const observer = new ResizeObserver(() => {
-      // 👉 Do something when the element is resized
       checkTableWidth(header.clientWidth);
     });
 

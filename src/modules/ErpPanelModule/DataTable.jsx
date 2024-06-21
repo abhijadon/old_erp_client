@@ -1,210 +1,118 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import moment from 'moment';
 import * as XLSX from 'xlsx';
 import {
   EyeOutlined,
-  EditOutlined,
   DeleteOutlined,
   FilePdfOutlined,
-  PlusOutlined,
   EllipsisOutlined,
 } from '@ant-design/icons';
-import { Dropdown, Table, Button, Input, Select, Card, Modal, DatePicker, Drawer } from 'antd';
+import {
+  Dropdown,
+  Table,
+  Button,
+  Input,
+  Select,
+  Card,
+  DatePicker,
+  Drawer,
+  Menu,
+  Radio,
+} from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import useLanguage from '@/locale/useLanguage';
 import { erp } from '@/redux/erp/actions';
 import { selectListItems } from '@/redux/erp/selectors';
 import { useErpContext } from '@/context/erp';
-import { generate as uniqueId } from 'shortid';
 import { useNavigate } from 'react-router-dom';
 import useResponsiveTable from '@/hooks/useResponsiveTable';
 import { DOWNLOAD_BASE_URL } from '@/config/serverApiConfig';
 import { request } from '@/request';
-import { BiReset } from 'react-icons/bi';
-import { FcBearish, FcBullish, FcSalesPerformance } from 'react-icons/fc';
-import { LiaFileDownloadSolid } from 'react-icons/lia';
+import { RiChatFollowUpLine } from 'react-icons/ri';
 import { GrHistory } from 'react-icons/gr';
 import HistoryModal from './HistoryModal';
-import CommentForm from '@/forms/comment'
-import { RiChatFollowUpLine } from "react-icons/ri";
-const { Search } = Input;
+import CommentForm from '@/forms/comment';
+import { LiaFileDownloadSolid } from 'react-icons/lia';
+import { IoFilterOutline } from 'react-icons/io5';
+import { PiMicrosoftTeamsLogo } from "react-icons/pi";
 const { RangePicker } = DatePicker;
 
-function AddNewItem({ config, hasCreate = true }) {
-  const navigate = useNavigate();
-  const { ADD_NEW_ENTITY, entity } = config;
-
-  const handleClick = () => {
-    navigate(`/${entity.toLowerCase()}/create`);
-  };
-
-  if (hasCreate)
-    return (
-      <Button onClick={handleClick} type="primary" icon={<PlusOutlined />}>
-        {ADD_NEW_ENTITY}
-      </Button>
-    );
-  else return null;
-}
 export default function DataTable({ config, extra = [] }) {
   const translate = useLanguage();
-  let { entity, dataTableColumns, create = true } = config;
+  let { entity, dataTableColumns, searchConfig } = config;
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
   const { items: dataSource, pagination } = listResult;
   const { erpContextAction } = useErpContext();
   const { modal } = erpContextAction;
-  const [selectedInstitute, setSelectedInstitute] = useState(null);
-  const [selectedPaymentMode, setSelectedPaymentMode] = useState(null);
-  const [selectedPaymentType, setSelectedPaymentType] = useState(null);
-  const [selectedUniversity, setSelectedUniversity] = useState(null);
-  const [selectedUserId, setSelectedUserId] = useState(null);
-  const [selectedStatus, setSelectedStatus] = useState(null);
   const [statuses, setStatuses] = useState([]);
   const [paymentMode, setPaymentMode] = useState([]);
   const [paymentType, setPaymentType] = useState([]);
   const [institutes, setInstitutes] = useState([]);
   const [universities, setUniversities] = useState([]);
   const [userNames, setUserNames] = useState([]);
-  const [paymentData, setPaymentData] = useState({ result: null });
-  const [searchQuery, setSearchQuery] = useState('');
-  const [historyData, setHistoryData] = useState(null); // State to hold history data
+  const [historyData, setHistoryData] = useState(null);
   const [showHistoryModal, setShowHistoryModal] = useState(false);
-  const [role, setRole] = useState('');
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
-  const [selectedFollowup, setSelectedFollowup] = useState(null);
   const [commentRecord, setCommentRecord] = useState(null);
   const [showCommentDrawer, setShowCommentDrawer] = useState(false);
-  const [followstartDate, setFollowStartDate] = useState(null);
-  const [followendDate, setFollowEndDate] = useState(null);
-  // Retrieve the role from localStorage
-  useEffect(() => {
-    const userData = JSON.parse(window.localStorage.getItem('auth'));
-    setRole(userData.current.role);
-  }, []);
-
-  const handelDataTableLoad = useCallback((pagination) => {
-    const options = { page: pagination.current || 1, items: pagination.pageSize || 10 };
-    dispatch(erp.list({
-      entity, options
-    }));
-  }, []);
-
-  const handleExportToExcel = () => {
-    if (dataSource.length === 0) {
-      return;
-    }
-    const fileName = 'data.xlsx';
-
-    const exportData = [
-      dataTableColumns.map(column => column.title),
-      ...dataSource.map(item => dataTableColumns.map(column => {
-        let value = item;
-        const dataIndex = column.dataIndex;
-        const keys = dataIndex ? (Array.isArray(dataIndex) ? dataIndex : dataIndex.split('.')) : [];
-        keys.forEach(key => {
-          value = value?.[key];
-        });
-        return value;
-      })),
-    ];
-
-    const ws = XLSX.utils.aoa_to_sheet(exportData);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Lead Data');
-
-    try {
-      XLSX.writeFile(wb, fileName);
-    } catch (error) {
-      console.error('Error exporting data to Excel:', error);
-    }
-  };
+  const [selectedInstitute, setSelectedInstitute] = useState(null);
+  const [selectedUniversity, setSelectedUniversity] = useState(null);
+  const [selectedStatus, setSelectedStatus] = useState(null);
+  const [selectedPaymentMode, setSelectedPaymentMode] = useState(null);
+  const [selectedPaymentType, setSelectedPaymentType] = useState(null);
+  const [selectedUserName, setSelectedUserName] = useState(null);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [followStartDate, setFollowStartDate] = useState(null);
+  const [followEndDate, setFollowEndDate] = useState(null);
+  const [selectedFollowup, setSelectedFollowup] = useState(null);
+  const [isFollowUpActive, setIsFollowUpActive] = useState(false);
+  const [isTeam, setIsTeam] = useState('false');
 
   const handleDateRangeChange = (dates) => {
     if (dates && dates.length === 2) {
       setStartDate(dates[0]);
-      setEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
+      setEndDate(dates[1].endOf('day')); // Set end date to the end of the day
     } else {
       setStartDate(null);
-      setEndDate(null); // Clear dates if not a valid range
+      setEndDate(null);
     }
   };
 
-  useEffect(() => {
-    handelDataTableLoad({}, searchQuery); // Call the function initially without filters
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const { result } = await request.summary({
-        entity: 'payment',
-        params: {
-          institute_name: selectedInstitute,
-          university_name: selectedUniversity,
-          status: selectedStatus,
-          payment_mode: selectedPaymentMode,
-          payment_type: selectedPaymentType,
-          startDate: startDate,
-          endDate: endDate,
-        },
-      });
-
-      // Update the payment data state
-      setPaymentData({ result });
-    } catch (error) {
-      // Handle errors
-      console.error('Error fetching data:', error);
+  const handleFollowupDateRangeChange = (dates) => {
+    if (dates && dates.length === 2) {
+      setFollowStartDate(dates[0]);
+      setFollowEndDate(dates[1].endOf('day')); // Set follow-up end date to the end of the day
+    } else {
+      setFollowStartDate(null);
+      setFollowEndDate(null);
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, [selectedUniversity, selectedInstitute, selectedStatus, selectedPaymentMode, selectedPaymentType, startDate, endDate]);
-
 
   useEffect(() => {
     const fetchData = async () => {
       const { result } = await request.filter({ entity: 'payment' });
       if (result) {
-        const uniquePaymentMode = [...new Set(result.map(item => item.payment_mode))];
-        const uniquePaymentType = [...new Set(result.map(item => item.payment_type))];
-        const uniqueStatuses = [...new Set(result.map(item => item.status))];
-        const uniqueInstitutes = [...new Set(result.map(item => item.institute_name))];
-        const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
-        const uniqueUserNames = [...new Set(result.map(item => item.userId?.fullname))];
+        const uniquePaymentMode = [...new Set(result.map((item) => item.payment_mode))];
+        const uniquePaymentType = [...new Set(result.map((item) => item.payment_type))];
+        const uniqueStatuses = [...new Set(result.map((item) => item.status))];
+        const uniqueInstitutes = [...new Set(result.map((item) => item.institute_name))];
+        const uniqueUniversities = [...new Set(result.map((item) => item.university_name))];
+        const uniqueUserNames = [
+          ...new Map(result.map((item) => [item.userId?._id, {
+            value: item.userId?._id,
+            label: item.userId?.fullname
+          }])).values()
+        ];
         setStatuses(uniqueStatuses);
         setPaymentType(uniquePaymentType);
         setInstitutes(uniqueInstitutes);
         setPaymentMode(uniquePaymentMode);
         setUniversities(uniqueUniversities);
-        setUserNames(uniqueUserNames); // New state for unique user names
+        setUserNames(uniqueUserNames);
       }
     };
-
     fetchData();
-    handelDataTableLoad({}, searchQuery); // Include searchQuery here
-  }, [searchQuery, handelDataTableLoad]);
-
-  // Function to reset all values
-  const resetValues = () => {
-    setSelectedInstitute(null);
-    setSelectedUniversity(null);
-    setSelectedStatus(null);
-    setSelectedUserId(null);
-    setSelectedPaymentMode(null)
-    setSelectedPaymentType(null)
-    setStartDate(null);
-    setEndDate(null);
-    setFollowStartDate(null);
-    setFollowEndDate(null);
-    setSelectedFollowup(null);
-  };
-  useEffect(() => {
-    const controller = new AbortController();
-    return () => {
-      controller.abort();
-    };
   }, []);
-
 
   const items = [
     {
@@ -231,7 +139,6 @@ export default function DataTable({ config, extra = [] }) {
     {
       type: 'divider',
     },
-
     {
       label: translate('Delete'),
       key: 'delete',
@@ -245,8 +152,12 @@ export default function DataTable({ config, extra = [] }) {
     dispatch(erp.currentItem({ data: record }));
     navigate(`/${entity}/read/${record._id}`);
   };
+
   const handleDownload = (record) => {
-    window.open(`${DOWNLOAD_BASE_URL}${entity}/${entity}-${record._id}.pdf`, '_blank');
+    window.open(
+      `${DOWNLOAD_BASE_URL}${entity}/${entity}-${record._id}.pdf`,
+      '_blank'
+    );
   };
 
   const handleDelete = (record) => {
@@ -254,28 +165,31 @@ export default function DataTable({ config, extra = [] }) {
     modal.open();
   };
 
-
   const handleFollowup = (record) => {
-    setCommentRecord(record); // Store the record
-    setShowCommentDrawer(true); // Open the Drawer
-  };
-  const closeCommentDrawer = () => {
-    setShowCommentDrawer(false); // Close the Drawer
-    setCommentRecord(null); // Clear the record
+    setCommentRecord(record);
+    setShowCommentDrawer(true);
   };
 
-  // Function to handle history button click
+  const closeCommentDrawer = () => {
+    setShowCommentDrawer(false);
+    setCommentRecord(null);
+  };
+
   const handleHistory = async (record) => {
     try {
-      const historyData = await request.history({ entity: 'payment', id: record._id });
-      // Sort the history data in descending order based on the time it was changed
+      const historyData = await request.history({
+        entity: 'payment',
+        id: record._id,
+      });
       if (historyData && historyData.history) {
-        historyData.history.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+        historyData.history.sort(
+          (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+        );
       }
       setHistoryData(historyData);
-      setShowHistoryModal(true); // Show history modal
+      setShowHistoryModal(true);
     } catch (error) {
-      console.error("Error fetching history data:", error);
+      console.error('Error fetching history data:', error);
     }
   };
 
@@ -287,9 +201,8 @@ export default function DataTable({ config, extra = [] }) {
       fixed: 'right',
       render: (_, record) => (
         <Dropdown
-          menu={{
-            items,
-            onClick: ({ key }) => {
+          overlay={
+            <Menu onClick={({ key }) => {
               switch (key) {
                 case 'read':
                   handleRead(record);
@@ -309,14 +222,22 @@ export default function DataTable({ config, extra = [] }) {
                 default:
                   break;
               }
-            },
-          }}
+            }}>
+              {items.map(item => {
+                if (item.type === 'divider') {
+                  return <Menu.Divider key={item.key} />;
+                }
+                return (
+                  <Menu.Item key={item.key} icon={item.icon}>
+                    {item.label}
+                  </Menu.Item>
+                );
+              })}
+            </Menu>
+          }
           trigger={['click']}
         >
-          <EllipsisOutlined
-            style={{ cursor: 'pointer', fontSize: '24px' }}
-            onClick={(e) => e.preventDefault()}
-          />
+          <EllipsisOutlined style={{ cursor: 'pointer', fontSize: '24px' }} />
         </Dropdown>
       ),
     },
@@ -324,47 +245,49 @@ export default function DataTable({ config, extra = [] }) {
 
   const dispatch = useDispatch();
 
-  const filterDataSource = (data) => {
-    return data.filter(item => {
-      // Extract the date from your data source (assuming it's stored as a Date object)
-      const itemDate = new Date(item.created); // Change 'created' to the key where your date is stored
+  const handelDataTableLoad = (pagination) => {
+    const options = {
+      page: pagination.current || 1,
+      items: pagination.pageSize || 10, // Set the page size to 20
+      sortBy: 'updated',  // Example sort field
+      sortValue: -1,      // Example sort order (descending)
+    };
 
-      // Check if the item date falls within the selected date range
-      const dateMatch = (!startDate || !endDate || (itemDate >= startDate && itemDate <= endDate));
-
-
-      const followDate = new Date(item.followUpDate); // Change 'created' to the key where your date is stored
-
-      // Check if the item date falls within the selected date range
-      const followUpdateMatch = (!followstartDate || !followendDate || (followDate >= followstartDate && followDate <= followendDate));
-
-
-      // Your existing filters
-      const instituteMatch = !selectedInstitute || (item && item.institute_name === selectedInstitute);
-      const universityMatch = !selectedUniversity || (item && item.university_name === selectedUniversity);
-      const statusMatch = !selectedStatus || (item && item.status === selectedStatus);
-      const userMatch = !selectedUserId || (item && item.userId?.fullname === selectedUserId);
-
-
-      const phoneAsString = item && item.phone?.toString();
-      const emailLowerCase = item && item.email?.toLowerCase();
-
-      const searchMatch = !searchQuery || (
-        (item && item.lead_id && item.lead_id.includes(searchQuery)) ||
-        (emailLowerCase && emailLowerCase.includes(searchQuery.toLowerCase())) ||
-        (typeof phoneAsString === 'string' && phoneAsString.includes(searchQuery)) ||
-        (item && item.full_name && item.full_name.includes(searchQuery))
-      );
-
-      // Check if follow-up status matches
-      let followupMatch = true;
-      if (selectedFollowup === 'follow-up') {
-        followupMatch = item.followStatus === 'follow-up';
-      }
-
-      // Return true only if all conditions match
-      return dateMatch && instituteMatch && universityMatch && statusMatch && userMatch && followupMatch && followUpdateMatch && searchMatch;
-    });
+    // Add selected filters if they are not null
+    if (selectedInstitute !== null) {
+      options.institute_name = selectedInstitute;
+    }
+    if (selectedUniversity !== null) {
+      options.university_name = selectedUniversity;
+    }
+    if (selectedStatus !== null) {
+      options.status = selectedStatus;
+    }
+    if (selectedPaymentMode !== null) {
+      options.payment_mode = selectedPaymentMode;
+    }
+    if (selectedPaymentType !== null) {
+      options.payment_type = selectedPaymentType;
+    }
+    if (isTeam === 'true' && selectedUserName !== null) {
+      options.team = isTeam;
+      options.teamLeader = selectedUserName;
+    } else if (selectedUserName !== null) {
+      options.userId = selectedUserName;
+    }
+    if (selectedFollowup !== null) {
+      options.followup = selectedFollowup;
+    }
+    if (followStartDate !== null && followEndDate !== null) {
+      options.followupdate_start = followStartDate.format('DD/MM/YYYY');
+      options.followupdate_end = followEndDate.format('DD/MM/YYYY');
+    }
+    if (startDate !== null && endDate !== null) {
+      options.start_date = startDate.format('DD/MM/YYYY');
+      options.end_date = endDate.format('DD/MM/YYYY');
+    }
+    // Dispatch API call with updated options
+    dispatch(erp.list({ entity, options }));
   };
 
   const dispatcher = () => {
@@ -372,57 +295,373 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   useEffect(() => {
-    const controller = new AbortController();
     dispatcher();
-    return () => {
-      controller.abort();
-    };
   }, []);
 
   const { tableColumns, tableHeader } = useResponsiveTable(
     dataTableColumns,
     items
   );
-  const handleSearch = (value) => {
-    setSearchQuery(value);
-    handelDataTableLoad({}, value); // Trigger search on each keystroke
+
+  const filterTable = (e) => {
+    const value = e.target.value;
+    const options = { q: value, fields: searchConfig?.searchFields || '' };
+    dispatch(erp.list({ entity, options }));
   };
+
+  const handlePaymentStatus = (status) => {
+    setSelectedFollowup(status);
+    setIsFollowUpActive(true); // Activate the follow-up state
+  };
+
+  useEffect(() => {
+    if (selectedFollowup) {
+      applyFilters();
+    }
+  }, [selectedFollowup]);
+
+  const handleFilterChange = (filterType, value) => {
+    switch (filterType) {
+      case 'institute':
+        setSelectedInstitute(value);
+        break;
+      case 'university':
+        setSelectedUniversity(value);
+        break;
+      case 'status':
+        setSelectedStatus(value);
+        break;
+      case 'paymentMode':
+        setSelectedPaymentMode(value);
+        break;
+      case 'paymentType':
+        setSelectedPaymentType(value);
+        break;
+      case 'userName':
+        setSelectedUserName(value);
+        break;
+      case 'team':
+        setIsTeam(value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const applyFilters = () => {
+    const options = {};
+
+    // Add selected filters if they are not null
+    if (selectedInstitute !== null) {
+      options.institute_name = selectedInstitute;
+    }
+    if (selectedUniversity !== null) {
+      options.university_name = selectedUniversity;
+    }
+    if (selectedStatus !== null) {
+      options.status = selectedStatus;
+    }
+    if (selectedPaymentMode !== null) {
+      options.payment_mode = selectedPaymentMode;
+    }
+    if (selectedPaymentType !== null) {
+      options.payment_type = selectedPaymentType;
+    }
+    if (isTeam === 'true' && selectedUserName !== null) {
+      options.team = isTeam;
+      options.teamLeader = selectedUserName;
+    } else if (selectedUserName !== null) {
+      options.userId = selectedUserName;
+    }
+    if (selectedFollowup !== null) {
+      options.followup = selectedFollowup;
+    }
+    if (followStartDate !== null && followEndDate !== null) {
+      options.followupdate_start = followStartDate.format('DD/MM/YYYY');
+      options.followupdate_end = followEndDate.format('DD/MM/YYYY');
+    }
+    if (startDate !== null && endDate !== null) {
+      options.start_date = startDate.format('DD/MM/YYYY');
+      options.end_date = endDate.format('DD/MM/YYYY');
+    }
+    // Dispatch API call with updated options
+    dispatch(erp.list({ entity, options }));
+  };
+
+  useEffect(() => {
+    applyFilters();
+  }, [selectedInstitute, selectedUniversity, selectedStatus, selectedPaymentMode, selectedPaymentType, selectedUserName, isTeam, startDate, endDate, followStartDate, followEndDate]);
+
+  const resetFilters = () => {
+    setSelectedInstitute(null);
+    setSelectedUniversity(null);
+    setSelectedStatus(null);
+    setSelectedPaymentMode(null);
+    setSelectedPaymentType(null);
+    setSelectedUserName(null);
+    setStartDate(null);
+    setEndDate(null);
+    setFollowStartDate(null);
+    setFollowEndDate(null);
+    setSelectedFollowup(null);
+    setIsFollowUpActive(false);
+    setIsTeam('false');
+    applyFilters(); // Ensure filters are applied after resetting
+  };
+
+  const filterRender = () => {
+    return (
+      <Card>
+        <div className='ml-4'>
+          <div className='flex flex-wrap items-center gap-2'>
+            <Select
+              showSearch
+              allowClear
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select institute"
+              className='w-44 h-8'
+              onChange={(value) => handleFilterChange('institute', value)}
+              value={selectedInstitute}
+            >
+              {institutes.map(institute => (
+                <Select.Option key={institute}>{institute}</Select.Option>
+              ))}
+            </Select>
+
+            <Select
+              showSearch
+              allowClear
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select university"
+              className='w-44 h-8'
+              onChange={(value) => handleFilterChange('university', value)}
+              value={selectedUniversity}
+            >
+              {universities.map(university => (
+                <Select.Option key={university}>{university}</Select.Option>
+              ))}
+            </Select>
+
+            <Select
+              showSearch
+              allowClear
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select status"
+              className='w-44 h-8'
+              onChange={(value) => handleFilterChange('status', value)}
+              value={selectedStatus}
+            >
+              {statuses.map(status => (
+                <Select.Option key={status}>{status}</Select.Option>
+              ))}
+            </Select>
+
+            <Select
+              showSearch
+              allowClear
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select payment mode"
+              className='w-44 h-8'
+              onChange={(value) => handleFilterChange('paymentMode', value)}
+              value={selectedPaymentMode}
+            >
+              {paymentMode.map(mode => (
+                <Select.Option key={mode}>{mode}</Select.Option>
+              ))}
+            </Select>
+
+            <Select
+              showSearch
+              allowClear
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select payment type"
+              className='w-44 h-8'
+              onChange={(value) => handleFilterChange('paymentType', value)}
+              value={selectedPaymentType}
+            >
+              {paymentType.map(type => (
+                <Select.Option key={type}>{type}</Select.Option>
+              ))}
+            </Select>
+
+            <Select
+              showSearch
+              allowClear
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select user name"
+              className='w-44 h-8'
+              onChange={(value) => handleFilterChange('userName', value)}
+              value={selectedUserName}
+            >
+              {userNames.map(user => (
+                <Select.Option key={user.value} value={user.value}>{user.label}</Select.Option>
+              ))}
+            </Select>
+
+            <RangePicker
+              onChange={handleDateRangeChange}
+              value={startDate && endDate ? [startDate, endDate] : null}
+              className='w-44 h-8'
+              format='DD/MM/YYYY'
+              placeholder={['Start Date', 'End Date']}
+            />
+
+            <RangePicker
+              onChange={handleFollowupDateRangeChange}
+              value={followStartDate && followEndDate ? [followStartDate, followEndDate] : null}
+              className='w-44 h-8'
+              format='DD/MM/YYYY'
+              placeholder={['Follow-up Start Date', 'Follow-up End Date']}
+            />
+            <Button className={isFollowUpActive ? 'bg-green-500 border-blue-400 border w-40' : 'bg-green-200 text-green-800 hover:text-green-700 hover:bg-green-100 hover:border-none border-none w-44'}
+              onClick={() => handlePaymentStatus('follow-up')}
+            >
+              <span>Follow Status </span><span className='text-red-500'>({pagination.followUpCount})</span>
+            </Button>
+            <Button className="bg-red-200 text-red-800 hover:text-red-700 hover:bg-red-100 hover:border-none border-none w-28"
+              onClick={resetFilters}
+            >
+              Reset Filters
+            </Button>
+          </div>
+        </div>
+      </Card>
+    );
+  };
+
+  const menu = (
+    <Menu>
+      <Menu.Item key="team">
+        <Radio.Group
+          onChange={(e) => handleFilterChange('team', e.target.value)} // Fix the onChange handler
+          value={isTeam}
+        >
+          <Radio.Button value="true">Yes</Radio.Button>
+          <Radio.Button value="false">No</Radio.Button>
+        </Radio.Group>
+      </Menu.Item>
+    </Menu>
+  );
+
+  const exportToExcel = async () => {
+    const options = {
+      export: 'true',
+      sortBy: 'updated',
+      sortValue: -1,
+    };
+
+    // Add selected filters if they are not null
+    if (selectedInstitute !== null) {
+      options.institute_name = selectedInstitute;
+    }
+    if (selectedUniversity !== null) {
+      options.university_name = selectedUniversity;
+    }
+    if (selectedStatus !== null) {
+      options.status = selectedStatus;
+    }
+    if (selectedPaymentMode !== null) {
+      options.payment_mode = selectedPaymentMode;
+    }
+    if (selectedPaymentType !== null) {
+      options.payment_type = selectedPaymentType;
+    }
+    if (isTeam === 'true' && selectedUserName !== null) {
+      options.team = isTeam;
+      options.teamLeader = selectedUserName;
+    } else if (selectedUserName !== null) {
+      options.userId = selectedUserName;
+    }
+    if (selectedFollowup !== null) {
+      options.followup = selectedFollowup;
+    }
+    if (followStartDate !== null && followEndDate !== null) {
+      options.followupdate_start = followStartDate.format('DD/MM/YYYY');
+      options.followupdate_end = followEndDate.format('DD/MM/YYYY');
+    }
+    if (startDate !== null && endDate !== null) {
+      options.start_date = startDate.format('DD/MM/YYYY');
+      options.end_date = endDate.format('DD/MM/YYYY');
+    }
+
+    const { result } = await request.list({ entity, options });
+
+    const data = result.map(item => ({
+      'Student Name': item.student_name,
+      'Email': item.email,
+      'Phone': item.phone,
+      'Institute': item.institute_name,
+      'University': item.university_name,
+      'Session': item.session,
+      'Payment Type': item.payment_type,
+      'Total Course Fee': item.total_course_fee,
+      'Total Paid Amount': item.total_paid_amount,
+      'Paid Amount': item.paid_amount,
+      'Due Amount': item.due_amount,
+      'Payment Mode': item.payment_mode,
+      'Follow Up Date': item.followUpDate ? moment(item.followUpDate).format('DD/MM/YYYY') : '',
+      'Status': item.status,
+      'Created': moment(item.created).format('DD/MM/YYYY'),
+      'Updated': moment(item.updated).format('DD/MM/YYYY'),
+    }));
+
+    const worksheet = XLSX.utils.json_to_sheet(data);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Data');
+    XLSX.writeFile(workbook, 'data.xlsx');
+  };
+
   const renderTable = () => {
-    const filteredData = filterDataSource(dataSource);
     return (
       <>
+        <div className='space30'></div>
         <Card>
           <div ref={tableHeader}>
-            <div>
-              <div className='flex justify-between items-center'>
-                <div className='grid grid-rows-1 gap-1 font-thin text-xs text-red-500 '>
-                  {entity === 'payment' && (
-                    <div className='flex items-center gap-2'>
-                      <div className="flex justify-center items-center text-red-500">
-                        <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {pagination.total}</span>
-                      </div>
-                      <Search
-                        placeholder="Search by email"
-                        onSearch={handleSearch} // Remove this line
-                        onChange={(e) => handleSearch(e.target.value)} // Add this line
-                        className='w-full'
-                      />
-                    </div>
-                  )}
-                </div>
-                <div className='flex items-center gap-1'>
-                  {entity === 'teams' && (
-                    <AddNewItem config={config} key={`${uniqueId()}`} hasCreate={create} />
-                  )}
-                  <div>
-                    <LiaFileDownloadSolid title='Export excel' onClick={handleExportToExcel} className='text-3xl text-blue-500 hover:text-blue-700 cursor-pointer font-thin' />
-                  </div>
+            <div className='flex justify-between items-center mb-4'>
+              <div className='flex items-center space-x-2'>
+                <Input
+                  key={`searchFilterDataTable}`}
+                  onChange={filterTable}
+                  placeholder={translate('search')}
+                  allowClear
+                  className='w-44'
+                />
+                <div className='flex items-center text-red-500'>
+                  <span className='font-thin text-sm'>Total:</span>
+                  <span className='font-thin text-sm'> {pagination.total}</span>
                 </div>
               </div>
+              <div className='flex items-center gap-1'>
+                <Dropdown overlay={menu} trigger={['click']}>
+                  <div className='flex items-center gap-1 text-sm uppercase rounded-full border border-gray-400 bg-gray-50 px-1 h-6 cursor-pointer'>
+                    <span><PiMicrosoftTeamsLogo /></span>
+                    <span>Team</span>
+                  </div>
+                </Dropdown>
+                <Button onClick={exportToExcel} className='flex items-center gap-0.5 capitalize text-sm font-thin bg-green-300 text-green-800 border-none hover:border-none hover:text-green-700 hover:bg-green-100'>
+                  <span><LiaFileDownloadSolid /></span><span>excel</span>
+                </Button>
+              </div>
             </div>
-
           </div>
-          <div className='space30'></div>
           <Table
             columns={tableColumns}
             rowKey={(item) => item._id}
@@ -433,218 +672,6 @@ export default function DataTable({ config, extra = [] }) {
           />
         </Card>
       </>
-    )
-  }
-
-
-  const amountCardsData = [
-    {
-      title: 'Total Course Fee',
-      color: 'green',
-      value: paymentData.result?.total_course_fee,
-      total: paymentData.result?.total_course_fee_total,
-      icon: <FcSalesPerformance style={{ fontSize: 48, color: 'green' }} />,
-    },
-    {
-      title: 'Total Paid Amount',
-      color: 'blue',
-      value: paymentData.result?.total_paid_amount,
-      total: paymentData.result?.total_paid_amount_total,
-      icon: <FcBullish style={{ fontSize: 48, color: 'blue' }} />,
-    },
-    {
-      title: 'Due Amount',
-      color: 'red',
-      value: paymentData.result?.due_amount,
-      total: paymentData.result?.due_amount_total,
-      icon: <FcBearish style={{ fontSize: 48, color: 'blue' }} />,
-    },
-  ];
-
-  const amountCards = amountCardsData.map((card, index) => {
-    return (
-      <Card className="w-1/3 shadow drop-shadow-lg" key={index}>
-        <div>
-          <div>
-            <div className="flex gap-10 justify-between items-center">
-              <div>{card.icon}</div>
-              <div>
-                <div className={`text-${card.color}-500 mb-2 text-sm font-normal font-serif`}>
-                  {card.title}
-                </div>
-                <div className={`text-${card.color}-500 text-2xl`}>₹ {card.value}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Card>
-    );
-  });
-
-  const handlePaymentStatus = (status) => {
-    setSelectedFollowup(status);
-  };
-
-  const handleFollowupDateRangeChange = (dates) => {
-    if (dates && dates.length === 2) {
-      setFollowStartDate(dates[0]);
-      setFollowEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
-    } else {
-      setFollowStartDate(null);
-      setFollowEndDate(null); // Clear dates if not a valid range
-    }
-  };
-
-  const filterRender = () => {
-    const filtered = filterDataSource(dataSource);
-    const followupCount = filtered.filter(item => item.followStatus === 'follow-up').length;
-    return (
-      <div>
-        <div className='flex items-center space-x-2'>
-          <div>
-            {/* Select for Institute */}
-            <Select
-              showSearch
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-              placeholder="Select institute"
-              className='w-60 h-10 capitalize'
-              value={selectedInstitute}
-              onChange={(value) => setSelectedInstitute(value)}
-            >
-              {institutes.map(institute => (
-                <Select.Option key={institute}>{institute}</Select.Option>
-              ))}
-            </Select>
-          </div>
-          <div>
-            {/* Select for University */}
-            <Select
-              showSearch
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-              placeholder="Select university"
-              className='w-60 h-10 capitalize'
-              value={selectedUniversity}
-              onChange={(value) => setSelectedUniversity(value)}
-            >
-              {universities.map(university => (
-                <Select.Option key={university}>{university}</Select.Option>
-              ))}
-            </Select>
-          </div>
-          <div>
-            {/* Select for Status */}
-            <Select
-              showSearch
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-              placeholder="Select status"
-              className='w-60 h-10 capitalize'
-              value={selectedStatus}
-              onChange={(value) => setSelectedStatus(value)}
-            >
-              {statuses.map(status => (
-                <Select.Option key={status}>{status}</Select.Option>
-              ))}
-            </Select>
-          </div>
-          {/* Select for User Full Name */}
-          <div>
-            <Select
-              showSearch
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-              placeholder="Select payment mode"
-              className='w-60 h-10 capitalize'
-              value={selectedPaymentMode}
-              onChange={(value) => setSelectedPaymentMode(value)}
-            >
-              {paymentMode.map((paymentmode) => (
-                <Select.Option className="capitalize font-thin font-mono" key={paymentmode}>
-                  {paymentmode}
-                </Select.Option>
-              ))}
-            </Select>
-          </div>
-          <div>
-            <Select
-              showSearch
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-              placeholder="Select payment type"
-              className='w-60 h-10 capitalize'
-              value={selectedPaymentType}
-              onChange={(value) => setSelectedPaymentType(value)}
-            >
-              {paymentType.map((paymenttype) => (
-                <Select.Option className="capitalize font-thin font-mono" key={paymenttype}>
-                  {paymenttype}
-                </Select.Option>
-              ))}
-            </Select>
-          </div>
-        </div>
-        <div className='flex items-center space-x-2'>
-          <div>
-            <Select
-              showSearch
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-              placeholder="Select user full name"
-              className='w-60 h-10 capitalize mt-3'
-              value={selectedUserId}
-              onChange={(value) => setSelectedUserId(value)}
-            >
-              {userNames.map((userName) => (
-                <Select.Option className="capitalize font-thin font-mono" key={userName}>
-                  {userName}
-                </Select.Option>
-              ))}
-            </Select>
-          </div>
-          <div>
-            <RangePicker
-              className='w-60 h-10 mt-3 capitalize'
-              onChange={handleDateRangeChange}
-              style={{ width: '100%' }}
-              placeholder={['Start Date', 'End Date']}
-            />
-          </div>
-          <div>
-            {/* Button to filter Payment Received */}
-            <Button className='w-48 h-9 mt-3 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700 border-cyan-500 hover:border-cyan-500 rounded-none' onClick={() => handlePaymentStatus('follow-up')}>
-              <span className="font-thin text-sm -ml-2">Follow-uP</span>
-              <span className="font-thin text-sm ml-1">({followupCount})</span>
-            </Button>
-          </div>
-          <div>
-            <RangePicker
-              className='w-60 h-10 mt-3 capitalize'
-              onChange={handleFollowupDateRangeChange}
-              style={{ width: '100%' }}
-              placeholder={['Follow-UP Date', 'End Date']}
-            />
-          </div>
-        </div>
-        <div className='relative float-right -mt-10 mr-2'>
-          <Button title='Reset All Filters' onClick={resetValues} className='bg-white text-red-500 text-lg h-10 hover:text-red-600'>
-            <BiReset />
-          </Button>
-        </div>
-      </div>
     );
   };
 
@@ -652,18 +679,6 @@ export default function DataTable({ config, extra = [] }) {
     <>
       <div>
         {filterRender()}
-      </div>
-      <div className='space30'></div>
-      {['admin', 'subadmin'].includes(role) && (
-        <div>
-          <div className='space30'></div>
-          <div className='flex gap-4'>
-            {amountCards}
-          </div>
-        </div>
-      )}
-      <div className='space30'></div>
-      <div>
         {renderTable()}
       </div>
       <HistoryModal
@@ -672,20 +687,15 @@ export default function DataTable({ config, extra = [] }) {
         onClose={() => setShowHistoryModal(false)}
       />
       <Drawer
-        title={
-          <div>
-            <div className='relative float-right font-thin text-lg'>FollowUP & Comments</div>
-          </div>
-        }
-        placement="right" // The Drawer opens from the right
-        open={showCommentDrawer} // Controlled by state
-        onClose={closeCommentDrawer} // Close action
+        title={<div className='font-thin text-lg'>FollowUP & Comments</div>}
+        placement='right'
+        visible={showCommentDrawer}
+        onClose={closeCommentDrawer}
         width={500}
       >
-        {/* Render the CommentForm only if a record is set */}
         {commentRecord && (
           <CommentForm
-            entity="lead"
+            entity='lead'
             id={commentRecord.applicationId}
             recordDetails={commentRecord}
           />
@@ -694,5 +704,3 @@ export default function DataTable({ config, extra = [] }) {
     </>
   );
 }
-
-

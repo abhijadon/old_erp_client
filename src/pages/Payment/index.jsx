@@ -7,7 +7,7 @@ export default function Payment() {
   const translate = useLanguage();
   const searchConfig = {
     displayLabels: ['number'],
-    searchFields: 'number',
+    searchFields: ['student_name'],
     outputValue: '_id',
   };
 

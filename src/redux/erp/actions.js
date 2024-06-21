@@ -54,6 +54,7 @@ export const erp = {
             current: parseInt(data.pagination.page, 10),
             pageSize: options?.items,
             total: parseInt(data.pagination.count, 10),
+            followUpCount: parseInt(data.pagination.followUpCount),
           },
            };
       dispatch({

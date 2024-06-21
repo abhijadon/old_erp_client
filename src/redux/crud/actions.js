@@ -53,9 +53,9 @@ export const crud = {
             current: parseInt(data.pagination.page, 10),
             pageSize: options?.items,
             total: parseInt(data.pagination.count, 10),
-            countReceived: parseInt(data.countReceived, 10),
-            countRejected: parseInt(data.countRejected, 10),
-            countApproved: parseInt(data.countApproved, 10)
+            countReceived: parseInt(data.pagination.paymentReceivedCount, 10),
+            countRejected: parseInt(data.pagination.paymentRejectedCount, 10),
+            countApproved: parseInt(data.pagination.paymentApprovedCount, 10)
           },
         };
         dispatch({

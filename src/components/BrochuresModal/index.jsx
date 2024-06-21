@@ -1,33 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import { Select, message, Spin, Image, Space, Button } from 'antd';
+import { Select, message, Spin, Image, Space, Button, Popconfirm } from 'antd';
 import axios from 'axios';
 import {
-    DownloadOutlined,
-    UndoOutlined,
-    RotateLeftOutlined,
-    RotateRightOutlined,
-    SwapOutlined,
-    ZoomInOutlined,
-    ZoomOutOutlined,
+    DownloadOutlined, DeleteOutlined
 } from '@ant-design/icons';
+import { MdOutlineFileDownload } from 'react-icons/md';
 
 const Index = () => {
     const [filterOptions, setFilterOptions] = useState({ universities: [], courses: [], electives: [] });
     const [brochures, setBrochures] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [defaultUniversity, setDefaultUniversity] = useState('');
     const [filters, setFilters] = useState({
         university: '',
         course: '',
         electives: '',
     });
+    const onDownload = (url) => {
+        // Create a temporary link element
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = true;
 
+        // Trigger the click event on the link to start the download
+        document.body.appendChild(link);
+        link.click();
+
+        // Clean up
+        document.body.removeChild(link);
+    };
 
     // Fetch filter options from the API
     useEffect(() => {
         const fetchFilterOptions = async () => {
             try {
-                const response = await axios.get('http://localhost:5001/api/info/list');
+                const response = await axios.get('/info/list');
                 const result = response.data;
                 if (result.success) {
                     const universities = [...new Set(result.result.map(item => item.university))];
@@ -50,7 +56,7 @@ const Index = () => {
     const fetchBrochures = async (filters) => {
         setLoading(true);
         try {
-            const response = await axios.get('http://localhost:5001/api/brochures/list', {
+            const response = await axios.get('/brochures/list', {
                 params: filters,
             });
             const result = response.data;
@@ -150,6 +156,14 @@ const Index = () => {
                                         alt={`Brochure ${index}`}
                                     />
                                     <div className='mt-2 flex gap-4 items-center justify-center'>
+                                        <Popconfirm
+                                            title="Are you sure you want to download this image?"
+                                            onConfirm={() => onDownload(brochure.downloadURL)}
+                                            okText="Yes"
+                                            cancelText="No"
+                                        >
+                                            <Button className="bg-transparent text-blue-600 border-none text-xl hover:text-blue-700" icon={<MdOutlineFileDownload />} />
+                                        </Popconfirm>
                                         <p className='font-semibold'>{brochure.university}</p>
                                         <p className='text-sm'>{brochure.course}</p>
                                         <p className='text-sm'>{brochure.electives}</p>
