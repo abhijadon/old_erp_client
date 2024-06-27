@@ -69,14 +69,14 @@ const Index = () => {
                 labelStyle={{ backgroundColor: '#efefef', color: 'black', borderRadius: '2px', textAlign: 'center', borderBottom: '1px solid'}}
               />
             <Area
-              type="monotone"
+              type="natural"
               dataKey="Amount"
               stroke="#8884d8"
               fillOpacity={0.3}
               fill="url(#colorAmount)"
             />
             <Area
-              type="monotone"
+              type="natural"
               dataKey="Count"
               stroke="#82ca9d"
               fillOpacity={0.3}

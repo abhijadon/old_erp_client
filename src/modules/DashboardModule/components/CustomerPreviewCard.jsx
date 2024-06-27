@@ -112,12 +112,6 @@ const Index = () => {
                 <Cell key={`cell-${index}`} fill={colorScale(index)} />
               ))}
             </Pie>
-            <Legend
-              layout="vertical"
-              verticalAlign="middle"
-              align="right"
-              wrapperStyle={{ maxWidth: '200px' }}
-            />
           </PieChart>
         </ResponsiveContainer>
         <Table
