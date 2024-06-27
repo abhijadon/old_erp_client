@@ -34,7 +34,8 @@ import HistoryModal from './HistoryModal';
 import CommentForm from '@/forms/comment';
 import { LiaFileDownloadSolid } from 'react-icons/lia';
 import { IoFilterOutline } from 'react-icons/io5';
-import { PiMicrosoftTeamsLogo } from "react-icons/pi";
+import { PiMicrosoftTeamsLogo } from 'react-icons/pi';
+import useFetch from '@/hooks/useFetch';
 const { RangePicker } = DatePicker;
 
 export default function DataTable({ config, extra = [] }) {
@@ -88,31 +89,20 @@ export default function DataTable({ config, extra = [] }) {
     }
   };
 
+  const { data: uniqueOptions, isLoading: optionLoading } = useFetch(() =>
+    request.filter({ entity: 'lead' })
+  );
+
   useEffect(() => {
-    const fetchData = async () => {
-      const { result } = await request.filter({ entity: 'payment' });
-      if (result) {
-        const uniquePaymentMode = [...new Set(result.map((item) => item.payment_mode))];
-        const uniquePaymentType = [...new Set(result.map((item) => item.payment_type))];
-        const uniqueStatuses = [...new Set(result.map((item) => item.status))];
-        const uniqueInstitutes = [...new Set(result.map((item) => item.institute_name))];
-        const uniqueUniversities = [...new Set(result.map((item) => item.university_name))];
-        const uniqueUserNames = [
-          ...new Map(result.map((item) => [item.userId?._id, {
-            value: item.userId?._id,
-            label: item.userId?.fullname
-          }])).values()
-        ];
-        setStatuses(uniqueStatuses);
-        setPaymentType(uniquePaymentType);
-        setInstitutes(uniqueInstitutes);
-        setPaymentMode(uniquePaymentMode);
-        setUniversities(uniqueUniversities);
-        setUserNames(uniqueUserNames);
-      }
-    };
-    fetchData();
-  }, []);
+    if (uniqueOptions) {
+      setStatuses(uniqueOptions.uniqueValues.statuses || []);
+      setInstitutes(uniqueOptions.uniqueValues.institute_names || []);
+      setPaymentMode(uniqueOptions.uniqueValues.payment_modes || []);
+      setPaymentType(uniqueOptions.uniqueValues.payment_types || []);
+      setUniversities(uniqueOptions.uniqueValues.university_names || []);
+      setUserNames(uniqueOptions.uniqueValues.userIds || []);
+    }
+  }, [uniqueOptions]);
 
   const items = [
     {
@@ -427,7 +417,7 @@ export default function DataTable({ config, extra = [] }) {
               value={selectedInstitute}
             >
               {institutes.map(institute => (
-                <Select.Option key={institute}>{institute}</Select.Option>
+                <Select.Option key={institute} value={institute}>{institute}</Select.Option>
               ))}
             </Select>
 
@@ -444,7 +434,7 @@ export default function DataTable({ config, extra = [] }) {
               value={selectedUniversity}
             >
               {universities.map(university => (
-                <Select.Option key={university}>{university}</Select.Option>
+                <Select.Option key={university} value={university}>{university}</Select.Option>
               ))}
             </Select>
 
@@ -461,7 +451,7 @@ export default function DataTable({ config, extra = [] }) {
               value={selectedStatus}
             >
               {statuses.map(status => (
-                <Select.Option key={status}>{status}</Select.Option>
+                <Select.Option key={status} value={status}>{status}</Select.Option>
               ))}
             </Select>
 
@@ -478,7 +468,7 @@ export default function DataTable({ config, extra = [] }) {
               value={selectedPaymentMode}
             >
               {paymentMode.map(mode => (
-                <Select.Option key={mode}>{mode}</Select.Option>
+                <Select.Option key={mode} value={mode}>{mode}</Select.Option>
               ))}
             </Select>
 
@@ -495,7 +485,7 @@ export default function DataTable({ config, extra = [] }) {
               value={selectedPaymentType}
             >
               {paymentType.map(type => (
-                <Select.Option key={type}>{type}</Select.Option>
+                <Select.Option key={type} value={type}>{type}</Select.Option>
               ))}
             </Select>
 

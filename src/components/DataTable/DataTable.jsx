@@ -26,6 +26,7 @@ import { PiMicrosoftExcelLogo, PiMicrosoftTeamsLogo } from "react-icons/pi";
 const { RangePicker } = DatePicker;
 import { FiRefreshCw } from "react-icons/fi";
 import moment from 'moment';
+import useFetch from '@/hooks/useFetch';
 
 function AddNewItem({ config }) {
   const { crudContextAction } = useCrudContext();
@@ -85,11 +86,29 @@ export default function DataTable({ config, extra = [] }) {
   const [isTeam, setIsTeam] = useState('false');
   const [selectedPaymentstatus, setSelectedPaymentstatus] = useState(null);
   const [activeButton, setActiveButton] = useState(null);
-const [selectedWelcomemail, setSelectedWelcomemail] = useState(null);
-const [selectedWelcomewhatsapp, setSelectedWelcomewhatsapp] = useState(null);
-const [selectedErolledmail, setSelectedEnrolledmail] = useState(null);
-const [selectedEnrolledwhatsapp, setSelectedEnrolledwhatsapp] = useState(null);
-const [selectedLMS, setSelectedLMS] = useState(null);
+  const [selectedWelcomemail, setSelectedWelcomemail] = useState(null);
+  const [selectedWelcomewhatsapp, setSelectedWelcomewhatsapp] = useState(null);
+  const [selectedErolledmail, setSelectedEnrolledmail] = useState(null);
+  const [selectedEnrolledwhatsapp, setSelectedEnrolledwhatsapp] = useState(null);
+  const [selectedLMS, setSelectedLMS] = useState(null);
+
+  const { data: uniqueOptions, isLoading: optionLoading } = useFetch(() =>
+    request.filter({ entity: 'lead' })
+  );
+
+  useEffect(() => {
+    if (uniqueOptions) {
+      setStatuses(uniqueOptions.uniqueValues.statuses || []);
+      setInstitutes(uniqueOptions.uniqueValues.institute_names || []);
+      setInstallment(uniqueOptions.uniqueValues.installment_types || []);
+      setUniversities(uniqueOptions.uniqueValues.university_names || []);
+      setSession(uniqueOptions.uniqueValues.sessions || []);
+      setPaymentType(uniqueOptions.uniqueValues.payment_types || []);
+      setPaymentMode(uniqueOptions.uniqueValues.payment_modes || []);
+      setUserNames(uniqueOptions.uniqueValues.userIds || []);
+    }
+  }, [uniqueOptions]);
+
   const handleShowStudentDetails = (record) => {
     setSelectedStudent(record);
     setShowStudentDetailsDrawer(true);
@@ -183,39 +202,6 @@ const [selectedLMS, setSelectedLMS] = useState(null);
     panel.open();
     collapsedBox.open();
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const { success, result } = await request.filter({ entity: 'lead' });
-      if (success) {
-        const uniqueStatuses = [...new Set(result.map(item => item.customfields.status))];
-        const uniqueInstitutes = [...new Set(result.map(item => item.customfields.institute_name))];
-        const uniqueInstallment = [...new Set(result.map(item => item.customfields.installment_type))];
-        const uniqueSession = [...new Set(result.map(item => item.customfields.session))];
-        const uniqueUniversities = [...new Set(result.map(item => item.customfields.university_name))];
-        const uniquePaymentMode = [...new Set(result.map(item => item.customfields.payment_mode))];
-        const uniquePaymentType = [...new Set(result.map((item) => item.customfields.payment_type))];
-        const uniqueUserNames = result.reduce((acc, item) => {
-          const existingItem = acc.find(u => u._id === item.userId?._id);
-          if (!existingItem) {
-            acc.push({ fullname: item.userId?.fullname, _id: item.userId?._id });
-          }
-          return acc;
-        }, []);
-
-        setStatuses(uniqueStatuses);
-        setPaymentType(uniquePaymentType);
-        setInstitutes(uniqueInstitutes);
-        setInstallment(uniqueInstallment);
-        setSession(uniqueSession);
-        setUniversities(uniqueUniversities);
-        setUserNames(uniqueUserNames);
-        setPaymentMode(uniquePaymentMode);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const items = isAdmin
     ? [
@@ -401,6 +387,7 @@ const [selectedLMS, setSelectedLMS] = useState(null);
 
     dispatch(crud.list({ entity, options }));
   };
+
 
   const filterTable = (e) => {
     const value = e.target.value;
@@ -668,7 +655,7 @@ const [selectedLMS, setSelectedLMS] = useState(null);
               value={selectedUserName}
             >
               {userNames.map(user => (
-                <Select.Option key={user._id} value={user._id}>{user.fullname}</Select.Option>
+                <Select.Option key={user.value} value={user.value}>{user.label}</Select.Option>
               ))}
             </Select>
 
@@ -911,7 +898,7 @@ const [selectedLMS, setSelectedLMS] = useState(null);
             <div className='space-x-2 flex items-center'>
               <Dropdown overlay={menu1} trigger={['click']}>
                 <div className='flex items-center gap-1 text-sm uppercase rounded-full border border-gray-400 bg-gray-50 px-1 h-6 cursor-pointer'>
-                  <span><PiMicrosoftTeamsLogo className='text-blue-600'/></span>
+                  <span><PiMicrosoftTeamsLogo className='text-blue-600' /></span>
                   <span>Team</span>
                 </div>
               </Dropdown>

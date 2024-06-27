@@ -7,72 +7,83 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  Scatter,
-  Dot,
-  CartesianGrid
+  CartesianGrid,
 } from 'recharts';
-import useFetch from '@/hooks/useFetch';  // Adjust the path based on your project structure
-import { request } from '@/request';
+import axios from 'axios';
 
 const Index = () => {
-  const fetchLeadData = useCallback(() =>
-    request.filter({ entity: 'lead' }), []);
+  const fetchChartData = useCallback(async () => {
+    try {
+      const response = await axios.get('/chart-data');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching chart data:', error);
+      return { data: [] };
+    }
+  }, []);
 
-  const { data: paymentResult } = useFetch(fetchLeadData);
+  const [chartData, setChartData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const data = [
-    { name: 'Jan', count: 0 },
-    { name: 'Feb', count: 0 },
-    { name: 'Mar', count: 0 },
-    { name: 'Apr', count: 0 },
-    { name: 'May', count: 0 },
-    { name: 'June', count: 0 },
-    { name: 'July', count: 0 },
-    { name: 'Aug', count: 0 },
-    { name: 'Sep', count: 0 },
-    { name: 'Oct', count: 0 },
-    { name: 'Nov', count: 0 },
-    { name: 'Dec', count: 0 },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      const data = await fetchChartData();
 
-  if (paymentResult?.result) {
-    const sortedPayments = paymentResult.result.slice().sort((a, b) => new Date(a.created) - new Date(b.created));
+      // Process the data to ensure every month is represented
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      const processedData = months.map((month) => {
+        const found = data.data.find((d) => d.name.startsWith(month));
+        return found ? { ...found, name: month } : { name: month, Amount: 0, Count: 0 };
+      });
 
-    sortedPayments.forEach((payment) => {
-      const createdMonth = new Date(payment.created).toLocaleString('en-US', { month: 'short' });
-      const monthIndex = data.findIndex((item) => item.name === createdMonth);
-      if (monthIndex !== -1) {
-        data[monthIndex].count += 1;
-      }
-    });
-  }
+      setChartData(processedData);
+      setLoading(false);
+    };
 
-  const sortedData = data.slice().sort((a, b) => new Date(a.name + ' 1, 2000') - new Date(b.name + ' 1, 2000'));
+    fetchData();
+  }, [fetchChartData]);
 
   return (
-    <div style={{ marginLeft: '-45px', height: 300, fontFamily: 'Arial, sans-serif' }}>
-      <ResponsiveContainer>
-        <AreaChart data={sortedData}>
-          <XAxis
-            dataKey="name"
-            tick={{ fill: '#1677ff', fontSize: 13 }}
-            axisLine={false}
-            tickLine={false}
-          />
-          <YAxis
-            tick={{ fill: '#1677ff', fontSize: 13 }}
-            axisLine={false}
-            tickLine={false}
-          />
-          <Tooltip contentStyle={{ backgroundColor: '#a79fff', color: 'red', fontFamily: 'serif', textDecorationColor: 'activeborder' }} />
-          <Area type="natural" dataKey="count" stroke="#1677ff" fill="#1677ff" fillOpacity={0.1} />
-          <Scatter dataKey="count" fill="red" isAnimationActive={true}>
-            {sortedData.map((entry, index) => (
-              <Dot key={`dot-${index}`} cx={index * 20} cy={entry.count} r={4} fill="red" />
-            ))}
-          </Scatter>
-        </AreaChart>
-      </ResponsiveContainer>
+    <div style={{ height: 300, fontFamily: 'Arial, sans-serif', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      {loading ? (
+        <Spin />  
+      ) : (
+        <ResponsiveContainer width="100%" height={300}>
+          <AreaChart data={chartData || []}>
+            <CartesianGrid strokeDasharray='3 3' stroke="#f0f0f0" />
+            <XAxis
+              dataKey="name"
+              tick={{ fill: '#6e6b7b', fontSize: 12 }}
+              axisLine={{ stroke: '#e0e0e0' }}
+              tickLine={false}
+            />
+            <YAxis
+              tick={{ fill: '#6e6b7b', fontSize: 12 }}
+              axisLine={{ stroke: '#e0e0e0' }}
+              tickLine={false}
+            />
+            <Tooltip
+              contentStyle={{ backgroundColor: '#fff', border: '1px solid #e0e0e0', borderRadius: '4px', fontSize: 12 }}
+              cursor={{ fill: 'rgba(130, 202, 157, 0.2)' }}
+            />
+            <Area
+              type="natural"
+              dataKey="Count"
+              stroke="#8884d8"
+              fillOpacity={0.3}
+              fill="url(#colorAmount)"
+            />
+            <defs>
+              <linearGradient id="colorAmount" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
+                <stop offset="70%" stopColor="#8884d8" stopOpacity={0} />
+                <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+          </AreaChart>
+        </ResponsiveContainer>
+      )}
     </div>
   );
 };

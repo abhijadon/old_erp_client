@@ -395,7 +395,6 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                 <Form.Item
                     label="Welcome Mail"
                     name="welcome"
-                    rules={[{ required: true, message: 'Please select an option' }]}
                 >
                     <Radio.Group disabled={isField('paid_amount')}>
                         <Radio value="yes">Yes</Radio>
@@ -405,7 +404,6 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                 <Form.Item
                     label="Welcome whatsapp"
                     name="whatsappWelcome"
-                    rules={[{ required: true, message: 'Please select an option' }]}
                 >
                     <Radio.Group disabled={isField('paid_amount')}>
                         <Radio value="yes">Yes</Radio>
