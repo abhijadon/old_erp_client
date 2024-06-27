@@ -70,13 +70,6 @@ const Index = () => {
               />
             <Area
               type="natural"
-              dataKey="Amount"
-              stroke="#8884d8"
-              fillOpacity={0.3}
-              fill="url(#colorAmount)"
-            />
-            <Area
-              type="natural"
               dataKey="Count"
               stroke="#82ca9d"
               fillOpacity={0.3}
