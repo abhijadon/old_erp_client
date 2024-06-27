@@ -90,10 +90,10 @@ export default function PreviewCard({ startDate, endDate }) {
   };
 
   return (
-    <Card className='shadow-md drop-shadow-lg w-full h-[360px]'>
+    <Card className='shadow-md drop-shadow-lg w-full h-[400px]'>
       <div className='grid grid-cols-3 gap-2'>
         <div>
-          <div className='mb-8 text-base font-thin'>Institute Specific Data</div>
+          <div className='mb-8 text-base font-thin'>Institutes</div>
           {dataLoading ? (
             <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
           ) : (
@@ -106,7 +106,7 @@ export default function PreviewCard({ startDate, endDate }) {
           )}
         </div>
         <div>
-          <div className='mb-8 text-base font-thin'>University Specific Data</div>
+          <div className='mb-8 text-base font-thin'>Universities</div>
           {dataLoading ? (
             <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
           ) : (
@@ -119,7 +119,7 @@ export default function PreviewCard({ startDate, endDate }) {
           )}
         </div>
         <div>
-          <div className='mb-8 text-base font-thin'>Status Specific Data</div>
+          <div className='mb-8 text-base font-thin'>Statuses</div>
           {dataLoading ? (
             <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
           ) : (

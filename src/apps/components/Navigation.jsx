@@ -33,7 +33,6 @@ export default function Navigation() {
         console.error('Error fetching menu options:', error);
       }
     }
-
     fetchRoleAndMenuOptions();
   }, []);
 

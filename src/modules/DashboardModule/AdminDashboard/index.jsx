@@ -290,14 +290,14 @@ export default function DashboardModule() {
             </div>
             <div className="space30"></div>
             <Row gutter={[32, 32]}>
-                <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 14 }}>
+                <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 16 }}>
                     <div>
                         <Card className="shadow drop-shadow-lg">
                             <RecentTable />
                         </Card>
                     </div>
                 </Col>
-                <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 10 }}>
+                <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 8 }}>
                     <div>
                         <PreviewCard />
                     </div>
@@ -306,9 +306,9 @@ export default function DashboardModule() {
             <div className="space30"></div>
             <Row gutter={[32, 32]}>
                 <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 14 }}>
-                    <Card className="shadow drop-shadow-lg w-full h-full">
+        
                         <CustomerPreviewCard />
-                    </Card>
+             
                 </Col>
                 <Col className="gutter-row bg-white" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 10 }}>
                     <DataYear />

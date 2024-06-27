@@ -45,16 +45,16 @@ const Index = () => {
   }, [fetchChartData]);
 
   return (
-    <div style={{ height: 300, fontFamily: 'Arial, sans-serif', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div style={{ fontFamily: 'Arial, sans-serif', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       {loading ? (
-        <Spin />  
+        <Spin />
       ) : (
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={350}>
           <AreaChart data={chartData || []}>
-            <CartesianGrid strokeDasharray='3 3' stroke="#f0f0f0" />
+            <CartesianGrid vertical={false} horizontal={true} stroke="#f0f0f0"  strokeDasharray='3 3'/>
             <XAxis
               dataKey="name"
-              tick={{ fill: '#6e6b7b', fontSize: 12 }}
+              tick={{ fill: '#6e6b7b', fontSize: 12, }}
               axisLine={{ stroke: '#e0e0e0' }}
               tickLine={false}
             />
@@ -63,22 +63,33 @@ const Index = () => {
               axisLine={{ stroke: '#e0e0e0' }}
               tickLine={false}
             />
-            <Tooltip
-              contentStyle={{ backgroundColor: '#fff', border: '1px solid #e0e0e0', borderRadius: '4px', fontSize: 12 }}
-              cursor={{ fill: 'rgba(130, 202, 157, 0.2)' }}
-            />
+              <Tooltip
+                contentStyle={{ backgroundColor: '#fff', border: '1px solid #e0e0e0', borderRadius: '4px', fontSize: 12, width: 120, height: 80 }}
+                cursor={{ fill: 'rgba(130, 202, 157, 0.2)' }}
+                labelStyle={{ backgroundColor: '#efefef', color: 'black', borderRadius: '2px', textAlign: 'center', borderBottom: '1px solid'}}
+              />
             <Area
-              type="natural"
-              dataKey="Count"
+              type="monotone"
+              dataKey="Amount"
               stroke="#8884d8"
               fillOpacity={0.3}
               fill="url(#colorAmount)"
             />
+            <Area
+              type="monotone"
+              dataKey="Count"
+              stroke="#82ca9d"
+              fillOpacity={0.3}
+              fill="url(#colorCount)"
+            />
             <defs>
               <linearGradient id="colorAmount" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                <stop offset="70%" stopColor="#8884d8" stopOpacity={0} />
                 <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+              </linearGradient>
+              <linearGradient id="colorCount" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
               </linearGradient>
             </defs>
           </AreaChart>
