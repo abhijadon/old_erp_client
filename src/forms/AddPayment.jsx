@@ -4,6 +4,7 @@ import axios from 'axios';
 import useLanguage from '@/locale/useLanguage';
 import { InboxOutlined } from '@ant-design/icons';
 import DocumentPreview from '@/components/DocumentPreview';
+
 const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
     const [loading, setLoading] = useState(false);
     const translate = useLanguage();
@@ -55,7 +56,6 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
         }
     }, [recordDetails]);
 
-
     // Define the installment options with filtering logic
     const getInstallmentOptions = () => {
         const allInstallmentOptions = [
@@ -71,53 +71,12 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             { value: '10th Installment', label: '10th Installment' },
         ];
 
-        if (installmentType === '1st Installment') {
-            // Exclude the first installment
-            return allInstallmentOptions.filter(option => option.value !== '1st Installment');
-        }
+        const excludedInstallments = allInstallmentOptions.slice(0, parseInt(installmentType.split(' ')[0], 10));
 
-        if (installmentType === '2nd Installment') {
-            // Exclude the first and second installments
-            return allInstallmentOptions.filter(option => !['1st Installment', '2nd Installment'].includes(option.value));
-        }
-        if (installmentType === '3rd Installment') {
-            // Exclude the first and second installments
-            return allInstallmentOptions.filter(option => !['1st Installment', '2nd Installment', '3rd Installment'].includes(option.value));
-        }
-        if (installmentType === '4th Installment') {
-            // Exclude the first and second installments
-            return allInstallmentOptions.filter(option => !['1st Installment', '2nd Installment', '3rd Installment', '4th Installment'].includes(option.value));
-        }
-        if (installmentType === '5th Installment') {
-            // Exclude the first and second installments
-            return allInstallmentOptions.filter(option => !['1st Installment', '2nd Installment', '3rd Installment', '4th Installment', '5th Installment'].includes(option.value));
-        }
-
-        if (installmentType === '6th Installment') {
-            // Exclude the first and second installments
-            return allInstallmentOptions.filter(option => !['1st Installment', '2nd Installment', '3rd Installment', '4th Installment', '5th Installment', '6th Installment'].includes(option.value));
-        }
-        if (installmentType === '7th Installment') {
-            // Exclude the first and second installments
-            return allInstallmentOptions.filter(option => !['1st Installment', '2nd Installment', '3rd Installment', '4th Installment', '5th Installment', '6th Installment', '7th Installment'].includes(option.value));
-        }
-        if (installmentType === '8th Installment') {
-            // Exclude the first and second installments
-            return allInstallmentOptions.filter(option => !['1st Installment', '2nd Installment', '3rd Installment', '4th Installment', '5th Installment', '6th Installment', '7th Installment', '8th Installment'].includes(option.value));
-        }
-        if (installmentType === '9th Installment') {
-            // Exclude the first and second installments
-            return allInstallmentOptions.filter(option => !['1st Installment', '2nd Installment', '3rd Installment', '4th Installment', '5th Installment', '6th Installment', '7th Installment', '8th Installment', '9th Installment'].includes(option.value));
-        }
-        if (installmentType === '10th Installment') {
-            // Exclude the first and second installments
-            return allInstallmentOptions.filter(option => !['1st Installment', '2nd Installment', '3rd Installment', '4th Installment', '5th Installment', '6th Installment', '7th Installment', '8th Installment', '9th Installment', '10th Installment'].includes(option.value));
-        }
-        return allInstallmentOptions; // Default options if no specific exclusion
+        return allInstallmentOptions.filter(option => !excludedInstallments.includes(option));
     };
 
     const installmentOptions = getInstallmentOptions();
-
 
     const isFieldDisabled = (fieldName) => {
         if (fieldName === 'paid_amount') {
@@ -126,8 +85,6 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
         return false; // default to not disabled
     };
 
-
-    // Determine whether the fields should be disabled or enabled
     const isField = (fieldName) => {
         if (fieldName === 'paid_amount') {
             return paymentStatus === 'payment approved' || paymentStatus === 'payment rejected';
@@ -137,7 +94,7 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
 
     const isFieldrejected = (fieldName) => {
         if (fieldName === 'paid_amount') {
-            return  paymentStatus === 'payment rejected';
+            return paymentStatus === 'payment rejected';
         }
         return false; // default to not disabled
     };
@@ -159,6 +116,7 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             return () => clearTimeout(timer);
         }
     }, [success]);
+
     const onFinish = async (values) => {
         setLoading(true);
         try {
@@ -234,8 +192,6 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
 
     // Get status options based on the role
     const statusOptions = getStatusOptions(role);
-
-
 
     return (
         <><Form
@@ -381,7 +337,7 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             >
                 <Input disabled={isFieldDisabled('paid_amount')} />
             </Form.Item>
-          <div className='flex items-center justify-between'>
+            <div className='flex items-center justify-between'>
                 <Form.Item
                     label="Send Fee Receipt"
                     name={['customfields', 'sendfeeReciept']}
@@ -392,25 +348,29 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                         <Radio value="no">No</Radio>
                     </Radio.Group>
                 </Form.Item>
-                <Form.Item
-                    label="Welcome Mail"
-                    name="welcome"
-                >
-                    <Radio.Group disabled={isField('paid_amount')}>
-                        <Radio value="yes">Yes</Radio>
-                        <Radio value="no">No</Radio>
-                    </Radio.Group>
-                </Form.Item>
-                <Form.Item
-                    label="Welcome whatsapp"
-                    name="whatsappWelcome"
-                >
-                    <Radio.Group disabled={isField('paid_amount')}>
-                        <Radio value="yes">Yes</Radio>
-                        <Radio value="no">No</Radio>
-                    </Radio.Group>
-                </Form.Item>
-          </div>
+                {!recordDetails?.welcomeMail || recordDetails?.welcomeMail !== 'Yes' ? (
+                    <Form.Item
+                        label="Welcome Mail"
+                        name="welcome"
+                    >
+                        <Radio.Group disabled={isField('paid_amount')}>
+                            <Radio value="yes">Yes</Radio>
+                            <Radio value="no">No</Radio>
+                        </Radio.Group>
+                    </Form.Item>
+                ) : null}
+                {!recordDetails?.whatsappMessageStatus || recordDetails?.whatsappMessageStatus !== 'success' ? (
+                    <Form.Item
+                        label="Welcome Whatsapp"
+                        name="whatsappWelcome"
+                    >
+                        <Radio.Group disabled={isField('paid_amount')}>
+                            <Radio value="yes">Yes</Radio>
+                            <Radio value="no">No</Radio>
+                        </Radio.Group>
+                    </Form.Item>
+                ) : null}
+            </div>
             <Form.Item
                 label={translate('paymentStatus')}
                 name={['customfields', 'paymentStatus']}
