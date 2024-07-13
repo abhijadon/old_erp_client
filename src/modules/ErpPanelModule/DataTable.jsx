@@ -68,8 +68,10 @@ export default function DataTable({ config, extra = [] }) {
   const [selectedFollowup, setSelectedFollowup] = useState(null);
   const [isFollowUpActive, setIsFollowUpActive] = useState(false);
   const [isTeam, setIsTeam] = useState('false');
-  const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(selectCurrentAdmin?.role);
-  const isFilter = ['admin', 'subadmin', 'manager', 'supportiveassociate', 'teamleader'].includes(selectCurrentAdmin?.role);
+  const currentAdmin = useSelector(selectCurrentAdmin);
+  const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(currentAdmin?.role);
+  const isFilter = ['admin', 'subadmin', 'manager', 'supportiveassociate', 'teamleader'].includes(currentAdmin?.role);
+
   const handleDateRangeChange = (dates) => {
     if (dates && dates.length === 2) {
       setStartDate(dates[0]);
@@ -491,35 +493,41 @@ export default function DataTable({ config, extra = [] }) {
                 <Select.Option key={type} value={type}>{type}</Select.Option>
               ))}
             </Select>
-            {isFilter ? (
-              <><Select
-                showSearch
-                allowClear
-                optionFilterProp="children"
-                filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                placeholder="Select user name"
-                className="w-44 h-8"
-                onChange={(value) => handleFilterChange('userName', value)}
-                value={selectedUserName}
-              >
-                {userNames.map((user) => (
-                  <Select.Option key={user.value} value={user.value}>
-                    {user.label}
-                  </Select.Option>
-                ))}
-              </Select><RangePicker
+            {isFilter && (
+              <>
+                <Select
+                  showSearch
+                  allowClear
+                  optionFilterProp="children"
+                  filterOption={(input, option) =>
+                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  }
+                  placeholder="Select user name"
+                  className="w-44 h-8"
+                  onChange={(value) => handleFilterChange('userName', value)}
+                  value={selectedUserName}
+                >
+                  {userNames.map((user) => (
+                    <Select.Option key={user.value} value={user.value}>
+                      {user.label}
+                    </Select.Option>
+                  ))}
+                </Select>
+                <RangePicker
                   onChange={handleFollowupDateRangeChange}
                   value={followStartDate && followEndDate ? [followStartDate, followEndDate] : null}
                   className='w-44 h-8'
                   format='DD/MM/YYYY'
-                  placeholder={['Follow-up Start Date', 'Follow-up End Date']} /><Button className={isFollowUpActive ? 'bg-green-500 border-blue-400 border w-40' : 'bg-green-200 text-green-800 hover:text-green-700 hover:bg-green-100 hover:border-none border-none w-44'}
-                    onClick={() => handlePaymentStatus('follow-up')}
-                  >
+                  placeholder={['Follow-up Start Date', 'Follow-up End Date']}
+                />
+                <Button
+                  className={isFollowUpActive ? 'bg-green-500 border-blue-400 border w-40' : 'bg-green-200 text-green-800 hover:text-green-700 hover:bg-green-100 hover:border-none border-none w-44'}
+                  onClick={() => handlePaymentStatus('follow-up')}
+                >
                   <span>Follow Status </span><span className='text-red-500'>({pagination.followUpCount})</span>
-                </Button></>
-            ) : null}
-
-
+                </Button>
+              </>
+            )}
             <RangePicker
               onChange={handleDateRangeChange}
               value={startDate && endDate ? [startDate, endDate] : null}
@@ -527,7 +535,6 @@ export default function DataTable({ config, extra = [] }) {
               format='DD/MM/YYYY'
               placeholder={['Start Date', 'End Date']}
             />
-
 
             <Button className="bg-red-200 text-red-800 hover:text-red-700 hover:bg-red-100 hover:border-none border-none w-28"
               onClick={resetFilters}
