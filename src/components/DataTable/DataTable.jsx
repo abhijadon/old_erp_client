@@ -854,6 +854,7 @@ export default function DataTable({ config, extra = [] }) {
           <Radio.Button value={null}>All</Radio.Button>
           <Radio.Button value={'yes'}>Yes</Radio.Button>
           <Radio.Button value={'no'}>No</Radio.Button>
+          <Radio.Button value={'N/A'}>N/A</Radio.Button>
         </Radio.Group>
       </Menu.Item>
     </Menu>
