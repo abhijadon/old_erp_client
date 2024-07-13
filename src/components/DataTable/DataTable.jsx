@@ -46,7 +46,7 @@ function AddNewItem({ config }) {
 }
 
 export default function DataTable({ config, extra = [] }) {
-  let { entity, dataTableColumns, DATATABLE_TITLE, fields, searchConfig } = config;
+  let { entity, dataTableColumns, searchConfig } = config;
   const { isSuccess } = useSelector(selectCreatedItem);
   const dispatch = useDispatch();
   const { crudContextAction } = useCrudContext();
@@ -329,6 +329,8 @@ export default function DataTable({ config, extra = [] }) {
 
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
   const { pagination, items: dataSource } = listResult;
+
+  console.log(pagination)
 
   const handelDataTableLoad = (pagination) => {
     const options = {
@@ -908,9 +910,6 @@ export default function DataTable({ config, extra = [] }) {
                 </div>
               </Dropdown>
               <Button title='Export excel' onClick={exportToExcel} className='text-green-800 bg-green-300 hover:text-green-700 hover:bg-green-100 border-none hover:border-none' icon={<PiMicrosoftExcelLogo />}> Excel</Button>
-              <Button className='text-blue-700 bg-blue-300 hover:text-blue-800 hover:bg-blue-100' onClick={() => handelDataTableLoad({})} key={`${uniqueId()}`} icon={<FiRefreshCw />}>
-                {translate('Refresh')}
-              </Button>
               <AddNewItem key="addNewItem" config={config} />
             </div>
           </div>
