@@ -35,6 +35,7 @@ import CommentForm from '@/forms/comment';
 import { LiaFileDownloadSolid } from 'react-icons/lia';
 import { PiMicrosoftTeamsLogo } from 'react-icons/pi';
 import useFetch from '@/hooks/useFetch';
+import { selectCurrentAdmin } from '@/redux/auth/selectors';
 const { RangePicker } = DatePicker;
 
 export default function DataTable({ config, extra = [] }) {
@@ -67,7 +68,8 @@ export default function DataTable({ config, extra = [] }) {
   const [selectedFollowup, setSelectedFollowup] = useState(null);
   const [isFollowUpActive, setIsFollowUpActive] = useState(false);
   const [isTeam, setIsTeam] = useState('false');
-
+  const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(selectCurrentAdmin?.role);
+  const isFilter = ['admin', 'subadmin', 'manager', 'supportiveassociate', 'teamleader'].includes(selectCurrentAdmin?.role);
   const handleDateRangeChange = (dates) => {
     if (dates && dates.length === 2) {
       setStartDate(dates[0]);
@@ -489,23 +491,34 @@ export default function DataTable({ config, extra = [] }) {
                 <Select.Option key={type} value={type}>{type}</Select.Option>
               ))}
             </Select>
+            {isFilter ? (
+              <><Select
+                showSearch
+                allowClear
+                optionFilterProp="children"
+                filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+                placeholder="Select user name"
+                className="w-44 h-8"
+                onChange={(value) => handleFilterChange('userName', value)}
+                value={selectedUserName}
+              >
+                {userNames.map((user) => (
+                  <Select.Option key={user.value} value={user.value}>
+                    {user.label}
+                  </Select.Option>
+                ))}
+              </Select><RangePicker
+                  onChange={handleFollowupDateRangeChange}
+                  value={followStartDate && followEndDate ? [followStartDate, followEndDate] : null}
+                  className='w-44 h-8'
+                  format='DD/MM/YYYY'
+                  placeholder={['Follow-up Start Date', 'Follow-up End Date']} /><Button className={isFollowUpActive ? 'bg-green-500 border-blue-400 border w-40' : 'bg-green-200 text-green-800 hover:text-green-700 hover:bg-green-100 hover:border-none border-none w-44'}
+                    onClick={() => handlePaymentStatus('follow-up')}
+                  >
+                  <span>Follow Status </span><span className='text-red-500'>({pagination.followUpCount})</span>
+                </Button></>
+            ) : null}
 
-            <Select
-              showSearch
-              allowClear
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-              placeholder="Select user name"
-              className='w-44 h-8'
-              onChange={(value) => handleFilterChange('userName', value)}
-              value={selectedUserName}
-            >
-              {userNames.map(user => (
-                <Select.Option key={user.value} value={user.value}>{user.label}</Select.Option>
-              ))}
-            </Select>
 
             <RangePicker
               onChange={handleDateRangeChange}
@@ -515,18 +528,7 @@ export default function DataTable({ config, extra = [] }) {
               placeholder={['Start Date', 'End Date']}
             />
 
-            <RangePicker
-              onChange={handleFollowupDateRangeChange}
-              value={followStartDate && followEndDate ? [followStartDate, followEndDate] : null}
-              className='w-44 h-8'
-              format='DD/MM/YYYY'
-              placeholder={['Follow-up Start Date', 'Follow-up End Date']}
-            />
-            <Button className={isFollowUpActive ? 'bg-green-500 border-blue-400 border w-40' : 'bg-green-200 text-green-800 hover:text-green-700 hover:bg-green-100 hover:border-none border-none w-44'}
-              onClick={() => handlePaymentStatus('follow-up')}
-            >
-              <span>Follow Status </span><span className='text-red-500'>({pagination.followUpCount})</span>
-            </Button>
+
             <Button className="bg-red-200 text-red-800 hover:text-red-700 hover:bg-red-100 hover:border-none border-none w-28"
               onClick={resetFilters}
             >
@@ -640,17 +642,19 @@ export default function DataTable({ config, extra = [] }) {
                   <span className='font-thin text-sm'> {pagination.total}</span>
                 </div>
               </div>
-              <div className='flex items-center gap-1'>
-                <Dropdown overlay={menu} trigger={['click']}>
-                  <div className='flex items-center gap-1 text-sm uppercase rounded-full border border-gray-400 bg-gray-50 px-1 h-6 cursor-pointer'>
-                    <span><PiMicrosoftTeamsLogo /></span>
-                    <span>Team</span>
-                  </div>
-                </Dropdown>
-                <Button onClick={exportToExcel} className='flex items-center gap-0.5 capitalize text-sm font-thin bg-green-300 text-green-800 border-none hover:border-none hover:text-green-700 hover:bg-green-100'>
-                  <span><LiaFileDownloadSolid /></span><span>excel</span>
-                </Button>
-              </div>
+              {isAdmin ? (
+                <div className='flex items-center gap-1'>
+                  <Dropdown overlay={menu} trigger={['click']}>
+                    <div className='flex items-center gap-1 text-sm uppercase rounded-full border border-gray-400 bg-gray-50 px-1 h-6 cursor-pointer'>
+                      <span><PiMicrosoftTeamsLogo /></span>
+                      <span>Team</span>
+                    </div>
+                  </Dropdown>
+                  <Button onClick={exportToExcel} className='flex items-center gap-0.5 capitalize text-sm font-thin bg-green-300 text-green-800 border-none hover:border-none hover:text-green-700 hover:bg-green-100'>
+                    <span><LiaFileDownloadSolid /></span><span>excel</span>
+                  </Button>
+                </div>
+              ) : null}
             </div>
           </div>
           <Table

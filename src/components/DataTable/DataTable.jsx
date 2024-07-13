@@ -9,7 +9,6 @@ import useLanguage from '@/locale/useLanguage';
 import { GrHistory } from "react-icons/gr";
 import { useCrudContext } from '@/context/crud';
 import * as XLSX from 'xlsx';
-import { generate as uniqueId } from 'shortid';
 import { request } from '@/request';
 import UpdatePaymentForm from '@/forms/AddPayment';
 import UploadDocumentForm from '@/forms/uploadDocument';
@@ -24,7 +23,6 @@ import CommentForm from '@/forms/comment';
 import { BsSend } from "react-icons/bs";
 import { PiMicrosoftExcelLogo, PiMicrosoftTeamsLogo } from "react-icons/pi";
 const { RangePicker } = DatePicker;
-import { FiRefreshCw } from "react-icons/fi";
 import moment from 'moment';
 import useFetch from '@/hooks/useFetch';
 
@@ -91,7 +89,7 @@ export default function DataTable({ config, extra = [] }) {
   const [selectedErolledmail, setSelectedEnrolledmail] = useState(null);
   const [selectedEnrolledwhatsapp, setSelectedEnrolledwhatsapp] = useState(null);
   const [selectedLMS, setSelectedLMS] = useState(null);
-
+  const isFilter = ['admin', 'subadmin', 'manager', 'supportiveassociate', 'teamleader'].includes(selectCurrentAdmin?.role);
   const { data: uniqueOptions, isLoading: optionLoading } = useFetch(() =>
     request.filter({ entity: 'lead' })
   );
@@ -641,23 +639,25 @@ export default function DataTable({ config, extra = [] }) {
                 <Select.Option key={type}>{type}</Select.Option>
               ))}
             </Select>
+            {isFilter ? (
+              <Select
+                showSearch
+                allowClear
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
+                placeholder="Select user name"
+                className='w-44 h-8'
+                onChange={(value) => handleFilterChange('userName', value)}
+                value={selectedUserName}
+              >
+                {userNames.map(user => (
+                  <Select.Option key={user.value} value={user.value}>{user.label}</Select.Option>
+                ))}
+              </Select>
+            ) : null}
 
-            <Select
-              showSearch
-              allowClear
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-              placeholder="Select user name"
-              className='w-44 h-8'
-              onChange={(value) => handleFilterChange('userName', value)}
-              value={selectedUserName}
-            >
-              {userNames.map(user => (
-                <Select.Option key={user.value} value={user.value}>{user.label}</Select.Option>
-              ))}
-            </Select>
 
             <RangePicker
               onChange={handleDateRangeChange}
@@ -897,19 +897,28 @@ export default function DataTable({ config, extra = [] }) {
               />
             </div>
             <div className='space-x-2 flex items-center'>
-              <Dropdown overlay={menu1} trigger={['click']}>
-                <div className='flex items-center gap-1 text-sm uppercase rounded-full border border-gray-400 bg-gray-50 px-1 h-6 cursor-pointer'>
-                  <span><PiMicrosoftTeamsLogo className='text-blue-600' /></span>
-                  <span>Team</span>
-                </div>
-              </Dropdown>
-              <Dropdown trigger={['click']} overlay={menu}>
-                <div className='flex items-center gap-1.5 text-sm uppercase rounded-full border border-gray-400 bg-gray-50 px-1 h-6 cursor-pointer'>
-                  <span><IoFilterOutline /></span>
-                  <span>Filters</span>
-                </div>
-              </Dropdown>
-              <Button title='Export excel' onClick={exportToExcel} className='text-green-800 bg-green-300 hover:text-green-700 hover:bg-green-100 border-none hover:border-none' icon={<PiMicrosoftExcelLogo />}> Excel</Button>
+              {isAdmin ? (
+                <>
+                  <Dropdown overlay={menu1} trigger={['click']}>
+                    <div className="flex items-center gap-1 text-sm uppercase rounded-full border border-gray-400 bg-gray-50 px-1 h-6 cursor-pointer">
+                      <span>
+                        <PiMicrosoftTeamsLogo className="text-blue-600" />
+                      </span>
+                      <span>Team</span>
+                    </div>
+                  </Dropdown>
+                  <Dropdown trigger={['click']} overlay={menu}>
+                    <div className="flex items-center gap-1.5 text-sm uppercase rounded-full border border-gray-400 bg-gray-50 px-1 h-6 cursor-pointer">
+                      <span>
+                        <IoFilterOutline />
+                      </span>
+                      <span>Filters</span>
+                    </div>
+                  </Dropdown>
+                  <Button title='Export excel' onClick={exportToExcel} className='text-green-800 bg-green-300 hover:text-green-700 hover:bg-green-100 border-none hover:border-none' icon={<PiMicrosoftExcelLogo />}> Excel</Button>
+                </>
+              ) : null}
+
               <AddNewItem key="addNewItem" config={config} />
             </div>
           </div>
