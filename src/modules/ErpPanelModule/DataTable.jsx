@@ -239,8 +239,6 @@ export default function DataTable({ config, extra = [] }) {
     const options = {
       page: pagination.current || 1,
       items: pagination.pageSize || 10, // Set the page size to 20
-      sortBy: 'updated',  // Example sort field
-      sortValue: -1,      // Example sort order (descending)
     };
 
     // Add selected filters if they are not null
@@ -285,7 +283,11 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   useEffect(() => {
+    const controller = new AbortController();
     dispatcher();
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   const { tableColumns, tableHeader } = useResponsiveTable(

@@ -334,8 +334,6 @@ export default function DataTable({ config, extra = [] }) {
     const options = {
       page: pagination.current || 1,
       items: pagination.pageSize || 10,
-      sortBy: 'updated',
-      sortValue: -1,
     };
 
     if (selectedInstitute !== null) {
