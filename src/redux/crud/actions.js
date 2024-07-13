@@ -43,15 +43,18 @@ export const crud = {
         keyState: 'list',
         payload: null,
       });
+     
+      // Remove the pageSize key from options
+    const { ...restOptions } = options;
 
-      let data = await request.list({ entity, options });
+      let data = await request.list({ entity, options:  restOptions});
 
       if (data.success === true) {
         const result = {
           items: data.result,
           pagination: {
             current: parseInt(data.pagination.page, 10),
-            pageSize: options?.items,
+            pageSize: options?.items || 10,
             total: parseInt(data.pagination.count, 10),
             countReceived: parseInt(data.pagination.paymentReceivedCount, 10),
             countRejected: parseInt(data.pagination.paymentRejectedCount, 10),

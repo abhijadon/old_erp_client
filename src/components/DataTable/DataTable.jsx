@@ -90,7 +90,7 @@ export default function DataTable({ config, extra = [] }) {
   const [selectedEnrolledwhatsapp, setSelectedEnrolledwhatsapp] = useState(null);
   const [selectedLMS, setSelectedLMS] = useState(null);
   const isFilter = ['admin', 'subadmin', 'manager', 'supportiveassociate', 'teamleader'].includes(currentAdmin?.role);
-  const { data: uniqueOptions, isLoading: optionLoading } = useFetch(() =>
+  const { data: uniqueOptions } = useFetch(() =>
     request.filter({ entity: 'lead' })
   );
 
