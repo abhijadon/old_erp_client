@@ -35,7 +35,7 @@ export const crud = {
         payload: { ...data },
       });
     },
- list:
+  list:
     ({ entity, options = { page: 1, items: 10 } }) =>
     async (dispatch) => {
       dispatch({
@@ -43,11 +43,10 @@ export const crud = {
         keyState: 'list',
         payload: null,
       });
-     
-      // Remove the pageSize key from options
-    const { ...restOptions } = options;
 
-      let data = await request.list({ entity, options:  restOptions});
+      const { ...restOptions } = options;
+
+      let data = await request.list({ entity, options: restOptions });
 
       if (data.success === true) {
         const result = {

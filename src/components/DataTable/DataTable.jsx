@@ -408,7 +408,8 @@ export default function DataTable({ config, extra = [] }) {
     return () => {
       controller.abort();
     };
-  }, [entity]);
+  }, []);
+
 
   const handleFilterChange = (filterType, value) => {
     switch (filterType) {
@@ -925,9 +926,9 @@ export default function DataTable({ config, extra = [] }) {
           <Table
             columns={dataTableColumns}
             rowKey={(item) => item._id}
+            loading={listIsLoading}
             dataSource={dataSource}
             pagination={pagination}
-            loading={listIsLoading}
             onChange={handelDataTableLoad}
           />
         </div>
