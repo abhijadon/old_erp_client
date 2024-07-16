@@ -13469,7 +13469,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -14082,7 +14082,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -14695,7 +14695,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -15308,7 +15308,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -15921,7 +15921,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -16534,7 +16534,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -17147,7 +17147,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -17760,7 +17760,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -18373,7 +18373,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -18987,7 +18987,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -19600,7 +19600,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -20213,7 +20213,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -20826,7 +20826,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -21439,7 +21439,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -22053,7 +22053,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -22666,7 +22666,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -23280,7 +23280,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -23893,7 +23893,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -24506,7 +24506,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -25119,7 +25119,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],
@@ -25732,7 +25732,7 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [
-              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
               { value: 'University Website', label: 'University Website' }],

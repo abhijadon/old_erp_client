@@ -44,7 +44,7 @@ function AddNewItem({ config }) {
 }
 
 export default function DataTable({ config, extra = [] }) {
-  let { entity, dataTableColumns, searchConfig } = config;
+  let { entity, dataTableColumns } = config;
   const { isSuccess } = useSelector(selectCreatedItem);
   const dispatch = useDispatch();
   const { crudContextAction } = useCrudContext();
@@ -80,6 +80,7 @@ export default function DataTable({ config, extra = [] }) {
   const [selectedInstallment, setSelectedInstallment] = useState(null);
   const [selectedUserName, setSelectedUserName] = useState(null);
   const [startDate, setStartDate] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
   const [endDate, setEndDate] = useState(null);
   const [isTeam, setIsTeam] = useState('false');
   const [selectedPaymentstatus, setSelectedPaymentstatus] = useState(null);
@@ -328,12 +329,11 @@ export default function DataTable({ config, extra = [] }) {
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
   const { pagination, items: dataSource } = listResult;
 
-  console.log(pagination)
-
   const handelDataTableLoad = (pagination) => {
     const options = {
       page: pagination.current || 1,
       items: pagination.pageSize || 10,
+      q: searchQuery,
     };
 
     if (selectedInstitute !== null) {
@@ -383,13 +383,6 @@ export default function DataTable({ config, extra = [] }) {
       options.end_date = endDate.format('DD/MM/YYYY');
     }
 
-    dispatch(crud.list({ entity, options }));
-  };
-
-
-  const filterTable = (e) => {
-    const value = e.target.value;
-    const options = { q: value, fields: searchConfig?.searchFields || '' };
     dispatch(crud.list({ entity, options }));
   };
 
@@ -458,7 +451,9 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   const applyFilters = () => {
-    const options = {};
+    const options = {
+      q: searchQuery,
+    };
 
     if (selectedInstitute !== null) {
       options.institute_name = selectedInstitute;
@@ -511,7 +506,7 @@ export default function DataTable({ config, extra = [] }) {
 
   useEffect(() => {
     applyFilters();
-  }, [selectedInstitute, selectedUniversity, selectedStatus, selectedPaymentMode, selectedPaymentType, selectedUserName, selectedWelcomemail, selectedInstallment, isTeam, startDate, endDate, selectedPaymentstatus, selectedWelcomewhatsapp, selectedErolledmail, selectedEnrolledwhatsapp, selectedLMS]);
+  }, [selectedInstitute, selectedUniversity, selectedStatus, selectedPaymentMode, selectedPaymentType, selectedUserName, selectedWelcomemail, selectedInstallment, isTeam, startDate, endDate, selectedPaymentstatus, selectedWelcomewhatsapp, selectedErolledmail, selectedEnrolledwhatsapp, selectedLMS, searchQuery]);
 
   const resetFilters = () => {
     setSelectedInstitute(null);
@@ -531,6 +526,7 @@ export default function DataTable({ config, extra = [] }) {
     setActiveButton(null);
     setEndDate(null);
     setIsTeam('false');
+    setSearchQuery('');
     applyFilters();
   };
 
@@ -707,8 +703,7 @@ export default function DataTable({ config, extra = [] }) {
   const exportToExcel = async () => {
     const options = {
       export: 'true',
-      sortBy: 'updated',
-      sortValue: -1,
+      q: searchQuery,
     };
 
     if (selectedInstitute !== null) {
@@ -892,7 +887,7 @@ export default function DataTable({ config, extra = [] }) {
               </div>
               <Input
                 key={`searchFilterDataTable}`}
-                onChange={filterTable}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={translate('search')}
                 allowClear
               />
