@@ -11,6 +11,14 @@ import {
   SET_SEARCH,
 } from './types';
 
+const INITIAL_KEY_STATE = {
+  result: null,
+  current: null,
+  isLoading: false,
+  isSuccess: false,
+};
+
+
 const INITIAL_STATE = {
   current: {
     result: null,
@@ -33,7 +41,9 @@ const INITIAL_STATE = {
     filterValue: [], // Changed to an array
   },
   search: '', // Add search initial state
+  delete: INITIAL_KEY_STATE
 };
+
 
 const erpReducer = (state = INITIAL_STATE, action) => {
   const { payload, keyState } = action;

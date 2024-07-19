@@ -24,7 +24,7 @@ export default function Navigation() {
   useEffect(() => {
     async function fetchRoleAndMenuOptions() {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_BACKEND_SERVER}api/menu/list`);
+        const response = await axios.get(`menu/list`);
         if (response.status === 200) {
           const { role, options } = response.data;
           setMenuOptions({ role, options });

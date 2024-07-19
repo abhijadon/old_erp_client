@@ -1,28 +1,24 @@
-import { Form, Select, Button, message, Input } from 'antd';
+import { Form, Button, message, Input } from 'antd';
 import { request } from '@/request';
 
-const { Option } = Select;
-
-const EditCourseInfo = ({ onClose, onFormSubmit, selectedRecord }) => {
+const EditCourseInfo = ({ onClose, onFormSubmit, record }) => {
     const [form] = Form.useForm();
-
     const handleFinish = async (values) => {
         try {
-            await request.update({ entity: 'info', id: selectedRecord._id, jsonData: values });
-            onFormSubmit(); // Trigger reload in parent component
-            onClose(); // Close the form
+            await request.update({ entity: 'info', id: record._id, jsonData: values });
+            onFormSubmit();
+            onClose();
         } catch (error) {
             message.error('Failed to update record');
         }
     };
-
 
     return (
         <Form
             form={form}
             layout="vertical"
             onFinish={handleFinish}
-            initialValues={selectedRecord}
+            initialValues={record}
         >
             <Form.Item
                 label="Mode"

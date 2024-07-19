@@ -137,7 +137,7 @@ const Index = () => {
                 </div>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10' style={{ maxHeight: '400px', overflowY: 'auto' }}>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10'>
                 {loading ? (
                     <Spin size="large" />
                 ) : brochures.length > 0 ? (
@@ -150,8 +150,8 @@ const Index = () => {
                             }>
                                 <div className='text-center'>
                                     <Image
-                                        width={300}
-                                        height={200}
+                                        width={250}
+                                        height={180}
                                         src={brochure.downloadURL}
                                         alt={`Brochure ${index}`}
                                     />

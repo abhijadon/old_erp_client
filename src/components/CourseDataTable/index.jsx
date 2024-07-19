@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Card, Table, Button, Drawer, Divider } from 'antd';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Card, Table, Button, Drawer, Divider, Modal } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { course } from '@/redux/course/actions';
 import { selectListItems, selectFilterItems } from '@/redux/course/selector';
@@ -10,15 +10,27 @@ import { TbEdit } from 'react-icons/tb';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import CourseInform from '@/forms/courseInform';
 import FilterComponent from "../FilterComponent";
+import BrochureModal from "../BrochuresModal"
+import { LiaFolderOpen } from "react-icons/lia";
+import EditCourseInfo from '@/forms/EditCourseInfo';
+import DetailsPage from "../Detailspage";
+import { useCrudContext } from '@/context/crud';
 
 export default function Index({ config }) {
   const { entity, dataTableColumns } = config;
   const dispatch = useDispatch();
   const filter = useSelector(selectFilterItems);
+  const { crudContextAction } = useCrudContext();
+  const { panel, collapsedBox, modal, editBox, advancedBox } = crudContextAction;
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
   const { pagination, items: dataSource } = listResult;
   const searchQuery = useSelector(state => state.course.search); // Retrieve search query from Redux state
   const [visible, setVisible] = useState(false);
+  const [brochureVisible, setBrochureVisible] = useState(false);
+  const [editVisible, setEditVisible] = useState(false);
+  const [editRecord, setEditRecord] = useState(null);
+  const [detailsVisible, setDetailsVisible] = useState(false);
+  const [selectedRecord, setSelectedRecord] = useState(null);
 
   const handleDrawer = () => {
     setVisible(true);
@@ -28,25 +40,51 @@ export default function Index({ config }) {
     setVisible(false);
   };
 
-  const dispatcher = () => {
-    const filterField = filter.filterField; // Array of filter fields
-    const filterValue = filter.filterValue; // Array of filter values
-
-    dispatch(course.list({
-      entity,
-      options: {
-        page: pagination.current,
-        items: pagination.pageSize,
-        filterField: filterField,
-        filterValue: filterValue,
-        q: searchQuery, // Include search query in the request options
-      },
-    }));
+  const handleBrochureDrawer = () => {
+    setBrochureVisible(true);
   };
+
+  const handleCloseBrochureDrawer = () => {
+    setBrochureVisible(false);
+  };
+
+  const handleCloseEditDrawer = () => {
+    setEditVisible(false);
+    setEditRecord(null);
+  };
+
+  const handleCloseDetailsDrawer = () => {
+    setDetailsVisible(false);
+    setSelectedRecord(null);
+  };
+
+  const handelDataTableLoad = useCallback((pagination) => {
+    const filterField = filter.filterField; // Array of filter fields
+    const filterValue = filter.filterValue;
+    const options = {
+      page: pagination.current || 1,
+      items: pagination.pageSize || 10,
+      filterField: filterField,
+      filterValue: filterValue,
+      q: searchQuery,
+    };
+    dispatch(course.list({ entity, options }));
+  }, [dispatch, filter.filterField, filter.filterValue, searchQuery]);
 
   useEffect(() => {
     dispatcher();
-  }, [filter, pagination.current, pagination.pageSize, searchQuery]); // Add searchQuery as a dependency
+  }, [filter, searchQuery]); // Add searchQuery and filter as dependencies
+
+  const dispatcher = useCallback(() => {
+    const filterField = filter.filterField; // Array of filter fields
+    const filterValue = filter.filterValue;
+    const options = {
+      filterField: filterField,
+      filterValue: filterValue,
+      q: searchQuery,
+    };
+    dispatch(course.list({ entity, options }));
+  }, [dispatch, filter.filterField, filter.filterValue, searchQuery]);
 
   const handleFilterChange = (field, value) => {
     dispatch(course.setFilter({ filterField: field, filterValue: value }));
@@ -62,21 +100,18 @@ export default function Index({ config }) {
   };
 
   const handleShowStudentDetails = (record) => {
-    setSelectedStudent(record);
-    setShowStudentDetailsDrawer(true);
+    setSelectedRecord(record);
+    setDetailsVisible(true);
   };
 
   const handleDelete = (record) => {
-    dispatch(crud.currentAction({ actionType: 'delete', data: record }));
-    modalClasses.open();
+    dispatch(course.delete({ id: record._id, entity }));
+    modal.open();
   };
 
   const handleEdit = (record) => {
-    dispatch(crud.currentItem({ data: record }));
-    dispatch(crud.currentAction({ actionType: 'update', data: record }));
-    editBox.open();
-    panel.open();
-    collapsedBox.open();
+    setEditRecord(record);
+    setEditVisible(true);
   };
 
   const actionColumn = {
@@ -108,9 +143,17 @@ export default function Index({ config }) {
 
   const ButtonFunction = () => {
     return (
-      <Button onClick={handleDrawer} type="primary" size="small" className='flex items-center gap-0.5 py-3.5 mb-6'>
-        <span><IoIosAddCircleOutline /></span> <span>Add Course</span>
-      </Button>
+      <>
+        <div className='flex gap-2'>
+          <Button onClick={handleDrawer} size="small" className='flex items-center gap-0.5 py-3.5 mb-6 bg-blue-200 text-blue-500 hover:text-blue-700 hover:bg-blue-100'>
+            <span><IoIosAddCircleOutline /></span><span>Add Course</span>
+          </Button>
+          <Button onClick={handleBrochureDrawer} size="small" className='flex items-center gap-0.5 py-3.5 mb-6 text-red-500 bg-red-200 capitalize hover:text-red-700 hover:bg-red-100 hover:border-red-500'>
+            <span><LiaFolderOpen /></span>
+            <span>Open Brochure</span>
+          </Button>
+        </div>
+      </>
     );
   };
 
@@ -129,7 +172,8 @@ export default function Index({ config }) {
           rowKey={(item) => item._id}
           loading={listIsLoading}
           dataSource={dataSource}
-          pagination={pagination}
+          pagination={false}
+          onChange={handelDataTableLoad}
           columns={columns}
         />
       </Card>
@@ -139,6 +183,43 @@ export default function Index({ config }) {
         </span>
       } placement='top' onClose={handleCloseDrawer} visible={visible}>
         <CourseInform onClose={handleCloseDrawer} onFormSubmit={dispatcher} />
+      </Drawer>
+      <Drawer
+        title={
+          <div className='float-end font-thin text-base'>Brochures</div>
+        }
+        placement='right'
+        onClose={handleCloseBrochureDrawer}
+        visible={brochureVisible}
+        width={900}
+      >
+        <BrochureModal onClose={handleCloseBrochureDrawer} />
+      </Drawer>
+      <Drawer
+        title={
+          <div className='flex items-center justify-center gap-2'>
+            <span className='text-base font-thin'>Edit Course</span>
+          </div>
+        }
+        placement='bottom'
+        onClose={handleCloseEditDrawer}
+        visible={editVisible}
+        height={500}
+      >
+        {editRecord && <EditCourseInfo record={editRecord} onClose={handleCloseEditDrawer} onFormSubmit={dispatcher} />}
+      </Drawer>
+      <Drawer
+        title={
+          <div className='flex items-center justify-center gap-2'>
+            <span className='text-base font-thin'>Course Details</span>
+          </div>
+        }
+        placement='left'
+        onClose={handleCloseDetailsDrawer}
+        visible={detailsVisible}
+        width={750}
+      >
+        {selectedRecord && <DetailsPage record={selectedRecord} onClose={handleCloseDetailsDrawer} />}
       </Drawer>
     </>
   );

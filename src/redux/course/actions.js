@@ -124,4 +124,33 @@ export const course = {
         });
       }
     },
+     delete:
+    ({ entity, id }) =>
+    async (dispatch) => {
+      dispatch({
+        type: REQUEST_LOADING,
+        keyState: 'delete',
+        payload: null,
+      });
+
+      let data = await request.delete({ entity, id });
+
+      if (data.success === true) {
+        dispatch({
+          type: REQUEST_SUCCESS,
+          keyState: 'delete',
+          payload: data.result,
+        });
+        dispatch({
+          type: RESET_ACTION,
+          keyState: 'delete',
+        });
+      } else {
+        dispatch({
+          type: REQUEST_FAILED,
+          keyState: 'delete',
+          payload: null,
+        });
+      }
+    },
 };
