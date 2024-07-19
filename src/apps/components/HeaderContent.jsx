@@ -78,7 +78,7 @@ export default function HeaderContent() {
 
   const DropdownMenu = ({ text }) => {
     return <span style={{}}>{text}</span>;
-  }; 
+  };
 
   const items = isAdmin
     ? [
@@ -211,12 +211,6 @@ export default function HeaderContent() {
             {currentAdmin?.fullname && currentAdmin?.fullname.charAt(0).toUpperCase()}
           </Avatar>
         </Dropdown>
-        <Dropdown menu={darkModeDropdown} trigger={['click']} placement='bottomRight'>
-          <div>
-            <BsMoonStars className='text-[20px] text-black cursor-pointer' />
-          </div>
-        </Dropdown>
-        <SelectLanguage />
       </div>
     </Header>
   );

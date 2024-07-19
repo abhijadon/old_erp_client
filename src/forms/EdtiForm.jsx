@@ -1,12 +1,19 @@
-import { Form, Input, Select, Radio } from 'antd';
+import { Form, Input, Select, Radio, InputNumber } from 'antd';
 import useLanguage from '@/locale/useLanguage';
 import { useState } from 'react';
 
-
 const { TextArea } = Input;
+
 export default function EditForm() {
     const translate = useLanguage();
     const [status, setStatus] = useState('');
+
+    const restrictNumericInput = (e) => {
+        const charCode = e.which ? e.which : e.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            e.preventDefault();
+        }
+    };
 
     return (
         <>
@@ -31,8 +38,7 @@ export default function EditForm() {
                         { required: true, message: 'Email is required' }
                     ]}
                 >
-                    <Input type='email' autoComplete='
-                on'/>
+                    <Input type='email' autoComplete='on' />
                 </Form.Item>
 
                 <Form.Item
@@ -48,11 +54,9 @@ export default function EditForm() {
                 <Form.Item
                     label={translate('Alternate number')}
                     name={['contact', 'alternate_phone']}
-
                 >
                     <Input type='tel' autoComplete='on' />
                 </Form.Item>
-
 
                 <Form.Item
                     label={translate('course')}
@@ -73,7 +77,8 @@ export default function EditForm() {
                 >
                     <Select
                         showSearch
-                        placeholder='select session' options={[
+                        placeholder='select session'
+                        options={[
                             { value: 'JAN 20', label: 'JAN 20' },
                             { value: 'JULY 20', label: 'JULY 20' },
                             { value: 'JAN 21', label: 'JAN 21' },
@@ -92,9 +97,8 @@ export default function EditForm() {
                             { value: 'OCT 23', label: 'OCT 23' },
                             { value: 'OCT 24', label: 'OCT 24' },
                             { value: 'NOV 23', label: 'NOV 23' },
-                        ]}>
-
-                    </Select>
+                        ]}
+                    />
                 </Form.Item>
                 <Form.Item
                     label={translate('admission type')}
@@ -108,7 +112,7 @@ export default function EditForm() {
                             { value: 'Credit Transfer', label: 'Credit Transfer' },
                             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }
                         ]}
-                    ></Select>
+                    />
                 </Form.Item>
                 <Form.Item
                     label={translate('Institute name')}
@@ -121,7 +125,7 @@ export default function EditForm() {
                             { value: 'HES', label: 'HES' },
                             { value: 'DES', label: 'DES' },
                         ]}
-                    ></Select>
+                    />
                 </Form.Item>
 
                 <Form.Item
@@ -154,7 +158,7 @@ export default function EditForm() {
                             { value: 'MANGALAYATAN DISTANCE', label: 'MANGALAYATAN DISTANCE' },
                             { value: 'MANGALAYATAN ONLINE', label: 'MANGALAYATAN ONLINE' },
                         ]}
-                    ></Select>
+                    />
                 </Form.Item>
 
                 <Form.Item
@@ -173,7 +177,13 @@ export default function EditForm() {
                     label={translate('date of birth')}
                     name={['customfields', 'dob']}
                 >
-                    <Input type='date' className='uppercase' />
+                    <Input type='date' className='uppercase' max="9999-12-31"
+                        onInput={(e) => {
+                            if (e.target.value.length > 10) {
+                                e.target.value = e.target.value.slice(0, 10);
+                            }
+                        }}
+                    />
                 </Form.Item>
 
                 <Form.Item
@@ -187,7 +197,7 @@ export default function EditForm() {
                             { value: 'Female', label: translate('Female') },
                             { value: 'Other', label: translate('Other') },
                         ]}
-                    ></Select>
+                    />
                 </Form.Item>
                 <Form.Item
                     label={translate('Installment Type')}
@@ -210,7 +220,7 @@ export default function EditForm() {
                             { value: '9th Installment', label: '9th Installment' },
                             { value: '10th Installment', label: '10th Installment' },
                         ]}
-                    ></Select>
+                    />
                 </Form.Item>
                 <Form.Item
                     label={translate('Payment Mode')}
@@ -226,7 +236,7 @@ export default function EditForm() {
                             { value: 'Cash/DD', label: 'Cash/DD' }
 
                         ]}
-                    ></Select>
+                    />
                 </Form.Item>
                 <Form.Item
                     label={translate('payment type')}
@@ -239,25 +249,37 @@ export default function EditForm() {
                             { value: 'Yearly', label: translate('Yearly') },
                             { value: 'Fullfees', label: translate('Fullfees') },
                         ]}
-                    ></Select>
+                    />
                 </Form.Item>
                 <Form.Item
                     label={translate('Total Course Fee')}
                     name={['customfields', 'total_course_fee']}
                 >
-                    <Input />
+                    <InputNumber
+                        style={{ width: '100%' }}
+                        min={0}
+                        onKeyPress={restrictNumericInput}
+                    />
                 </Form.Item>
                 <Form.Item
                     label={translate('Total Paid Amount')}
                     name={['customfields', 'total_paid_amount']}
                 >
-                    <Input />
+                    <InputNumber
+                        style={{ width: '100%' }}
+                        min={0}
+                        onKeyPress={restrictNumericInput}
+                    />
                 </Form.Item>
                 <Form.Item
                     label={translate('Paid Amount')}
                     name={['customfields', 'paid_amount']}
                 >
-                    <Input />
+                    <InputNumber
+                        style={{ width: '100%' }}
+                        min={0}
+                        onKeyPress={restrictNumericInput}
+                    />
                 </Form.Item>
 
                 <Form.Item
@@ -291,7 +313,6 @@ export default function EditForm() {
                     >
                         <Input placeholder='Enter enrollment number' />
                     </Form.Item>
-
                 )}
                 <Form.Item
                     label={translate('paymentStatus')}

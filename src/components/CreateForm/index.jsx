@@ -48,7 +48,6 @@ export default function CreateForm({ config, formElements, withUpload = false })
 
   const dispatchFormSubmission = (fieldsValue) => {
     const formData = new FormData();
-    console.log('felval', fieldsValue)
     if (fieldsValue && entity !== 'lead') {
       console.log('fiewldvalue', fieldsValue)
       dispatch(crud.create({ entity, jsonData: fieldsValue, withUpload: true }));

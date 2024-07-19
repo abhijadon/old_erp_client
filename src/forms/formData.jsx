@@ -339,21 +339,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -362,21 +362,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -385,21 +385,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -414,21 +414,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -443,21 +443,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -951,21 +951,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -974,21 +974,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -997,21 +997,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -1026,21 +1026,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -1055,21 +1055,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -1564,21 +1564,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -1587,21 +1587,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -1610,21 +1610,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -1639,21 +1639,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -1668,21 +1668,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -2177,21 +2177,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -2200,21 +2200,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -2223,21 +2223,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -2252,21 +2252,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -2281,21 +2281,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -2790,21 +2790,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -2813,21 +2813,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -2836,21 +2836,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -2865,21 +2865,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -2894,21 +2894,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -3403,21 +3403,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -3426,21 +3426,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -3449,21 +3449,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -3478,21 +3478,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -3507,21 +3507,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -4016,21 +4016,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -4039,21 +4039,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -4062,21 +4062,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -4091,21 +4091,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -4120,21 +4120,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -4629,21 +4629,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -4652,21 +4652,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -4675,21 +4675,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -4704,21 +4704,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -4733,21 +4733,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -5242,21 +5242,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -5265,21 +5265,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -5288,21 +5288,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -5317,21 +5317,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -5346,21 +5346,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -5856,21 +5856,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -5879,21 +5879,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -5902,21 +5902,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -5931,21 +5931,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -5960,21 +5960,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -6469,21 +6469,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -6492,21 +6492,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -6515,21 +6515,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -6544,21 +6544,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -6573,21 +6573,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -7082,21 +7082,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -7105,21 +7105,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -7128,21 +7128,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -7157,21 +7157,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -7186,21 +7186,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -7695,21 +7695,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -7718,21 +7718,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -7741,21 +7741,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -7770,21 +7770,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -7799,21 +7799,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -8308,21 +8308,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -8331,21 +8331,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -8354,21 +8354,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -8383,21 +8383,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -8412,21 +8412,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -8922,21 +8922,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -8945,21 +8945,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -8968,21 +8968,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -8997,21 +8997,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -9026,21 +9026,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -9535,21 +9535,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -9558,21 +9558,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -9581,21 +9581,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -9610,21 +9610,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -9639,21 +9639,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -10149,21 +10149,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -10172,21 +10172,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -10195,21 +10195,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -10224,21 +10224,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -10253,21 +10253,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -10762,21 +10762,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -10785,21 +10785,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -10808,21 +10808,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -10837,21 +10837,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -10866,21 +10866,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -11375,21 +11375,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -11398,21 +11398,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -11421,21 +11421,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -11450,21 +11450,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -11479,21 +11479,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -11988,21 +11988,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -12011,21 +12011,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -12034,21 +12034,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -12063,21 +12063,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -12092,21 +12092,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -12601,21 +12601,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -12624,21 +12624,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -12647,21 +12647,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -12676,21 +12676,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -12705,21 +12705,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -13223,21 +13223,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -13246,21 +13246,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -13269,21 +13269,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -13298,21 +13298,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -13327,21 +13327,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -13835,21 +13835,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -13858,21 +13858,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -13881,21 +13881,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -13910,21 +13910,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -13939,21 +13939,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -14448,21 +14448,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -14471,21 +14471,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -14494,21 +14494,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -14523,21 +14523,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -14552,21 +14552,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -15061,21 +15061,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -15084,21 +15084,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -15107,21 +15107,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -15136,21 +15136,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -15165,21 +15165,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -15674,21 +15674,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -15697,21 +15697,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -15720,21 +15720,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -15749,21 +15749,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -15778,21 +15778,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -16287,21 +16287,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -16310,21 +16310,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -16333,21 +16333,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -16362,21 +16362,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -16391,21 +16391,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -16900,21 +16900,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -16923,21 +16923,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -16946,21 +16946,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -16975,21 +16975,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -17004,21 +17004,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -17513,21 +17513,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -17536,21 +17536,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -17559,21 +17559,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -17588,21 +17588,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -17617,21 +17617,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -18126,21 +18126,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -18149,21 +18149,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -18172,21 +18172,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -18201,21 +18201,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -18230,21 +18230,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -18740,21 +18740,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -18763,21 +18763,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -18786,21 +18786,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -18815,21 +18815,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -18844,21 +18844,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -19353,21 +19353,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -19376,21 +19376,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -19399,21 +19399,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -19428,21 +19428,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -19457,21 +19457,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -19966,21 +19966,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -19989,21 +19989,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -20012,21 +20012,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -20041,21 +20041,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -20070,21 +20070,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -20579,21 +20579,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -20602,21 +20602,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -20625,21 +20625,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -20654,21 +20654,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -20683,21 +20683,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -21192,21 +21192,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -21215,21 +21215,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -21238,21 +21238,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -21267,21 +21267,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -21296,21 +21296,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -21806,21 +21806,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -21829,21 +21829,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -21852,21 +21852,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -21881,21 +21881,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -21910,21 +21910,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -22419,21 +22419,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -22442,21 +22442,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -22465,21 +22465,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -22494,21 +22494,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -22523,21 +22523,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -23033,21 +23033,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -23056,21 +23056,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -23079,21 +23079,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -23108,21 +23108,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -23137,21 +23137,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -23646,21 +23646,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -23669,21 +23669,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -23692,21 +23692,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -23721,21 +23721,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -23750,21 +23750,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -24259,21 +24259,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -24282,21 +24282,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -24305,21 +24305,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -24334,21 +24334,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -24363,21 +24363,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -24872,21 +24872,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -24895,21 +24895,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -24918,21 +24918,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -24947,21 +24947,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -24976,21 +24976,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -25485,21 +25485,21 @@ const formData = [
                     label: "Semester",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Semester fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -25508,21 +25508,21 @@ const formData = [
                     label: "Yearly",
                     paymentType: [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Yearly Fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   },
@@ -25531,21 +25531,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -25560,21 +25560,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }
@@ -25589,21 +25589,21 @@ const formData = [
                     label: "Fullfees",
                     "paymentType": [
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Full fees",
                         name: ["customfields", "total_course_fee"],
                         place: "eg: 20000",
                         id: "Total Course Fee",
-                        type: "text",
+                        type: "tel",
                         required: "require"
                       },
                       {
-                        key: "text",
+                        key: "tel",
                         label: "Paid Amount",
                         name: ["customfields", "paid_amount"],
                         place: "eg: 20000",
                         id: "Paid Amount",
-                        type: "text"
+                        type: "tel"
                       }
                     ]
                   }

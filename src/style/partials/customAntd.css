@@ -166,7 +166,9 @@
   background-color: #f0f0f0; /* Change this to your desired sticky header background color */
 }
 
-
+:where(.css-dev-only-do-not-override-1k979oh).ant-drawer .ant-drawer-header {
+  padding: 5px 24px;
+}
 
 /* Customize the scrollbar corner */
 .custom-scrollbar::-webkit-scrollbar-corner {

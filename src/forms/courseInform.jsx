@@ -29,15 +29,14 @@ const CourseInform = ({ onClose, onFormSubmit }) => {
         try {
             const response = await axios.post('/info/create', formValues);
             if (response.status === 200) {
-                message.success('Permission created successfully');
+                message.success('Course created successfully');
                 onFormSubmit(); // Trigger parent component's onFormSubmit function
                 onClose(); // Close the form
             } else {
-                throw new Error(response.data.message || 'Failed to create permission');
+                throw new Error(response.data.message);
             }
         } catch (error) {
-            console.error('Error:', error);
-            message.error(error.response?.data?.message || 'Failed to create permission');
+            message.error(error.response?.data?.message);
         }
     };
 
@@ -59,7 +58,7 @@ const CourseInform = ({ onClose, onFormSubmit }) => {
     };
 
     return (
-        <Form onFinish={onFinish} layout="vertical">
+        <Form onFinish={onFinish} layout="vertical" className='grid grid-cols-4 space-x-3'>
             <Form.Item
                 label="Mode"
                 name="mode_info"
@@ -127,7 +126,7 @@ const CourseInform = ({ onClose, onFormSubmit }) => {
                     )}
                 </Form.Item>
             ))}
-            <Form.Item>
+            <Form.Item className='mt-7'>
                 <Button type="primary" htmlType="submit">
                     Submit
                 </Button>

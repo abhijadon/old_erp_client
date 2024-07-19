@@ -6,7 +6,8 @@ export default {
   ], 
 important: true,
   theme: {
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 }

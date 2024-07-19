@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Select, Upload, message, Radio, Modal } from 'antd';
+import { Form, Input, Button, Select, Upload, message, Radio, Modal, InputNumber } from 'antd';
 import axios from 'axios';
 import useLanguage from '@/locale/useLanguage';
 import { InboxOutlined } from '@ant-design/icons';
 import DocumentPreview from '@/components/DocumentPreview';
+import { useSelector } from 'react-redux';
+import { selectCreatedItem } from '@/redux/crud/selectors';
 
 const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
     const [loading, setLoading] = useState(false);
+    const { isSuccess } = useSelector(selectCreatedItem);
     const translate = useLanguage();
     const [role, setRole] = useState('');
     const [success, setSuccess] = useState(false); // Track success state
@@ -31,6 +34,13 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             setDocumentUrls(recordDetails.studentDocument); // Set student documents to display
             setDocumentType('student'); // Set document type
             setDocumentModalVisible(true); // Open modal
+        }
+    };
+
+    const restrictNumericInput = (e) => {
+        const charCode = e.which ? e.which : e.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            e.preventDefault();
         }
     };
 
@@ -141,7 +151,7 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             formData.append('whatsappWelcome', values.whatsappWelcome);
             formData.append(
                 'customfields[sendfeeReciept]',
-                values.customfields.sendfeeReciept === 'yes' ? 'Yes' : 'No'
+                values.customfields.sendfeeReciept === 'yes' ? 'yes' : 'no'
             );
 
             // Append existing images 
@@ -192,6 +202,14 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
 
     // Get status options based on the role
     const statusOptions = getStatusOptions(role);
+
+    useEffect(() => {
+        if (isSuccess) {
+            setSuccess(true);
+            onCloseModal();
+        }
+    }, [isSuccess]);
+
 
     return (
         <><Form
@@ -335,7 +353,13 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                 label={translate('Paid Amount')}
                 name={['customfields', 'paid_amount']}
             >
-                <Input disabled={isFieldDisabled('paid_amount')} />
+
+                <InputNumber
+                    disabled={isFieldDisabled('paid_amount')}
+                    style={{ width: '100%' }}
+                    min={0}
+                    onKeyPress={restrictNumericInput}
+                />
             </Form.Item>
             <div className='flex items-center justify-between'>
                 <Form.Item

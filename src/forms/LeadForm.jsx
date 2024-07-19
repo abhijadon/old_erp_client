@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Form, Select, Input, Checkbox, Radio, notification, Upload, message } from 'antd';
+import { Form, Select, Input, Checkbox, Radio, notification, Upload, message, InputNumber } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 import formData from './formData';
 
@@ -23,7 +23,7 @@ export default function LeadForm() {
   const [selectedPayment, setSelectedPayment] = useState(null);
   const [studentId, setStudentId] = useState('');
   const [selectedAdmissionType, setSelectedAdmissionType] = useState(null);
-  const [selectedSpecialization, setSelectedSpecialization] = useState(null)
+  const [selectedSpecialization, setSelectedSpecialization] = useState(null);
 
   const handleAdmissionTypeChange = (value) => {
     setSelectedAdmissionType(value);
@@ -67,9 +67,16 @@ export default function LeadForm() {
   };
 
   const handlePaymentChange = (value) => {
-    setSelectedPayment(value)
-  }
+    setSelectedPayment(value);
+  };
   /* handlechanges */
+
+  const restrictNumericInput = (e) => {
+    const charCode = e.which ? e.which : e.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      e.preventDefault();
+    }
+  };
 
   /* generate fields dynamic by selectedUniversity */
 
@@ -194,7 +201,12 @@ export default function LeadForm() {
                 },
               ]}
             >
-              <Input placeholder={field.place} />
+              <InputNumber
+                placeholder={field.place}
+                style={{ width: '100%' }}
+                min={0}
+                onKeyPress={restrictNumericInput}
+              />
             </Form.Item>
           );
         case 'select':
@@ -219,9 +231,14 @@ export default function LeadForm() {
                 },
               ]}
             >
-              <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              } placeholder={field.place}>
+              <Select
+                showSearch
+                optionFilterProp='children'
+                filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
+                placeholder={field.place}
+              >
                 {field.options.map((option) => (
                   <Option key={option.value} value={option.value}>
                     {option.label ? option.label.charAt(0).toUpperCase() + option.label.slice(1) : ''}
@@ -254,7 +271,17 @@ export default function LeadForm() {
                 },
               ]}
             >
-              <Input type="date" placeholder={field.place} className='uppercase' />
+              <Input
+                type="date"
+                placeholder={field.place}
+                className='uppercase'
+                max="9999-12-31" // Set the max date value to ensure only 4-digit years
+                onInput={(e) => {
+                  if (e.target.value.length > 10) {
+                    e.target.value = e.target.value.slice(0, 10);
+                  }
+                }}
+              />
             </Form.Item>
           );
         case 'textarea':
@@ -294,10 +321,15 @@ export default function LeadForm() {
     <div>
       <form className='grid grid-cols-4 gap-3'>
         <Form.Item label="Select Institute" name={['customfields', 'institute_name']} >
-          <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
-            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-          }
-            onChange={handleInstituteChange} placeholder="--Select Institute--">
+          <Select
+            showSearch
+            optionFilterProp='children'
+            filterOption={(input, option) =>
+              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+            onChange={handleInstituteChange}
+            placeholder="--Select Institute--"
+          >
             {formData.map((item) => (
               <Option key={item.value} value={item.value}>
                 {item.label}
@@ -308,10 +340,15 @@ export default function LeadForm() {
         {selectedInstitute && (
           <>
             <Form.Item label="Select University" name={['customfields', 'university_name']} >
-              <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-                onChange={handleUniversityChange} placeholder="--Select University--">
+              <Select
+                showSearch
+                optionFilterProp='children'
+                filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
+                onChange={handleUniversityChange}
+                placeholder="--Select University--"
+              >
                 {formData
                   .find((item) => item.value === selectedInstitute)
                   .universities?.map((university) => (
@@ -329,9 +366,15 @@ export default function LeadForm() {
                   .universities.find((university) => university.value === selectedUniversity)
                   .fields[0]?.courses ? (
                   <Form.Item label="Select Course" name={['education', 'course']}>
-                    <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
-                      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                    } onChange={handleCourseChange} placeholder="--Select Course--">
+                    <Select
+                      showSearch
+                      optionFilterProp='children'
+                      filterOption={(input, option) =>
+                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      }
+                      onChange={handleCourseChange}
+                      placeholder="--Select Course--"
+                    >
                       {formData
                         .find((item) => item.value === selectedInstitute)
                         .universities.find((university) => university.value === selectedUniversity)
@@ -342,7 +385,6 @@ export default function LeadForm() {
                         ))}
                     </Select>
                   </Form.Item>
-
                 ) : null}
                 {selectedCourse && (
                   <div>
@@ -350,7 +392,9 @@ export default function LeadForm() {
                       <Select
                         showSearch
                         optionFilterProp='children'
-                        filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+                        filterOption={(input, option) =>
+                          option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                        }
                         placeholder="--Select Specialization--"
                         onChange={handleSpecializationChange}
                       >
@@ -390,12 +434,17 @@ export default function LeadForm() {
                     .find((item) => item.value === selectedInstitute)
                     .universities.find((university) => university.value === selectedUniversity)
                     .fields[1]?.admission_type ? (
-                    <Form.Item label="Select admission status" name={['customfields', 'admission_type']} className='grid col-span-1' rules={[
-                      {
-                        required: true,
-                        message: "Please Select admission status",
-                      },
-                    ]}>
+                    <Form.Item
+                      label="Select admission status"
+                      name={['customfields', 'admission_type']}
+                      className='grid col-span-1'
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please Select admission status",
+                        },
+                      ]}
+                    >
                       <Select
                         showSearch
                         optionFilterProp='children'
@@ -419,12 +468,17 @@ export default function LeadForm() {
 
                   {/* Render payment select based on selected admission type */}
                   {selectedAdmissionType && (
-                    <Form.Item label="Select payment status" name={['customfields', 'payment_type']} className='grid col-span-1' rules={[
-                      {
-                        required: true,
-                        message: "Please Select admission status",
-                      },
-                    ]}>
+                    <Form.Item
+                      label="Select payment status"
+                      name={['customfields', 'payment_type']}
+                      className='grid col-span-1'
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please Select admission status",
+                        },
+                      ]}
+                    >
                       <Select
                         onChange={handlePaymentChange}
                         placeholder="--Select Payment--"
@@ -466,7 +520,13 @@ export default function LeadForm() {
                               },
                             ]}
                           >
-                            <Input placeholder={pay.place} type={pay.type} />
+
+                            <InputNumber
+                              placeholder={pay.place} type={pay.type}
+                              style={{ width: '100%' }}
+                              min={0}
+                              onKeyPress={restrictNumericInput}
+                            />
                           </Form.Item>
                         ))}
                       </Form.Item>

@@ -5,7 +5,7 @@ import { reducer as crudReducer } from './crud';
 import { reducer as erpReducer } from './erp';
 import { reducer as settingsReducer } from './settings';
 import { reducer as translateReducer } from './translate';
-
+import { reducer as courseReducer } from './course';
 import * as actionTypes from './auth/types';
 
 // Combine all reducers.
@@ -16,6 +16,7 @@ const appReducer = combineReducers({
   erp: erpReducer,
   settings: settingsReducer,
   translate: translateReducer,
+  course: courseReducer,
 });
 
 const rootReducer = (state, action) => {
