@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { EyeOutlined, EditOutlined, DeleteOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Dropdown, Table, Button, Card, Select, Input, DatePicker, Menu, Drawer, Radio } from 'antd';
+import { Dropdown, Table, Button, Card, Select, Input, DatePicker, Menu, Drawer, Radio, Modal } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
 import { LiaRupeeSignSolid } from "react-icons/lia";
@@ -52,10 +52,10 @@ export default function DataTable({ config, extra = [] }) {
   const translate = useLanguage();
   const [statuses, setStatuses] = useState([]);
   const [institutes, setInstitutes] = useState([]);
-  const [installment, setInstallment] = useState([]);
+  const [installments, setInstallments] = useState([]);
   const [universities, setUniversities] = useState([]);
-  const [session, setSession] = useState([]);
-  const [paymentType, setPaymentType] = useState([]);
+  const [sessions, setSessions] = useState([]);
+  const [paymentTypes, setPaymentTypes] = useState([]);
   const [userNames, setUserNames] = useState([]);
   const [historyData, setHistoryData] = useState(null);
   const [showHistoryModal, setShowHistoryModal] = useState(false);
@@ -63,7 +63,7 @@ export default function DataTable({ config, extra = [] }) {
   const [updatePaymentRecord, setUpdatePaymentRecord] = useState(null);
   const [showUploadDocumentDrawer, setShowUploadDocumentDrawer] = useState(false);
   const [recordForUploadDocument, setRecordForUploadDocument] = useState(null);
-  const [paymentMode, setPaymentMode] = useState([]);
+  const [paymentModes, setPaymentModes] = useState([]);
   const [showCommentDrawer, setShowCommentDrawer] = useState(false);
   const [commentRecord, setCommentRecord] = useState(null);
   const currentAdmin = useSelector(selectCurrentAdmin);
@@ -78,17 +78,18 @@ export default function DataTable({ config, extra = [] }) {
   const [selectedPaymentMode, setSelectedPaymentMode] = useState(null);
   const [selectedPaymentType, setSelectedPaymentType] = useState(null);
   const [selectedInstallment, setSelectedInstallment] = useState(null);
+  const [selectedSession, setSelectedSession] = useState(null);
   const [selectedUserName, setSelectedUserName] = useState(null);
   const [startDate, setStartDate] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [endDate, setEndDate] = useState(null);
   const [isTeam, setIsTeam] = useState('false');
-  const [selectedPaymentstatus, setSelectedPaymentstatus] = useState(null);
+  const [selectedPaymentStatus, setSelectedPaymentStatus] = useState(null);
   const [activeButton, setActiveButton] = useState(null);
-  const [selectedWelcomemail, setSelectedWelcomemail] = useState(null);
-  const [selectedWelcomewhatsapp, setSelectedWelcomewhatsapp] = useState(null);
-  const [selectedErolledmail, setSelectedEnrolledmail] = useState(null);
-  const [selectedEnrolledwhatsapp, setSelectedEnrolledwhatsapp] = useState(null);
+  const [selectedWelcomeMail, setSelectedWelcomeMail] = useState(null);
+  const [selectedWelcomeWhatsApp, setSelectedWelcomeWhatsApp] = useState(null);
+  const [selectedEnrolledMail, setSelectedEnrolledMail] = useState(null);
+  const [selectedEnrolledWhatsApp, setSelectedEnrolledWhatsApp] = useState(null);
   const [selectedLMS, setSelectedLMS] = useState(null);
   const isFilter = ['admin', 'subadmin', 'manager', 'supportiveassociate', 'teamleader'].includes(currentAdmin?.role);
   const { data: uniqueOptions } = useFetch(() =>
@@ -99,11 +100,11 @@ export default function DataTable({ config, extra = [] }) {
     if (uniqueOptions) {
       setStatuses(uniqueOptions.uniqueValues.statuses || []);
       setInstitutes(uniqueOptions.uniqueValues.institute_names || []);
-      setInstallment(uniqueOptions.uniqueValues.installment_types || []);
+      setInstallments(uniqueOptions.uniqueValues.installment_types || []);
       setUniversities(uniqueOptions.uniqueValues.university_names || []);
-      setSession(uniqueOptions.uniqueValues.sessions || []);
-      setPaymentType(uniqueOptions.uniqueValues.payment_types || []);
-      setPaymentMode(uniqueOptions.uniqueValues.payment_modes || []);
+      setSessions(uniqueOptions.uniqueValues.sessions || []);
+      setPaymentTypes(uniqueOptions.uniqueValues.payment_types || []);
+      setPaymentModes(uniqueOptions.uniqueValues.payment_modes || []);
       setUserNames(uniqueOptions.uniqueValues.userIds || []);
     }
   }, [uniqueOptions]);
@@ -174,7 +175,7 @@ export default function DataTable({ config, extra = [] }) {
     collapsedBox.open();
   };
 
-  const handleAddpayment = async (record) => {
+  const handleAddPayment = async (record) => {
     setUpdatePaymentRecord(record);
     setShowAddPaymentModal(true);
   };
@@ -190,8 +191,13 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   const handleDelete = (record) => {
-    dispatch(crud.currentAction({ actionType: 'delete', data: record }));
-    modal.open();
+    Modal.confirm({
+      title: 'Are you sure you want to delete this item?',
+      onOk: () => {
+        dispatch(crud.delete({ actionType: 'delete', data: record, entity }));
+        dispatcher();
+      }
+    });
   };
 
   const handleUpdatePassword = (record) => {
@@ -296,7 +302,7 @@ export default function DataTable({ config, extra = [] }) {
                   handleUpdatePassword(record);
                   break;
                 case 'add':
-                  handleAddpayment(record);
+                  handleAddPayment(record);
                   break;
                 case 'comments':
                   handleComment(record);
@@ -327,7 +333,7 @@ export default function DataTable({ config, extra = [] }) {
   ];
 
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
-  const { pagination, items: dataSource } = listResult;
+  const { pagination, items: dataSource = [] } = listResult || { items: [], pagination: {} };
 
   const handelDataTableLoad = (pagination) => {
     const options = {
@@ -354,20 +360,23 @@ export default function DataTable({ config, extra = [] }) {
     if (selectedInstallment !== null) {
       options.installment_type = selectedInstallment;
     }
-    if (selectedPaymentstatus !== null) {
-      options.paymentStatus = selectedPaymentstatus;
+    if (selectedSession !== null) {
+      options.session = selectedSession;
     }
-    if (selectedErolledmail !== null) {
-      options.welcomeEnrolled = selectedErolledmail;
+    if (selectedPaymentStatus !== null) {
+      options.paymentStatus = selectedPaymentStatus;
     }
-    if (selectedWelcomemail !== null) {
-      options.welcomeMail = selectedWelcomemail;
+    if (selectedEnrolledMail !== null) {
+      options.welcomeEnrolled = selectedEnrolledMail;
     }
-    if (selectedWelcomewhatsapp !== null) {
-      options.whatsappMessageStatus = selectedWelcomewhatsapp;
+    if (selectedWelcomeMail !== null) {
+      options.welcomeMail = selectedWelcomeMail;
     }
-    if (selectedEnrolledwhatsapp !== null) {
-      options.whatsappEnrolled = selectedEnrolledwhatsapp;
+    if (selectedWelcomeWhatsApp !== null) {
+      options.whatsappMessageStatus = selectedWelcomeWhatsApp;
+    }
+    if (selectedEnrolledWhatsApp !== null) {
+      options.whatsappEnrolled = selectedEnrolledWhatsApp;
     }
     if (selectedLMS !== null) {
       options.lmsStatus = selectedLMS;
@@ -387,7 +396,7 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   const handlePaymentStatus = (status) => {
-    setSelectedPaymentstatus(status);
+    setSelectedPaymentStatus(status);
     setActiveButton(status);
   };
 
@@ -424,20 +433,23 @@ export default function DataTable({ config, extra = [] }) {
       case 'installmentType':
         setSelectedInstallment(value);
         break;
+      case 'session':
+        setSelectedSession(value);
+        break;
       case 'userName':
         setSelectedUserName(value);
         break;
       case 'welcomeMail':
-        setSelectedWelcomemail(value);
+        setSelectedWelcomeMail(value);
         break;
       case 'enrolledEmail':
-        setSelectedEnrolledmail(value);
+        setSelectedEnrolledMail(value);
         break;
       case 'welcomeWhatsApp':
-        setSelectedWelcomewhatsapp(value);
+        setSelectedWelcomeWhatsApp(value);
         break;
       case 'enrolledWhatsApp':
-        setSelectedEnrolledwhatsapp(value);
+        setSelectedEnrolledWhatsApp(value);
         break;
       case 'lmsStatus':
         setSelectedLMS(value);
@@ -473,20 +485,23 @@ export default function DataTable({ config, extra = [] }) {
     if (selectedInstallment !== null) {
       options.installment_type = selectedInstallment;
     }
-    if (selectedPaymentstatus !== null) {
-      options.paymentStatus = selectedPaymentstatus;
+    if (selectedSession !== null) {
+      options.session = selectedSession;
     }
-    if (selectedWelcomemail !== null) {
-      options.welcomeMail = selectedWelcomemail;
+    if (selectedPaymentStatus !== null) {
+      options.paymentStatus = selectedPaymentStatus;
     }
-    if (selectedWelcomewhatsapp !== null) {
-      options.whatsappMessageStatus = selectedWelcomewhatsapp;
+    if (selectedWelcomeMail !== null) {
+      options.welcomeMail = selectedWelcomeMail;
     }
-    if (selectedErolledmail !== null) {
-      options.welcomeEnrolled = selectedErolledmail;
+    if (selectedWelcomeWhatsApp !== null) {
+      options.whatsappMessageStatus = selectedWelcomeWhatsApp;
     }
-    if (selectedEnrolledwhatsapp !== null) {
-      options.whatsappEnrolled = selectedEnrolledwhatsapp;
+    if (selectedEnrolledMail !== null) {
+      options.welcomeEnrolled = selectedEnrolledMail;
+    }
+    if (selectedEnrolledWhatsApp !== null) {
+      options.whatsappEnrolled = selectedEnrolledWhatsApp;
     }
     if (selectedLMS !== null) {
       options.lmsStatus = selectedLMS;
@@ -506,7 +521,7 @@ export default function DataTable({ config, extra = [] }) {
 
   useEffect(() => {
     applyFilters();
-  }, [selectedInstitute, selectedUniversity, selectedStatus, selectedPaymentMode, selectedPaymentType, selectedUserName, selectedWelcomemail, selectedInstallment, isTeam, startDate, endDate, selectedPaymentstatus, selectedWelcomewhatsapp, selectedErolledmail, selectedEnrolledwhatsapp, selectedLMS, searchQuery]);
+  }, [selectedInstitute, selectedUniversity, selectedStatus, selectedPaymentMode, selectedPaymentType, selectedUserName, selectedWelcomeMail, selectedInstallment, isTeam, startDate, endDate, selectedPaymentStatus, selectedWelcomeWhatsApp, selectedEnrolledMail, selectedEnrolledWhatsApp, selectedLMS, searchQuery, selectedSession]);
 
   const resetFilters = () => {
     setSelectedInstitute(null);
@@ -514,20 +529,22 @@ export default function DataTable({ config, extra = [] }) {
     setSelectedStatus(null);
     setSelectedPaymentMode(null);
     setSelectedPaymentType(null);
-    setSelectedWelcomewhatsapp(null);
+    setSelectedWelcomeWhatsApp(null);
     setSelectedUserName(null);
-    setSelectedEnrolledmail(null);
+    setSelectedEnrolledMail(null);
     setStartDate(null);
-    setSelectedEnrolledwhatsapp(null);
+    setSelectedEnrolledWhatsApp(null);
     setSelectedInstallment(null)
     setSelectedLMS(null);
-    setSelectedPaymentstatus(null);
-    setSelectedWelcomemail(null);
+    setSelectedPaymentStatus(null);
+    setSelectedSession(null);
+    setSelectedWelcomeMail(null);
     setActiveButton(null);
     setEndDate(null);
     setIsTeam('false');
     setSearchQuery('');
     applyFilters();
+    dispatcher();
   };
 
   const filterRender = () => {
@@ -598,7 +615,7 @@ export default function DataTable({ config, extra = [] }) {
               onChange={(value) => handleFilterChange('paymentType', value)}
               value={selectedPaymentType}
             >
-              {paymentType.map(type => (
+              {paymentTypes.map(type => (
                 <Select.Option key={type}>{type}</Select.Option>
               ))}
             </Select>
@@ -615,7 +632,7 @@ export default function DataTable({ config, extra = [] }) {
               onChange={(value) => handleFilterChange('paymentMode', value)}
               value={selectedPaymentMode}
             >
-              {paymentMode.map(mode => (
+              {paymentModes.map(mode => (
                 <Select.Option key={mode}>{mode}</Select.Option>
               ))}
             </Select>
@@ -632,7 +649,23 @@ export default function DataTable({ config, extra = [] }) {
               onChange={(value) => handleFilterChange('installmentType', value)}
               value={selectedInstallment}
             >
-              {installment.map(type => (
+              {installments.map(type => (
+                <Select.Option key={type}>{type}</Select.Option>
+              ))}
+            </Select>
+            <Select
+              showSearch
+              allowClear
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              placeholder="Select session type"
+              className='w-44 h-8'
+              onChange={(value) => handleFilterChange('session', value)}
+              value={selectedSession}
+            >
+              {sessions.map(type => (
                 <Select.Option key={type}>{type}</Select.Option>
               ))}
             </Select>
@@ -724,20 +757,20 @@ export default function DataTable({ config, extra = [] }) {
     if (selectedInstallment !== null) {
       options.installment_type = selectedInstallment;
     }
-    if (selectedWelcomemail !== null) {
-      options.welcomeMail = selectedWelcomemail;
+    if (selectedWelcomeMail !== null) {
+      options.welcomeMail = selectedWelcomeMail;
     }
-    if (selectedWelcomewhatsapp !== null) {
-      options.whatsappMessageStatus = selectedWelcomewhatsapp;
+    if (selectedWelcomeWhatsApp !== null) {
+      options.whatsappMessageStatus = selectedWelcomeWhatsApp;
     }
-    if (selectedPaymentstatus !== null) {
-      options.paymentStatus = selectedPaymentstatus;
+    if (selectedPaymentStatus !== null) {
+      options.paymentStatus = selectedPaymentStatus;
     }
-    if (selectedErolledmail !== null) {
-      options.welcomeEnrolled = selectedErolledmail;
+    if (selectedEnrolledMail !== null) {
+      options.welcomeEnrolled = selectedEnrolledMail;
     }
-    if (selectedEnrolledwhatsapp !== null) {
-      options.whatsappEnrolled = selectedEnrolledwhatsapp;
+    if (selectedEnrolledWhatsApp !== null) {
+      options.whatsappEnrolled = selectedEnrolledWhatsApp;
     }
     if (selectedLMS !== null) {
       options.lmsStatus = selectedLMS;
@@ -748,7 +781,6 @@ export default function DataTable({ config, extra = [] }) {
     } else if (selectedUserName !== null) {
       options.userId = selectedUserName;
     }
-
     if (startDate !== null && endDate !== null) {
       options.start_date = startDate.format('DD/MM/YYYY');
       options.end_date = endDate.format('DD/MM/YYYY');
@@ -796,7 +828,7 @@ export default function DataTable({ config, extra = [] }) {
         <span className="radio-label">Welcome Mail</span>
         <Radio.Group
           onChange={(e) => handleFilterChange('welcomeMail', e.target.value)} // Fix the onChange handler
-          value={selectedWelcomemail}
+          value={selectedWelcomeMail}
           className="radio-group"
         >
           <Radio.Button value={null}>All</Radio.Button>
@@ -808,7 +840,7 @@ export default function DataTable({ config, extra = [] }) {
         <span className="radio-label">Welcome Whatsapp</span>
         <Radio.Group
           onChange={(e) => handleFilterChange('welcomeWhatsApp', e.target.value)} // Fix the onChange handler
-          value={selectedWelcomewhatsapp}
+          value={selectedWelcomeWhatsApp}
           className="radio-group"
         >
           <Radio.Button value={null}>All</Radio.Button>
@@ -820,7 +852,7 @@ export default function DataTable({ config, extra = [] }) {
         <span className="radio-label">Enrolled Mailed</span>
         <Radio.Group
           onChange={(e) => handleFilterChange('enrolledEmail', e.target.value)} // Fix the onChange handler
-          value={selectedErolledmail}
+          value={selectedEnrolledMail}
           className="radio-group"
         >
           <Radio.Button value={null}>All</Radio.Button>
@@ -832,7 +864,7 @@ export default function DataTable({ config, extra = [] }) {
         <span className="radio-label">Enrolled Whatsapp</span>
         <Radio.Group
           onChange={(e) => handleFilterChange('enrolledWhatsApp', e.target.value)} // Fix the onChange handler
-          value={selectedEnrolledwhatsapp}
+          value={selectedEnrolledWhatsApp}
           className="radio-group"
         >
           <Radio.Button value={null}>All</Radio.Button>
@@ -856,7 +888,6 @@ export default function DataTable({ config, extra = [] }) {
     </Menu>
   );
 
-
   const menu1 = (
     <Menu>
       <Menu.Item key="team">
@@ -870,7 +901,6 @@ export default function DataTable({ config, extra = [] }) {
       </Menu.Item>
     </Menu>
   );
-
 
   return (
     <>

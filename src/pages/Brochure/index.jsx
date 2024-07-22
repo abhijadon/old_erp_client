@@ -19,7 +19,6 @@ const Index = ({ onClose, onFormSubmit }) => {
                 const response = await axios.get('/info/list');
                 if (response.data.success) {
                     const data = response.data.result;
-                    // Extract unique values from data
                     const universities = [...new Set(data.map(item => item.university))];
                     const courses = [...new Set(data.map(item => item.course))];
                     const electives = [...new Set(data.map(item => item.electives))];
@@ -32,7 +31,6 @@ const Index = ({ onClose, onFormSubmit }) => {
                 console.error('Error fetching course and elective list:', error);
             }
         };
-
         fetchCourseAndElectiveList();
     }, []);
 
@@ -65,9 +63,9 @@ const Index = ({ onClose, onFormSubmit }) => {
                     'Content-Type': 'multipart/form-data'
                 }
             });
-            if (response.data) {
+            if (response.data.success) {
                 message.success(response.data.message);
-                if (onFormSubmit) onFormSubmit();
+                if (onFormSubmit) onFormSubmit(response.data.result); // Pass the uploaded files to onFormSubmit
                 if (onClose) onClose();
                 form.resetFields();
             } else {
@@ -184,7 +182,7 @@ const Index = ({ onClose, onFormSubmit }) => {
                         label="Sample Degree"
                         name="sampleDegree"
                         valuePropName="fileList"
-                        getValueFromEvent={e => Array.isArray(e) ? e : e && e.fileList}
+                        getValueFromEvent={e => Array.isArray(e) ? e : e.fileList}
                     >
                         <Upload.Dragger
                             multiple={true}

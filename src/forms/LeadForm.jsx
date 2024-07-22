@@ -29,9 +29,6 @@ export default function LeadForm() {
     setSelectedAdmissionType(value);
   };
 
-  /* useState, useEffect uses condition */
-
-  /* student id generate automatica */
   useEffect(() => {
     if (selectedInstitute && selectedUniversity) {
       setStudentId(generateUniqueId());
@@ -544,32 +541,27 @@ export default function LeadForm() {
               <Upload.Dragger
                 multiple={true} // Allow multiple file upload
                 listType="picture"
-                accept="image/png, image/jpeg, image/svg+xml"
+                accept=".png,.jpeg,.jpg,.pdf"
+                beforeUpload={(file) => {
+                  const isJpgOrPngOrPdf =
+                    file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'application/pdf';
+                  if (!isJpgOrPngOrPdf) {
+                    message.error('You can only upload JPG/PNG/PDF file!');
+                    return Upload.LIST_IGNORE;
+                  }
+                  const isLt2M = file.size / 1024 / 1024 < 2;
+                  if (!isLt2M) {
+                    message.error('File must be smaller than 2MB!');
+                    return Upload.LIST_IGNORE;
+                  }
+                  return false;
+                }}
               >
                 <p className="ant-upload-drag-icon">
                   <InboxOutlined />
                 </p>
                 <p className="ant-upload-text">Click or drag files to this area to upload</p>
-                <p className="ant-upload-hint">Support for multiple images</p>
-              </Upload.Dragger>
-            </Form.Item>
-
-            <Form.Item
-              label="Student Documents"
-              name="studentDocument"
-              valuePropName="fileList"
-              getValueFromEvent={(e) => e.fileList}
-            >
-              <Upload.Dragger
-                multiple={true} // Allow multiple file upload
-                listType="picture"
-                accept="image/png, image/jpeg, image/svg+xml"
-              >
-                <p className="ant-upload-drag-icon">
-                  <InboxOutlined />
-                </p>
-                <p className="ant-upload-text">Click or drag files to this area to upload</p>
-                <p className="ant-upload-hint">Support for multiple images</p>
+                <p className="ant-upload-hint">Support for multiple images and PDF files</p>
               </Upload.Dragger>
             </Form.Item>
           </form>

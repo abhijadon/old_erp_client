@@ -1,12 +1,16 @@
 import { Form, Input, Select, Radio, InputNumber } from 'antd';
 import useLanguage from '@/locale/useLanguage';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectCurrentAdmin } from '@/redux/auth/selectors';
 
 const { TextArea } = Input;
 
 export default function EditForm() {
     const translate = useLanguage();
     const [status, setStatus] = useState('');
+    const currentAdmin = useSelector(selectCurrentAdmin);
+    const isAdmin = ['admin', 'subadmin', 'manager'].includes(currentAdmin?.role);
 
     const restrictNumericInput = (e) => {
         const charCode = e.which ? e.which : e.keyCode;
@@ -298,11 +302,11 @@ export default function EditForm() {
                             { value: 'Cancel', label: translate('Cancel') },
                             { value: 'Refunded', label: translate('Refunded') },
                             { value: 'Alumni', label: translate('Alumni') },
+                            { value: 'Connected', label: translate('Connected') },
                         ]}
                         onChange={(value) => setStatus(value)} // Update status state
                     />
                 </Form.Item>
-
                 {status === 'Enrolled' && ( // Conditionally render if status is 'Enrolled'
                     <Form.Item
                         label={translate('Enrollment Number')}
@@ -332,7 +336,17 @@ export default function EditForm() {
                 >
                     <TextArea rows={1} />
                 </Form.Item>
-
+                {isAdmin && (
+                    <Form.Item
+                        label={translate('LMS Status')}
+                        name={['customfields', 'lmsStatus']}
+                    >
+                        <Radio.Group>
+                            <Radio value="yes">{translate('Yes')}</Radio>
+                            <Radio value="no">{translate('No')}</Radio>
+                        </Radio.Group>
+                    </Form.Item>
+                )}
             </div>
         </>
     );

@@ -49,9 +49,7 @@ export default function CreateForm({ config, formElements, withUpload = false })
   const dispatchFormSubmission = (fieldsValue) => {
     const formData = new FormData();
     if (fieldsValue && entity !== 'lead') {
-      console.log('fiewldvalue', fieldsValue)
       dispatch(crud.create({ entity, jsonData: fieldsValue, withUpload: true }));
-
       return; // Exit the function
     }
 
@@ -95,12 +93,9 @@ export default function CreateForm({ config, formElements, withUpload = false })
         formData.append('studentDocument', file.originFileObj);
       });
     }
-
     // Dispatch the form submission action with the modified form data
     dispatch(crud.create({ entity, jsonData: formData, withUpload: true }));
   };
-
-
 
   useEffect(() => {
     if (isSuccess) {
