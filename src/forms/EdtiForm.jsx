@@ -100,7 +100,8 @@ export default function EditForm() {
                             { value: 'APR 23', label: 'APR 23' },
                             { value: 'OCT 23', label: 'OCT 23' },
                             { value: 'OCT 24', label: 'OCT 24' },
-                            { value: 'NOV 23', label: 'NOV 23' },
+                            { value: 'OCT 25', label: 'OCT 25' },
+                            { value: 'MAR 24', label: 'MAR 24' },
                         ]}
                     />
                 </Form.Item>

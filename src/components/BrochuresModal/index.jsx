@@ -1,35 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { Select, message, Spin, Image, Space, Button, Popconfirm } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { Select, message, Spin, Button, Popconfirm } from 'antd';
 import axios from 'axios';
-import {
-    DownloadOutlined, DeleteOutlined
-} from '@ant-design/icons';
 import { MdOutlineFileDownload } from 'react-icons/md';
+import { DeleteOutlined } from '@ant-design/icons';
+
+// Initial state for filters
+const initialFilters = {
+    university: '',
+    course: '',
+    electives: '',
+};
 
 const Index = () => {
     const [filterOptions, setFilterOptions] = useState({ universities: [], courses: [], electives: [] });
     const [brochures, setBrochures] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [filters, setFilters] = useState({
-        university: '',
-        course: '',
-        electives: '',
-    });
-    const onDownload = (url) => {
-        // Create a temporary link element
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = true;
+    const [filters, setFilters] = useState(initialFilters);
 
-        // Trigger the click event on the link to start the download
-        document.body.appendChild(link);
-        link.click();
-
-        // Clean up
-        document.body.removeChild(link);
-    };
-
-    // Fetch filter options from the API
     useEffect(() => {
         const fetchFilterOptions = async () => {
             try {
@@ -52,13 +39,10 @@ const Index = () => {
         fetchFilterOptions();
     }, []);
 
-    // Fetch filtered brochures from the API
     const fetchBrochures = async (filters) => {
         setLoading(true);
         try {
-            const response = await axios.get('/brochures/list', {
-                params: filters,
-            });
+            const response = await axios.get('/brochures/list', { params: filters });
             const result = response.data;
             if (result) {
                 setBrochures(result.brochures);
@@ -85,16 +69,25 @@ const Index = () => {
     };
 
     const handleDownload = (url) => {
-        // Implement download logic here
         window.open(url, '_blank');
     };
 
+    const handleDelete = async (fileUrl, university, course, electives) => {
+        try {
+            const response = await axios.post('/brochures/delete', { fileUrl, university, course, electives });
+            if (response.data.success) {
+                message.success(response.data.message);
+                setBrochures(brochures.filter(brochure => brochure.downloadURL !== fileUrl));
+            } else {
+                throw new Error('Unexpected response format');
+            }
+        } catch (error) {
+            message.error(error.response?.data?.message || 'Delete failed');
+        }
+    };
+
     const handleReset = () => {
-        setFilters({
-            university: '',
-            course: '',
-            electives: '',
-        });
+        setFilters(initialFilters);
     };
 
     return (
@@ -143,33 +136,38 @@ const Index = () => {
                 ) : brochures.length > 0 ? (
                     brochures.map((brochure, index) => (
                         <div key={index} className='text-center'>
-                            <Image.PreviewGroup items={brochures.map(brochure => brochure.downloadURL)} preview={
-                                <Space size={12} className="toolbar-wrapper">
-                                    <DownloadOutlined onClick={() => handleDownload(brochure.downloadURL)} />
-                                </Space>
-                            }>
-                                <div className='text-center'>
-                                    <Image
-                                        width={250}
-                                        height={180}
-                                        src={brochure.downloadURL}
-                                        alt={`Brochure ${index}`}
-                                    />
-                                    <div className='mt-2 flex gap-4 items-center justify-center'>
-                                        <Popconfirm
-                                            title="Are you sure you want to download this image?"
-                                            onConfirm={() => onDownload(brochure.downloadURL)}
-                                            okText="Yes"
-                                            cancelText="No"
-                                        >
-                                            <Button className="bg-transparent text-blue-600 border-none text-xl hover:text-blue-700" icon={<MdOutlineFileDownload />} />
-                                        </Popconfirm>
+                            <div className='text-center'>
+                                <iframe
+                                    src={brochure.downloadURL}
+                                    width="250"
+                                    height="180"
+                                    title={`Brochure ${index}`}
+                                    style={{ border: 'none' }}
+                                />
+                                <div className='mt-2 flex gap-4 items-center justify-center'>
+                                    <Popconfirm
+                                        title="Are you sure you want to download this PDF?"
+                                        onConfirm={() => handleDownload(brochure.downloadURL)}
+                                        okText="Yes"
+                                        cancelText="No"
+                                    >
+                                        <Button className="bg-transparent text-blue-600 border-none text-xl hover:text-blue-700" icon={<MdOutlineFileDownload />} />
+                                    </Popconfirm>
+                                    <Popconfirm
+                                        title="Are you sure you want to delete this file?"
+                                        onConfirm={() => handleDelete(brochure.downloadURL, brochure.university, brochure.course, brochure.electives)}
+                                        okText="Yes"
+                                        cancelText="No"
+                                    >
+                                        <Button className="bg-transparent text-red-600 border-none text-xl hover:text-red-700" icon={<DeleteOutlined />} />
+                                    </Popconfirm>
+                                    <div className='flex flex-col'>
                                         <p className='font-semibold'>{brochure.university}</p>
                                         <p className='text-sm'>{brochure.course}</p>
                                         <p className='text-sm'>{brochure.electives}</p>
                                     </div>
                                 </div>
-                            </Image.PreviewGroup>
+                            </div>
                         </div>
                     ))
                 ) : (

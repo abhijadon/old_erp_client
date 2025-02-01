@@ -191,15 +191,9 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   const handleDelete = (record) => {
-    Modal.confirm({
-      title: 'Are you sure you want to delete this item?',
-      onOk: () => {
-        dispatch(crud.delete({ actionType: 'delete', data: record, entity }));
-        dispatcher();
-      }
-    });
+    dispatch(crud.currentAction({ actionType: 'delete', data: record }));
+    modal.open();
   };
-
   const handleUpdatePassword = (record) => {
     dispatch(crud.currentItem({ data: record }));
     dispatch(crud.currentAction({ actionType: 'update', data: record }));
@@ -519,6 +513,7 @@ export default function DataTable({ config, extra = [] }) {
     dispatch(crud.list({ entity, options }));
   };
 
+
   useEffect(() => {
     applyFilters();
   }, [selectedInstitute, selectedUniversity, selectedStatus, selectedPaymentMode, selectedPaymentType, selectedUserName, selectedWelcomeMail, selectedInstallment, isTeam, startDate, endDate, selectedPaymentStatus, selectedWelcomeWhatsApp, selectedEnrolledMail, selectedEnrolledWhatsApp, selectedLMS, searchQuery, selectedSession]);
@@ -554,13 +549,14 @@ export default function DataTable({ config, extra = [] }) {
           <div className='flex flex-wrap items-center gap-2'>
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select institute"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('institute', value)}
               value={selectedInstitute}
             >
@@ -571,13 +567,14 @@ export default function DataTable({ config, extra = [] }) {
 
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select university"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('university', value)}
               value={selectedUniversity}
             >
@@ -588,13 +585,14 @@ export default function DataTable({ config, extra = [] }) {
 
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select status"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('status', value)}
               value={selectedStatus}
             >
@@ -605,13 +603,14 @@ export default function DataTable({ config, extra = [] }) {
 
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select payment type"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('paymentType', value)}
               value={selectedPaymentType}
             >
@@ -622,13 +621,14 @@ export default function DataTable({ config, extra = [] }) {
 
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select payment mode"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('paymentMode', value)}
               value={selectedPaymentMode}
             >
@@ -639,13 +639,14 @@ export default function DataTable({ config, extra = [] }) {
 
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select installment type"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('installmentType', value)}
               value={selectedInstallment}
             >
@@ -655,13 +656,14 @@ export default function DataTable({ config, extra = [] }) {
             </Select>
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select session type"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('session', value)}
               value={selectedSession}
             >
@@ -672,13 +674,14 @@ export default function DataTable({ config, extra = [] }) {
             {isFilter ? (
               <Select
                 showSearch
+                mode='multiple'
                 allowClear
                 optionFilterProp="children"
                 filterOption={(input, option) =>
                   option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                 }
                 placeholder="Select user name"
-                className='w-44 h-8'
+                className='w-44 h-auto'
                 onChange={(value) => handleFilterChange('userName', value)}
                 value={selectedUserName}
               >
@@ -687,12 +690,10 @@ export default function DataTable({ config, extra = [] }) {
                 ))}
               </Select>
             ) : null}
-
-
             <RangePicker
               onChange={handleDateRangeChange}
               value={startDate && endDate ? [startDate, endDate] : null}
-              className='w-44 h-8'
+              className='w-44 h-auto'
               format='DD/MM/YYYY'
               placeholder={['Start Date', 'End Date']}
             />
@@ -747,6 +748,9 @@ export default function DataTable({ config, extra = [] }) {
     }
     if (selectedStatus !== null) {
       options.status = selectedStatus;
+    }
+    if (selectedSession !== null) {
+      options.session = selectedSession;
     }
     if (selectedPaymentMode !== null) {
       options.payment_mode = selectedPaymentMode;
@@ -941,11 +945,10 @@ export default function DataTable({ config, extra = [] }) {
                       <span>Filters</span>
                     </div>
                   </Dropdown>
-                  <Button title='Export excel' onClick={exportToExcel} className='text-green-800 bg-green-300 hover:text-green-700 hover:bg-green-100 border-none hover:border-none' icon={<PiMicrosoftExcelLogo />}> Excel</Button>
-                </>
+                  <Button title='Export excel' onClick={exportToExcel} className='text-green-800 bg-green-300 hover:text-green-700 hover:bg-green-100 border-none hover:border-none' icon={<PiMicrosoftExcelLogo />}> Excel</Button>               
+ </>
               ) : null}
-
-              <AddNewItem key="addNewItem" config={config} />
+ <AddNewItem key="addNewItem" config={config} />
             </div>
           </div>
           <Table
@@ -965,7 +968,7 @@ export default function DataTable({ config, extra = [] }) {
         footer={null}
         width={500}
       >
-        {updatePaymentRecord && <UpdatePaymentForm entity="lead" id={updatePaymentRecord?._id} recordDetails={updatePaymentRecord} onCloseModal={handleSuccessUpdate} />}
+        {updatePaymentRecord && <UpdatePaymentForm entity="lead" id={updatePaymentRecord?._id} recordDetails={updatePaymentRecord} onCloseModal={handleSuccessUpdate} refreshTable={dispatcher} />}
       </Drawer>
       <Drawer
         title="Upload Document"

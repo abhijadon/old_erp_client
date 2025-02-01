@@ -164,3 +164,7 @@ button,
   display: inline-block;
   vertical-align: middle;
 }
+
+.ant-drawer-body {
+  padding: 0px !important;
+}

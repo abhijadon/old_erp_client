@@ -1,27 +1,28 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Card, Table, Button, Drawer, Divider, Modal } from 'antd';
+import { Card, Table, Button, Drawer, Divider, Popconfirm, message } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { course } from '@/redux/course/actions';
 import { selectListItems, selectFilterItems } from '@/redux/course/selector';
-import { crud } from '@/redux/crud/actions';
 import { IoIosAddCircleOutline } from "react-icons/io";
-import { FaRegEye } from 'react-icons/fa6';
+import { FaRegEye } from 'react-icons/fa';
 import { TbEdit } from 'react-icons/tb';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import CourseInform from '@/forms/courseInform';
 import FilterComponent from "../FilterComponent";
-import BrochureModal from "../BrochuresModal"
+import BrochureModal from "../BrochuresModal";
 import { LiaFolderOpen } from "react-icons/lia";
 import EditCourseInfo from '@/forms/EditCourseInfo';
 import DetailsPage from "../Detailspage";
 import { useCrudContext } from '@/context/crud';
+import { selectCurrentAdmin } from '@/redux/auth/selectors';
+import axios from 'axios';
 
 export default function Index({ config }) {
   const { entity, dataTableColumns } = config;
   const dispatch = useDispatch();
   const filter = useSelector(selectFilterItems);
   const { crudContextAction } = useCrudContext();
-  const { panel, collapsedBox, modal, editBox, advancedBox } = crudContextAction;
+  const { modal } = crudContextAction;
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
   const { pagination, items: dataSource } = listResult;
   const searchQuery = useSelector(state => state.course.search); // Retrieve search query from Redux state
@@ -31,6 +32,8 @@ export default function Index({ config }) {
   const [editRecord, setEditRecord] = useState(null);
   const [detailsVisible, setDetailsVisible] = useState(false);
   const [selectedRecord, setSelectedRecord] = useState(null);
+  const currentAdmin = useSelector(selectCurrentAdmin);
+  const isAdmin = ['admin', 'subadmin', 'manager'].includes(currentAdmin?.role);
 
   const handleDrawer = () => {
     setVisible(true);
@@ -125,16 +128,26 @@ export default function Index({ config }) {
           className='text-green-500 hover:text-green-700 text-base cursor-pointer'
           onClick={() => handleShowStudentDetails(record)}
         />
-        <TbEdit
-          title='Edit'
-          className='text-blue-500 hover:text-blue-800 text-base cursor-pointer'
-          onClick={() => handleEdit(record)}
-        />
-        <RiDeleteBin6Line
-          title='Delete'
-          className='text-red-500 hover:text-red-800 text-base cursor-pointer'
-          onClick={() => handleDelete(record)}
-        />
+        {isAdmin && (
+          <>
+            <TbEdit
+              title='Edit'
+              className='text-blue-500 hover:text-blue-800 text-base cursor-pointer'
+              onClick={() => handleEdit(record)}
+            />
+            <Popconfirm
+              title="Are you sure you want to delete this file?"
+              onConfirm={() => handleDelete(record)}
+              okText="Yes"
+              cancelText="No"
+            >
+              <RiDeleteBin6Line
+                title='Delete'
+                className='text-red-500 hover:text-red-800 text-base cursor-pointer'
+              />
+            </Popconfirm>
+          </>
+        )}
       </span>
     ),
   };
@@ -145,9 +158,11 @@ export default function Index({ config }) {
     return (
       <>
         <div className='flex gap-2'>
-          <Button onClick={handleDrawer} size="small" className='flex items-center gap-0.5 py-3.5 mb-6 bg-blue-200 text-blue-500 hover:text-blue-700 hover:bg-blue-100'>
-            <span><IoIosAddCircleOutline /></span><span>Add Course</span>
-          </Button>
+          {isAdmin && (
+            <Button onClick={handleDrawer} size="small" className='flex items-center gap-0.5 py-3.5 mb-6 bg-blue-200 text-blue-500 hover:text-blue-700 hover:bg-blue-100'>
+              <span><IoIosAddCircleOutline /></span><span>Add Course</span>
+            </Button>
+          )}
           <Button onClick={handleBrochureDrawer} size="small" className='flex items-center gap-0.5 py-3.5 mb-6 text-red-500 bg-red-200 capitalize hover:text-red-700 hover:bg-red-100 hover:border-red-500'>
             <span><LiaFolderOpen /></span>
             <span>Open Brochure</span>
@@ -224,3 +239,4 @@ export default function Index({ config }) {
     </>
   );
 }
+

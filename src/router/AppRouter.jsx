@@ -35,7 +35,7 @@ import Application from '@/pages/Application/index';
 import Offer from '@/pages/Offer/index';
 import OfferCreate from '@/pages/Offer/OfferCreate';
 import OfferRead from '@/pages/Offer/OfferRead';
-import CourseInfo from '@/pages/CourseInfo';
+import CourseInfo from '@/pages/courseInfo';
 
 export default function AppRouter() {
   let element = useRoutes([

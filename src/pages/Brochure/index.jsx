@@ -63,9 +63,10 @@ const Index = ({ onClose, onFormSubmit }) => {
                     'Content-Type': 'multipart/form-data'
                 }
             });
+            console.log('Response:', response.data); // Debugging statement
             if (response.data.success) {
                 message.success(response.data.message);
-                if (onFormSubmit) onFormSubmit(response.data.result); // Pass the uploaded files to onFormSubmit
+                if (onFormSubmit) onFormSubmit();
                 if (onClose) onClose();
                 form.resetFields();
             } else {

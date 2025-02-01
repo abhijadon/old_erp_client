@@ -11,13 +11,19 @@ const FilterComponent = ({ onFilterChange, onResetFilters, onSearch }) => {
     const [uniqueUniversities, setUniqueUniversities] = useState([]);
     const [uniqueCourses, setUniqueCourses] = useState([]);
     const [uniqueElectives, setUniqueElectives] = useState([]);
+
+    const [selectedMode, setSelectedMode] = useState(null);
+    const [selectedUniversity, setSelectedUniversity] = useState(null);
+    const [selectedCourse, setSelectedCourse] = useState(null);
+    const [selectedElective, setSelectedElective] = useState(null);
+
     useEffect(() => {
         if (infoList && infoList.result) {
             const modes = [...new Set(infoList.result.map(item => item.mode_info))];
             const universities = [...new Set(infoList.result.map(item => item.university))];
             const courses = [...new Set(infoList.result.map(item => item.course))];
             const electives = [...new Set(infoList.result.map(item => item.electives))];
-            
+
             setUniqueModes(modes);
             setUniqueUniversities(universities);
             setUniqueCourses(courses);
@@ -25,13 +31,25 @@ const FilterComponent = ({ onFilterChange, onResetFilters, onSearch }) => {
         }
     }, [infoList]);
 
+    const handleResetFilters = () => {
+        setSelectedMode(null);
+        setSelectedUniversity(null);
+        setSelectedCourse(null);
+        setSelectedElective(null);
+        onResetFilters();
+    };
+
     return (
         <div className='flex items-center justify-between gap-2 mb-4'>
             <div className='space-x-2'>
                 <Select
                     className='w-48'
                     placeholder="Select mode"
-                    onChange={(value) => onFilterChange('mode_info', value)}
+                    value={selectedMode}
+                    onChange={(value) => {
+                        setSelectedMode(value);
+                        onFilterChange('mode_info', value);
+                    }}
                     loading={infoLoading}
                 >
                     {uniqueModes.map(mode => (
@@ -41,7 +59,11 @@ const FilterComponent = ({ onFilterChange, onResetFilters, onSearch }) => {
                 <Select
                     className='w-48'
                     placeholder="Select university"
-                    onChange={(value) => onFilterChange('university', value)}
+                    value={selectedUniversity}
+                    onChange={(value) => {
+                        setSelectedUniversity(value);
+                        onFilterChange('university', value);
+                    }}
                     loading={infoLoading}
                 >
                     {uniqueUniversities.map(university => (
@@ -50,8 +72,12 @@ const FilterComponent = ({ onFilterChange, onResetFilters, onSearch }) => {
                 </Select>
                 <Select
                     className='w-48'
-                    placeholder="Select Course"
-                    onChange={(value) => onFilterChange('course', value)}
+                    placeholder="Select course"
+                    value={selectedCourse}
+                    onChange={(value) => {
+                        setSelectedCourse(value);
+                        onFilterChange('course', value);
+                    }}
                     loading={infoLoading}
                 >
                     {uniqueCourses.map(course => (
@@ -60,8 +86,12 @@ const FilterComponent = ({ onFilterChange, onResetFilters, onSearch }) => {
                 </Select>
                 <Select
                     className='w-48'
-                    placeholder="Select Electives"
-                    onChange={(value) => onFilterChange('electives', value)}
+                    placeholder="Select electives"
+                    value={selectedElective}
+                    onChange={(value) => {
+                        setSelectedElective(value);
+                        onFilterChange('electives', value);
+                    }}
                     loading={infoLoading}
                 >
                     {uniqueElectives.map(elective => (
@@ -71,7 +101,7 @@ const FilterComponent = ({ onFilterChange, onResetFilters, onSearch }) => {
             </div>
             <div className='flex items-center gap-1'>
                 <Input placeholder='search' onChange={(e) => onSearch(e.target.value)} />
-                <Button onClick={onResetFilters} className='text-red-600 font-thin bg-red-200 border-none hover:text-red-700'>Reset</Button>
+                <Button onClick={handleResetFilters} className='text-red-600 font-thin bg-red-200 border-none hover:text-red-700'>Reset</Button>
             </div>
         </div>
     );

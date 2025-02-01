@@ -18,6 +18,7 @@ import {
   Drawer,
   Menu,
   Radio,
+  Progress,
 } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import useLanguage from '@/locale/useLanguage';
@@ -30,20 +31,20 @@ import { DOWNLOAD_BASE_URL } from '@/config/serverApiConfig';
 import { request } from '@/request';
 import { RiChatFollowUpLine } from 'react-icons/ri';
 import { GrHistory } from 'react-icons/gr';
-import HistoryModal from './HistoryModal';
+import HistoryModal from '@/components/HistoryModal';
 import CommentForm from '@/forms/comment';
 import { LiaFileDownloadSolid } from 'react-icons/lia';
 import { PiMicrosoftTeamsLogo } from 'react-icons/pi';
 import useFetch from '@/hooks/useFetch';
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
+import { FcBearish, FcBullish, FcSalesPerformance } from 'react-icons/fc';
 const { RangePicker } = DatePicker;
 
 export default function DataTable({ config, extra = [] }) {
   const translate = useLanguage();
   let { entity, dataTableColumns, searchConfig } = config;
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
-  const { items: dataSource, pagination } = listResult;
-  console.log(pagination)
+  const { items: dataSource, pagination, summaryResult } = listResult;
   const { erpContextAction } = useErpContext();
   const { modal } = erpContextAction;
   const [statuses, setStatuses] = useState([]);
@@ -72,6 +73,7 @@ export default function DataTable({ config, extra = [] }) {
   const currentAdmin = useSelector(selectCurrentAdmin);
   const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(currentAdmin?.role);
   const isFilter = ['admin', 'subadmin', 'manager', 'supportiveassociate', 'teamleader'].includes(currentAdmin?.role);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleDateRangeChange = (dates) => {
     if (dates && dates.length === 2) {
@@ -107,6 +109,25 @@ export default function DataTable({ config, extra = [] }) {
       setUserNames(uniqueOptions.uniqueValues.userIds || []);
     }
   }, [uniqueOptions]);
+
+
+  const handleHistory = async (record) => {
+    try {
+      const historyData = await request.history({
+        entity: 'lead',
+        id: record.applicationId,
+      });
+      if (historyData && historyData.history) {
+        historyData.history.sort(
+          (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+        );
+      }
+      setHistoryData(historyData);
+      setShowHistoryModal(true);
+    } catch (error) {
+      console.error('Error fetching history data:', error);
+    }
+  };
 
   const items = [
     {
@@ -169,23 +190,7 @@ export default function DataTable({ config, extra = [] }) {
     setCommentRecord(null);
   };
 
-  const handleHistory = async (record) => {
-    try {
-      const historyData = await request.history({
-        entity: 'payment',
-        id: record._id,
-      });
-      if (historyData && historyData.history) {
-        historyData.history.sort(
-          (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
-        );
-      }
-      setHistoryData(historyData);
-      setShowHistoryModal(true);
-    } catch (error) {
-      console.error('Error fetching history data:', error);
-    }
-  };
+
 
   dataTableColumns = [
     ...dataTableColumns,
@@ -243,6 +248,7 @@ export default function DataTable({ config, extra = [] }) {
     const options = {
       page: pagination.current || 1,
       items: pagination.pageSize || 10, // Set the page size to 20
+      q: searchQuery,
     };
 
     // Add selected filters if they are not null
@@ -299,11 +305,6 @@ export default function DataTable({ config, extra = [] }) {
     items
   );
 
-  const filterTable = (e) => {
-    const value = e.target.value;
-    const options = { q: value, fields: searchConfig?.searchFields || '' };
-    dispatch(erp.list({ entity, options }));
-  };
 
   const handlePaymentStatus = (status) => {
     setSelectedFollowup(status);
@@ -345,7 +346,9 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   const applyFilters = () => {
-    const options = {};
+    const options = {
+      q: searchQuery,
+    };
 
     // Add selected filters if they are not null
     if (selectedInstitute !== null) {
@@ -405,6 +408,61 @@ export default function DataTable({ config, extra = [] }) {
     applyFilters(); // Ensure filters are applied after resetting
   };
 
+  const amountCardsData = [
+    {
+      title: 'Total Course Fee',
+      color: 'green',
+      value: summaryResult?.total_course_fee,
+      icon: <FcSalesPerformance style={{ fontSize: 48, color: 'green' }} />,
+    },
+    {
+      title: 'Total Paid Amount',
+      color: 'blue',
+      value: summaryResult?.total_paid_amount,
+      total: summaryResult?.total_paid_amount_total,
+      icon: <FcBullish style={{ fontSize: 48, color: 'blue' }} />,
+    },
+    {
+      title: 'Due Amount',
+      color: 'red',
+      value: summaryResult?.due_amount,
+      total: summaryResult?.due_amount_total,
+      icon: <FcBearish style={{ fontSize: 48, color: 'blue' }} />,
+    },
+  ];
+
+  const amountCards = amountCardsData.map((card, index) => {
+    return (
+      <Card className="w-1/3 shadow drop-shadow-lg" key={index}>
+        <div>
+          <div>
+            <div className="flex gap-10 justify-between items-center">
+              <div>{card.icon}</div>
+              <div>
+                <div className={`text-${card.color}-500 mb-2 text-sm font-normal`}>
+                  {card.title}
+                </div>
+                <div className={`text-${card.color}-500 text-2xl`}>₹ {card.value}</div>
+              </div>
+            </div>
+            <div className="mt-2">
+              <Progress
+                percent={Math.min(Math.round((card.value / 500000000) * 100), 100)}
+                status="active"
+                strokeColor={{
+                  '0%': 'red',
+                  '40%': 'blue',
+                  '100%': 'green',
+                }}
+                className='mt-3'
+              />
+            </div>
+          </div>
+        </div>
+      </Card>
+    );
+  });
+
   const filterRender = () => {
     return (
       <Card>
@@ -412,13 +470,14 @@ export default function DataTable({ config, extra = [] }) {
           <div className='flex flex-wrap items-center gap-2'>
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select institute"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('institute', value)}
               value={selectedInstitute}
             >
@@ -429,13 +488,14 @@ export default function DataTable({ config, extra = [] }) {
 
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select university"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('university', value)}
               value={selectedUniversity}
             >
@@ -446,13 +506,14 @@ export default function DataTable({ config, extra = [] }) {
 
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select status"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('status', value)}
               value={selectedStatus}
             >
@@ -463,13 +524,14 @@ export default function DataTable({ config, extra = [] }) {
 
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select payment mode"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('paymentMode', value)}
               value={selectedPaymentMode}
             >
@@ -480,13 +542,14 @@ export default function DataTable({ config, extra = [] }) {
 
             <Select
               showSearch
+              mode='multiple'
               allowClear
               optionFilterProp="children"
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
               placeholder="Select payment type"
-              className='w-44 h-8'
+              className='w-44 h-auto'
               onChange={(value) => handleFilterChange('paymentType', value)}
               value={selectedPaymentType}
             >
@@ -498,13 +561,14 @@ export default function DataTable({ config, extra = [] }) {
               <>
                 <Select
                   showSearch
+                  mode='multiple'
                   allowClear
                   optionFilterProp="children"
                   filterOption={(input, option) =>
                     option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                   }
                   placeholder="Select user name"
-                  className="w-44 h-8"
+                  className="w-44 h-auto"
                   onChange={(value) => handleFilterChange('userName', value)}
                   value={selectedUserName}
                 >
@@ -517,7 +581,7 @@ export default function DataTable({ config, extra = [] }) {
                 <RangePicker
                   onChange={handleFollowupDateRangeChange}
                   value={followStartDate && followEndDate ? [followStartDate, followEndDate] : null}
-                  className='w-44 h-8'
+                  className='w-44 h-auto'
                   format='DD/MM/YYYY'
                   placeholder={['Follow-up Start Date', 'Follow-up End Date']}
                 />
@@ -532,7 +596,7 @@ export default function DataTable({ config, extra = [] }) {
             <RangePicker
               onChange={handleDateRangeChange}
               value={startDate && endDate ? [startDate, endDate] : null}
-              className='w-44 h-8'
+              className='w-44 h-auto'
               format='DD/MM/YYYY'
               placeholder={['Start Date', 'End Date']}
             />
@@ -567,6 +631,7 @@ export default function DataTable({ config, extra = [] }) {
       export: 'true',
       sortBy: 'updated',
       sortValue: -1,
+      q: searchQuery,
     };
 
     // Add selected filters if they are not null
@@ -639,11 +704,12 @@ export default function DataTable({ config, extra = [] }) {
             <div className='flex justify-between items-center mb-4'>
               <div className='flex items-center space-x-2'>
                 <Input
-                  key={`searchFilterDataTable}`}
-                  onChange={filterTable}
+                  key="searchFilterDataTable"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)} // Update search query state
+                  onPressEnter={() => applyFilters()} // Trigger search on Enter
                   placeholder={translate('search')}
                   allowClear
-                  className='w-44'
                 />
                 <div className='flex items-center text-red-500'>
                   <span className='font-thin text-sm'>Total:</span>
@@ -682,6 +748,9 @@ export default function DataTable({ config, extra = [] }) {
     <>
       <div>
         {filterRender()}
+        <div className='flex gap-4'>
+          {amountCards}
+        </div>
         {renderTable()}
       </div>
       <HistoryModal

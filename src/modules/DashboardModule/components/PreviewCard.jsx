@@ -53,6 +53,7 @@ export default function PreviewCard({ startDate, endDate }) {
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   };
 
+
   const renderProgressItems = (data) => {
     const sortedData = sortDataDescending(data);
     return sortedData?.map((item, index) => (
@@ -64,8 +65,8 @@ export default function PreviewCard({ startDate, endDate }) {
             </label>
             <Progress
               className='mb-5'
-              percent={Math.min(item[0]?.count || 0, 3000) / 3000 * 100}
-              format={() => `${Math.min(item[0]?.count || 0, 3000)}`}
+              percent={Math.min(item[0]?.count || 0, 100000) / 100000 * 100}
+              format={() => `${Math.min(item[0]?.count || 0, 100000)}`}
               status="active"
               strokeColor={getColorForId(item[0]._id)}
               style={{ padding: '4px' }}
@@ -147,3 +148,4 @@ export default function PreviewCard({ startDate, endDate }) {
     </Card>
   );
 }
+	
